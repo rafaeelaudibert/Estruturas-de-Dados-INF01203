@@ -1,5 +1,4 @@
-Porto Alegre;Copa do Mundo;Russia;FIFA
-rto Alegre;Estruturas de Dados;Árvores;AVL;Rubro-Negras;ABP
+Porto Alegre;Estruturas de Dados;Árvores;AVL;Rubro-Negras;ABP
 Porto Alegre;Copa do Mundo;Russia;FIFA
 Porto Alegre;Estruturas de Dados;Árvores;AVL;Rubro-Negras;ABP
 São Paulo;Copa do Mundo;Russia
@@ -9,4 +8,3 @@ Rio de Janeiro;Estruturas de Dados;Arvore
 Porto Alegre;Passagens Aereas;Russia
 Porto Alegre;Copa do Mundo;Russia;FIFA
 Porto Alegre;Copa do Mundo;Russia;FIFA
-
