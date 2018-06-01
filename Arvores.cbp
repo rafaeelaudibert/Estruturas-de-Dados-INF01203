@@ -31,10 +31,26 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="arvore.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="arvore.h" />
+		<Unit filename="cidades.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cidades.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="version.h" />
+		<Unit filename="manipulaDados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="manipulaDados.h" />
+		<Unit filename="manipulaString.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="manipulaString.h" />
+		<Unit filename="struct.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

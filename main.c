@@ -1,46 +1,50 @@
+/* INCLUSÃO DAS BIBLIOTECAS DO C */
 #include <stdio.h>
+#include <stdlib.h>
 #include <locale.h>
+
+
+/* INCLUSÃO DAS BIBLIIOTECAS CRIADAS PELO GRUPO */
 #include "struct.h"
 #include "manipulaString.h"
+#include "arvore.h"
+#include "cidades.h"
+#include "manipulaDados.h"
 
+/* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */
 #define F_ENTRADA "data/entrada.txt"
 #define F_OPERACOES "data/operacoes.txt"
 #define F_SAIDA "data/saida.txt"
 
+
+/* MAIN */
 int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
-    char str[201];
+    Consulta* arvore;
 
     setlocale(LC_ALL, "Portuguese");
 
-    // Abertura dos arquivos
+    // Abertura dos arquivos, com checagem dos erros
     if(!(entrada = fopen(F_ENTRADA, "r"))){
        printf("Erro na abertura do arquivo de entrada");
+       return 1;
     }
     if(!(operacoes = fopen(F_OPERACOES, "r"))){
        printf("Erro na abertura do arquivo das operacoes");
+       return 2;
     }
     if(!(saida = fopen(F_SAIDA, "w"))){
        printf("Erro na abertura do arquivo");
+       return 3;
     }
 
-    //L� cada uma das linhas dos arquivos de entrada e de operacoes
-    printf("ENTRADA: \n");
-    //entradaDados(entrada);
-    while(fgets(str, 200, entrada))
-    {
-        converteAcentos(str);
-        removeCaracteres(str);
-        printf("%s", str);
-    }
+    // Entrada dos dados na arvore
+    arvore = entradaDados(entrada);
 
-    printf("\nOPERACOES: \n");
-    //realizaOperacoes(operacoes);
-    while(fgets(str, 200, operacoes))
-    {
-        printf("%s", str);
-    }
+    // Realiza operacoes com os dados colocados na arvore
+    realizaOperacoes(operacoes, arvore);
+
 
     // Fechamento dos arquivos
     fclose(entrada);
