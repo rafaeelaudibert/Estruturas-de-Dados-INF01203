@@ -8,8 +8,9 @@
 #include "struct.h"
 #include "manipulaString.h"
 #include "arvore.h"
-#include "cidades.h"
+#include "lse.h"
 #include "manipulaDados.h"
+#include "lde.h"
 
 /* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */
 #define F_ENTRADA "data/entrada.txt"
@@ -45,6 +46,7 @@ int main(int argc, char **argv){
     // Realiza operacoes com os dados colocados na arvore
     realizaOperacoes(operacoes, arvore);
 
+    printf("\nPonteiro da arvore alocado em: %p", arvore);
 
     // Fechamento dos arquivos
     fclose(entrada);

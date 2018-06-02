@@ -2,29 +2,30 @@
 #define STRUCT_H_
 
 /* LISTA SIMPLESMENTE ENCADEADA RESPONSÁVEL POR GUARDAR INFORMAÇÃO SOBRE AS CIDADES */
-typedef struct cidades{
+typedef struct lde{
     char nome[100];
     int qtde;
-    struct cidades *prox;
-} Cidades;
+    struct lde *prox;
+    struct lde *ant;
+} LDE;
 
 
 /* LISTA SIMPLESMENTE ENCADEADA RESPONSÁVEL POR GUARDAR OS TERMOS DE CADA CONSULTA */
-typedef struct termos{
+typedef struct lse{
     char termo[100];
-    struct termos *prox;
-} Termos;
+    struct lse *prox;
+} LSE;
 
 
 /* ÁRVORE BINÁRIA RESPONSÁVEL POR GUARDAR TODOS OS DADOS DAS CONSULTAS */
-typedef struct consulta{
+typedef struct abp{
     int qtdeAcessos;
     int qtdeTermos;
-    Termos* termos;
-    Cidades* cidades;
+    LSE* termos;
+    LDE* cidades;
 
-    struct consulta *esq;
-    struct consulta *dir;
+    struct abp *esq;
+    struct abp *dir;
 } Consulta;
 
 

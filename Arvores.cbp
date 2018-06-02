@@ -35,10 +35,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="arvore.h" />
-		<Unit filename="cidades.c">
+		<Unit filename="lde.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="cidades.h" />
+		<Unit filename="lde.h" />
+		<Unit filename="lse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lse.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
