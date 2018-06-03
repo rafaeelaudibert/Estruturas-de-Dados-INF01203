@@ -19,14 +19,14 @@
 #define F_OPERACOES "data/operacoes.txt"
 #define F_SAIDA "data/saida.txt"
 
+/* PROTÓTIPO DA FUNÇÃO BENCHMARK */
+Consulta* consultaBenchmark(Consulta*(*function)(FILE*), FILE*);
 
 /* MAIN */
 int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
     Consulta* arvore;
-    __int64 freq,start,stop;
-    QueryPerformanceFrequency((LARGE_INTEGER *)&freq); //Seta a frequencia do processador
 
     setlocale(LC_ALL, "Portuguese");
 
@@ -44,13 +44,8 @@ int main(int argc, char **argv){
        return 3;
     }
 
-    // Entrada dos dados na arvore
-
-
-    QueryPerformanceCounter((LARGE_INTEGER *)&start);
-    arvore = entradaDados(entrada);
-    QueryPerformanceCounter((LARGE_INTEGER *)&stop);
-    printf("Tempo gasto na insercao dos dados: %.4fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
+    // Entrada dos dados na arvore com benchmark
+    arvore = consultaBenchmark(entradaDados, entrada);
 
     // Realiza operacoes com os dados colocados na arvore
     realizaOperacoes(operacoes, arvore);
@@ -60,4 +55,18 @@ int main(int argc, char **argv){
     fclose(saida);
 
     return 0;
+}
+
+Consulta* consultaBenchmark(Consulta*(*function)(FILE*), FILE* entrada){
+
+    Consulta *arvore;
+    __int64 freq,start,stop;
+    QueryPerformanceFrequency((LARGE_INTEGER *)&freq); //Seta a frequencia do processador
+
+    QueryPerformanceCounter((LARGE_INTEGER *)&start);
+    arvore = function(entrada);
+    QueryPerformanceCounter((LARGE_INTEGER *)&stop);
+    printf("Tempo gasto na insercao dos dados: %.4fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
+
+    return arvore;
 }
