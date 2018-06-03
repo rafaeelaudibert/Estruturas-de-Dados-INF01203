@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <time.h>
 
 
 /* INCLUSÃO DAS BIBLIIOTECAS CRIADAS PELO GRUPO */
@@ -45,9 +46,6 @@ int main(int argc, char **argv){
 
     // Realiza operacoes com os dados colocados na arvore
     realizaOperacoes(operacoes, arvore);
-
-    printf("\nPonteiro da arvore alocado em: %p", arvore);
-
     // Fechamento dos arquivos
     fclose(entrada);
     fclose(operacoes);

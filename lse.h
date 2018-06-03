@@ -6,4 +6,5 @@
 LSE* inicializaLSE();
 LSE* insereLSE();
 void printaLSE(LSE* lista);
+int LSEigual(LSE* lse1, LSE* lse2);
 #endif // TERMOS_H_
