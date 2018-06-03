@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
+#include <windows.h>
 
 
 /* INCLUSÃO DAS BIBLIIOTECAS CRIADAS PELO GRUPO */
@@ -24,6 +25,8 @@ int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
     Consulta* arvore;
+    __int64 freq,start,stop;
+    QueryPerformanceFrequency((LARGE_INTEGER *)&freq); //Seta a frequencia do processador
 
     setlocale(LC_ALL, "Portuguese");
 
@@ -42,7 +45,12 @@ int main(int argc, char **argv){
     }
 
     // Entrada dos dados na arvore
+
+
+    QueryPerformanceCounter((LARGE_INTEGER *)&start);
     arvore = entradaDados(entrada);
+    QueryPerformanceCounter((LARGE_INTEGER *)&stop);
+    printf("Tempo gasto na insercao dos dados: %.4fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
 
     // Realiza operacoes com os dados colocados na arvore
     realizaOperacoes(operacoes, arvore);
