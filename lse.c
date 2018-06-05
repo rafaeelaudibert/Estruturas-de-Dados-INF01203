@@ -11,40 +11,100 @@ LSE* inicializaLSE()
 LSE* insereLSE(LSE* lista, char* termo)
 {
 
-    LSE *novo = (LSE*)malloc(sizeof(LSE)),
-    *auxiliar = lista;
+    LSE *novo = (LSE*)malloc(sizeof(LSE)), *auxiliar = lista;
     strcpy(novo->termo, termo);
-    novo->prox = NULL;
 
-    if (auxiliar)                   // Se tiver uma lista, procuro o ultimo da lista para dar um append do meu termo
+    if (auxiliar)                   // Se tiver uma lista, procuro a posiÃ§Ã£o alfabetica para inserir o novo termo
     {
-        while(auxiliar->prox)
+
+        if(strcmp(auxiliar->termo, novo->termo) >= 0)    // Se auxiliar (inicio da lista) for maior que novo, coloco novo antes de auxiliar
         {
-            auxiliar = auxiliar->prox;
+            novo->prox = auxiliar;                      // Novo antes de auxiliar
+            lista = novo;                               // Novo Ã© o inicio da lista agora
+
+            printf("Inseri '%s' no inicio da lista, ANTES de '%s'\n", novo->termo, auxiliar->termo);
+
         }
-        auxiliar->prox = novo;      // Coloco ele no final
+        else            // Auxiliar Ã© menor que o novo
+        {
+            if(auxiliar->prox)  // Se tenho um proximo
+            {
+                while(strcmp(auxiliar->prox->termo, novo->termo) <= 0 && auxiliar->prox->prox)
+                {
+                    auxiliar = auxiliar->prox;
+                }
+
+
+                novo->prox = auxiliar->prox;
+                auxiliar->prox = novo;
+
+                printf("Inseri '%s' DEPOIS1 de '%s', com um strcmp = %d\n", novo->termo, auxiliar->termo, strcmp(auxiliar->prox->termo, novo->termo));
+            }
+            else    // NÃ£o tenho um proximo, sou o segundo da lista
+            {
+                auxiliar->prox = novo;
+                novo->prox = NULL;
+
+                printf("Inseri '%s' DEPOIS2 de '%s'\n", novo->termo, auxiliar->termo);
+            }
+        }
+
     }
-    else                            // Caso eu não tenha nada na lista, apenas digo que a lista começa em novo
+    else                            // Caso eu nÃ£o tenha nada na lista, apenas digo que a lista comeÃ§a em novo
     {
         lista = novo;
+        printf("COMECEI LSE inserindo '%s'\n", novo->termo);
+    }
+
+    return bubbleSort(lista);
+}
+
+LSE *bubbleSort(LSE* lista)
+{
+    int flag = 0;
+    LSE* auxiliar = lista, *copia;
+
+    if(lista)
+    {
+        do
+        {
+            flag = 0;
+            auxiliar = lista;
+
+            while(auxiliar && auxiliar->prox){
+                if(strcmp(auxiliar->termo, auxiliar->prox->termo) > 0){
+
+                    //Bubble sort (inversÃ£o dos 2 termos
+                    copia = insereLSE(NULL, auxiliar->termo);
+                    strcpy(auxiliar->termo, auxiliar->prox->termo);
+                    strcpy(auxiliar->prox->termo, copia->termo);
+                    flag = 1;
+                }
+
+                auxiliar = auxiliar->prox;
+            }
+
+        }
+        while(flag);
     }
 
     return lista;
+
 }
 
-/// Função que retorna se duas LSE's tem os mesmos termos
+/// FunÃ§Ã£o que retorna se duas LSE's tem os mesmos termos
 /// INPUT:
 ///         LSE*                ->  Lista simplesmente encadeada
 ///         LSE*                ->  Lista simplesmente encadeada
 /// OUTPUT:
-///         int                 ->  1 se as strings forem iguais em toda LSE, 0 se não forem
+///         int                 ->  1 se as strings forem iguais em toda LSE, 0 se nÃ£o forem
 int LSEigual(LSE* lse1, LSE* lse2)
 {
-    /* OBS.: Essa função só pode ser chamada se as duas LSE's tiverem o mesmo tamanho */
+    /* OBS.: Essa funÃ§Ã£o sÃ³ pode ser chamada se as duas LSE's tiverem o mesmo tamanho */
 
     if(lse1 && lse2)   // Se ainda tenho string NOS DOIS
     {
-        // Se as strings forem diferentes, retorno 0, pois a afirmação é falsa
+        // Se as strings forem diferentes, retorno 0, pois a afirmaÃ§Ã£o Ã© falsa
         if(strcmp(lse1->termo, lse2->termo))
         {
             return 0;
@@ -56,12 +116,12 @@ int LSEigual(LSE* lse1, LSE* lse2)
 
         // return strcmp(lse1->termo, lse2->termo) ? 0 : LSEigual(lse1->prox, lse2->prox);  //Operador ternario
     }
-    else // Se os dois são NULL, cheguei até o fim, LSE's são iguais
+    else // Se os dois sÃ£o NULL, cheguei atÃ© o fim, LSE's sÃ£o iguais
     {
         return 1;
     }
 
-    /* Operador ternario para essa função
+    /* Operador ternario para essa funÃ§Ã£o
      return lse1 && lse2 ? strcmp(lse1->termo, lse2->termo) ? 0 : LSEigual(lse1->prox, lse2->prox); : 1
     */
 }

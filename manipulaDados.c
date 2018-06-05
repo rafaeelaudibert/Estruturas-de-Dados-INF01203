@@ -33,7 +33,7 @@ Consulta* entradaDados(FILE* entrada)
 
         /* PEGA A CIDADE */
         strcpy(cidade, strtok(str, ";"));
-        //printf("\nCIDADE: --> %s\n", cidade);
+        printf("\nCIDADE: --> %s\n", cidade);
 
         /* PEGA OS TERMOS */
         listaTermos = inicializaLSE();                          // Zera a lista de termos

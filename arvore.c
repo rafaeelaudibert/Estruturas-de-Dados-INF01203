@@ -23,8 +23,8 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
                 arvore->qtdeAcessos++;    // Aumento a quantidade de acessos a essa consulta
                 arvore->cidades = insereLDE(arvore->cidades, cidade);   // Insiro a cidade
 
-                //printf("TERMOS (nodo ja existente):\n");
-                //printaLSE(arvore->termos);
+                printf("TERMOS (nodo ja existente):\n");
+                printaLSE(arvore->termos);
             }
             else
             {
@@ -50,8 +50,8 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
         arvore->qtdeAcessos = 1;                                // Primeira vez que essa árvore é acessada
         arvore->qtdeTermos = qtdTermos;                         // Zera o contador de termos para poder ser incrementado abaixo
 
-        //printf("TERMOS (nodo novo!):\n");
-        //printaLSE(arvore->termos);
+        printf("TERMOS (nodo novo!):\n");
+        printaLSE(arvore->termos);
     }
 
     return arvore;
