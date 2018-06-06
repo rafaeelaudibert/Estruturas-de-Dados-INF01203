@@ -10,39 +10,29 @@ LSE* inicializaLSE()
 
 LSE* insereLSE(LSE* lista, char* termo)
 {
-
-    LSE *novo = (LSE*)malloc(sizeof(LSE)), *auxiliar = lista;
+    int found = 0;
+    LSE *novo = (LSE*)malloc(sizeof(LSE)), *auxiliar = lista, *anterior = NULL;
     strcpy(novo->termo, termo);
 
     if (auxiliar)                   // Se tiver uma lista, procuro a posição alfabetica para inserir o novo termo
     {
 
-        if(strcmp(auxiliar->termo, novo->termo) >= 0)    // Se auxiliar (inicio da lista) for maior que novo, coloco novo antes de auxiliar
+        while(auxiliar && !found)  //Enquanto existe lista, e não encontrei o nodo percorro a lista
         {
-            novo->prox = auxiliar;                      // Novo antes de auxiliar
-            lista = novo;                               // Novo é o inicio da lista agora
-
-        }
-        else            // Auxiliar é menor que o novo
-        {
-            if(auxiliar->prox)  // Se tenho um proximo
-            {
-                while(strcmp(auxiliar->prox->termo, novo->termo) <= 0 && auxiliar->prox->prox)
-                {
-                    auxiliar = auxiliar->prox;
-                }
-
-
-                novo->prox = auxiliar->prox;
-                auxiliar->prox = novo;
-
-              }
-            else    // Não tenho um proximo, sou o segundo da lista
-            {
-                auxiliar->prox = novo;
-                novo->prox = NULL;
-
+            if(strcmp(auxiliar->termo, termo) > 0)
+                found = 1; // Encontrei, e vou ter o nó que preciso em auxiliar
+            else {
+                anterior = auxiliar;
+                auxiliar = auxiliar->prox;
             }
+        }
+
+        if(anterior){
+            novo->prox = anterior->prox;
+            anterior->prox = novo;
+        } else {
+            novo->prox = lista;
+            lista = novo;
         }
 
     }
@@ -51,7 +41,7 @@ LSE* insereLSE(LSE* lista, char* termo)
         lista = novo;
     }
 
-    return bubbleSort(lista);
+    return lista;
 }
 
 LSE *bubbleSort(LSE* lista)
@@ -66,8 +56,10 @@ LSE *bubbleSort(LSE* lista)
             flag = 0;
             auxiliar = lista;
 
-            while(auxiliar && auxiliar->prox){
-                if(strcmp(auxiliar->termo, auxiliar->prox->termo) > 0){
+            while(auxiliar && auxiliar->prox)
+            {
+                if(strcmp(auxiliar->termo, auxiliar->prox->termo) > 0)
+                {
 
                     //Bubble sort (inversão dos 2 termos
                     copia = insereLSE(NULL, auxiliar->termo);
