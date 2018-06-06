@@ -22,8 +22,6 @@ LSE* insereLSE(LSE* lista, char* termo)
             novo->prox = auxiliar;                      // Novo antes de auxiliar
             lista = novo;                               // Novo é o inicio da lista agora
 
-            printf("Inseri '%s' no inicio da lista, ANTES de '%s'\n", novo->termo, auxiliar->termo);
-
         }
         else            // Auxiliar é menor que o novo
         {
@@ -38,14 +36,12 @@ LSE* insereLSE(LSE* lista, char* termo)
                 novo->prox = auxiliar->prox;
                 auxiliar->prox = novo;
 
-                printf("Inseri '%s' DEPOIS1 de '%s', com um strcmp = %d\n", novo->termo, auxiliar->termo, strcmp(auxiliar->prox->termo, novo->termo));
-            }
+              }
             else    // Não tenho um proximo, sou o segundo da lista
             {
                 auxiliar->prox = novo;
                 novo->prox = NULL;
 
-                printf("Inseri '%s' DEPOIS2 de '%s'\n", novo->termo, auxiliar->termo);
             }
         }
 
@@ -53,7 +49,6 @@ LSE* insereLSE(LSE* lista, char* termo)
     else                            // Caso eu não tenha nada na lista, apenas digo que a lista começa em novo
     {
         lista = novo;
-        printf("COMECEI LSE inserindo '%s'\n", novo->termo);
     }
 
     return bubbleSort(lista);
