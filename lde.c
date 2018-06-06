@@ -143,20 +143,18 @@ LDE* insereLDE(LDE* lista, char *nome)
 
     return lista;
 }
-
+/// Função iterativa para printar todos os nomes e a quantidade de acessos de uma lista duplamente encadeada circular
 void printaLDE(LDE* lista)
 {
-
     LDE* auxiliar = lista;
 
-    printf("Lista de cidades: \n");
     if(lista)
     {
         while(auxiliar->prox != lista)
         {
-            printf("Cidade: %s - Qtde:%d\n", auxiliar->nome, auxiliar->qtde);
+            printf("Nome: %s - Acessos:%d\n", auxiliar->nome, auxiliar->qtde);
             auxiliar = auxiliar->prox;
         }
-        printf("Cidade: %s - Qtde: %d\n", auxiliar->nome, auxiliar->qtde);
+        printf("Nome: %s - Acessos: %d\n", auxiliar->nome, auxiliar->qtde);
     }
 }

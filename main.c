@@ -43,7 +43,7 @@ int main(int argc, char **argv){
        return 3;
     }
 
-    // Entrada dos dados na arvore com benchmark
+    // Entrada dos dados na arvore
     arvore = entradaDados(entrada);
 
     // Realiza operacoes com os dados colocados na arvore
@@ -56,6 +56,13 @@ int main(int argc, char **argv){
     return 0;
 }
 
+
+/// Função que faz o benchmark (tempo gasto em uma função) que retorna uma consulta
+/// INPUT:
+///         Consulta*(*function)(FILE*)  -> Função a ser feita o benchmark, deve retornar uma consulta e receber um arquivo
+///         FILE*                        -> Ponteiro para arquivo que a função vai receber
+/// OUTPUT:
+///         Consulta*                    -> Retorno da função que foi feita o benchmark
 Consulta* consultaBenchmark(Consulta*(*function)(FILE*), FILE* entrada){
 
     Consulta *arvore;
