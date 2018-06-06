@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
-#include <windows.h>
 
 
 /* INCLUSÃO DAS BIBLIIOTECAS CRIADAS PELO GRUPO */
@@ -44,8 +43,8 @@ int main(int argc, char **argv){
        return 3;
     }
 
-    // Entrada dos dados na arvore com benchmark
-    arvore = consultaBenchmark(entradaDados, entrada);
+    // Entrada dos dados na arvore
+    arvore = entradaDados(entrada);
 
     // Realiza operacoes com os dados colocados na arvore
     realizaOperacoes(operacoes, arvore);
@@ -57,16 +56,23 @@ int main(int argc, char **argv){
     return 0;
 }
 
+
+/// Função que faz o benchmark (tempo gasto em uma função) que retorna uma consulta
+/// INPUT:
+///         Consulta*(*function)(FILE*)  -> Função a ser feita o benchmark, deve retornar uma consulta e receber um arquivo
+///         FILE*                        -> Ponteiro para arquivo que a função vai receber
+/// OUTPUT:
+///         Consulta*                    -> Retorno da função que foi feita o benchmark
 Consulta* consultaBenchmark(Consulta*(*function)(FILE*), FILE* entrada){
 
     Consulta *arvore;
-    __int64 freq,start,stop;
-    QueryPerformanceFrequency((LARGE_INTEGER *)&freq); //Seta a frequencia do processador
+    //__int64 freq,start,stop;
+    //QueryPerformanceFrequency((LARGE_INTEGER *)&freq); //Seta a frequencia do processador
 
-    QueryPerformanceCounter((LARGE_INTEGER *)&start);
+    //QueryPerformanceCounter((LARGE_INTEGER *)&start);
     arvore = function(entrada);
-    QueryPerformanceCounter((LARGE_INTEGER *)&stop);
-    printf("Tempo gasto na insercao dos dados: %.4fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
+    //QueryPerformanceCounter((LARGE_INTEGER *)&stop);
+    //printf("Tempo gasto na insercao dos dados: %.4fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
 
     return arvore;
 }

@@ -11,6 +11,12 @@ Consulta* criaArvore()
 {
     return NULL;
 }
+/// Função responsável por inserir um nodo na árvore (ou incrementar ou contador, caso o nodo já exista)
+/// INPUT:
+///         Consulta*           -> Árvore na qual será inserido o novo nodo
+///         LSE*                -> Lista dos termos a ser inserido na lista de termos do nodo
+///         int                 -> Qtd de termos que tenho no nodo
+///         char*               -> String contendo a cidade da qual os termos foram recebidos
 
 Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, char* cidade)
 {
@@ -23,19 +29,19 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
                 arvore->qtdeAcessos++;    // Aumento a quantidade de acessos a essa consulta
                 arvore->cidades = insereLDE(arvore->cidades, cidade);   // Insiro a cidade
 
-                //printf("TERMOS (nodo ja existente):\n");
-                //printaLSE(arvore->termos);
+                printf("TERMOS (nodo ja existente):\n");
+                printaLSE(arvore->termos);
             }
             else
             {
-                arvore->dir = insereNodoArvore(arvore->dir, listaTermos, qtdTermos, cidade);
+                arvore->dir = insereNodoArvore(arvore->dir, listaTermos, qtdTermos, cidade); // Se não, vou tentar inserir a direita
             }
         }
-        else if(arvore->qtdeTermos < qtdTermos)
+        else if(arvore->qtdeTermos < qtdTermos) // Se tenho menos termos, tento inserir a direita
         {
             arvore->esq = insereNodoArvore(arvore->esq, listaTermos, qtdTermos, cidade);
         }
-        else
+        else                                    // Se tenho mais termos, tento inserir a esquerda
         {
             arvore->dir = insereNodoArvore(arvore->dir, listaTermos, qtdTermos, cidade);
         }
@@ -50,9 +56,40 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
         arvore->qtdeAcessos = 1;                                // Primeira vez que essa árvore é acessada
         arvore->qtdeTermos = qtdTermos;                         // Zera o contador de termos para poder ser incrementado abaixo
 
-        //printf("TERMOS (nodo novo!):\n");
-        //printaLSE(arvore->termos);
+        printf("TERMOS (nodo novo!):\n");
+        printaLSE(arvore->termos);
     }
 
     return arvore;
+}
+
+/// Função recursiva para printar uma ABP utilizando caminhamento central à esquerda
+void printaArvore(Consulta* tree, int grau, int choice)
+{
+
+    int i;  // Contador
+
+    if(tree)
+    {
+        for(i=0; i<grau; i++)   //Printador do grau
+            printf("=");
+
+        switch(choice)
+        {
+        case QTD_TERMOS:
+            printf("Termos: %d\n", tree->qtdeTermos);
+            break;
+        case QTD_ACESSOS:
+            printf("Acessos: %d\n", tree->qtdeAcessos);
+            break;
+        default:
+            printf("Impressao com dados invalidos\n");
+            return;
+        }
+        printaArvore(tree->esq, grau+1, choice);
+        printaArvore(tree->dir, grau+1, choice);
+    }
+
+    return;
+
 }

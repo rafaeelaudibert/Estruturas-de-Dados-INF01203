@@ -1,5 +1,6 @@
 #include "lde.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 /// Função responsável por inicializar uma Lista Duplamente Encadeada
@@ -22,55 +23,138 @@ LDE* insereLDE(LDE* lista, char *nome)
 {
 
     LDE *novo, *auxiliar = lista;
-    int adicionado = 0;
+    int adicionado=0;
 
     // Se ja tenho uma lista
     if(auxiliar)
     {
-
-        // Vou iterar pela lista
-        while(auxiliar->prox && !adicionado)
+        if(*nome >= 'l' && *nome <= 'z')    //Insere de tras pra frente
         {
-            //  Se o nome passado for o mesmo que a posicao atual da lista, aumenta em 1 sua quantidade
-            if(!(strcmp(nome, auxiliar->nome)))
+            auxiliar = auxiliar->ant;
+            do
             {
-                auxiliar->qtde++;   // Aumento a quantidade
-                adicionado = 1;     // Ligo a flag para poder sair do laço
+
+                if(strcmp(auxiliar->nome, nome) == 0)
+                {
+                    auxiliar->qtde++;
+                    adicionado = 1;
+                }
+                else if(strcmp(nome, auxiliar->nome) > 0)    //Se tenho um texto "maior" que aquele, insiro depois do auxiliar
+                {
+                    novo = (LDE*) malloc(sizeof(LDE));
+                    novo->qtde = 1;
+                    strcpy(novo->nome, nome);
+                    novo->prox = auxiliar->prox;
+                    novo->ant = auxiliar;
+                    auxiliar->prox->ant = novo;
+                    auxiliar->prox = novo;
+                    adicionado = 1;
+                }
+
+                auxiliar = auxiliar->ant;
             }
-            auxiliar = auxiliar->prox;    // Sempre aponto para o próximo na lista
+            while(auxiliar != lista && !adicionado);
+
+            if(auxiliar == lista && !adicionado){ //Se saí do loop, pode ser que precise inserir ainda
+                if(strcmp(lista->nome, nome) == 0){
+                    lista->qtde++;
+                } else if(strcmp(lista->nome, nome) > 0){ //Lista é maior, então o novo vai antes de lista
+                    novo = (LDE*) malloc(sizeof(LDE));
+                    novo->qtde = 1;
+                    strcpy(novo->nome, nome);
+                    novo->ant = lista->ant;
+                    novo->prox = lista;
+                    lista->ant->prox = novo;
+                    lista->ant = novo;
+                    lista = novo;
+                } else { //Novo vai depois da lista
+                    novo = (LDE*) malloc(sizeof(LDE));
+                    novo->qtde = 1;
+                    strcpy(novo->nome, nome);
+                    novo->ant = lista;
+                    novo->prox = lista->prox;
+                    lista->prox->ant = novo;
+                    lista->prox = novo;
+                }
+            }
+
+        }
+        else        //Insere de frente pra tras
+        {
+
+            do
+            {
+                if(strcmp(auxiliar->nome, nome) == 0)
+                {
+                    auxiliar->qtde++;
+                    adicionado = 1;
+                }
+                else if(strcmp(nome, auxiliar->nome) < 0)    //Se tenho um texto "menor" que aquele, insiro antes
+                {
+                    novo = (LDE*) malloc(sizeof(LDE));
+                    novo->qtde = 1;
+                    strcpy(novo->nome, nome);
+                    novo->prox = auxiliar;
+                    novo->ant = auxiliar->ant;
+                    auxiliar->ant->prox = novo;
+                    adicionado = 1;
+
+                    if (auxiliar == lista)
+                        lista = novo;
+                }
+
+                auxiliar = auxiliar->ant;
+            }
+            while(auxiliar->prox != lista && !adicionado);
+
+            if(auxiliar->prox == lista && !adicionado){ //Se saí do loop, pode ser que precise inserir ainda
+                if(strcmp(auxiliar->nome, nome) == 0){
+                    auxiliar->qtde++;
+                } else if(strcmp(nome, auxiliar->nome) > 0){ //Novo é maior que o fim da lista, vai pro final
+                    novo = (LDE*) malloc(sizeof(LDE));
+                    novo->qtde = 1;
+                    strcpy(novo->nome, nome);
+                    novo->ant = lista->ant;
+                    novo->prox = lista;
+                    lista->ant->prox = novo;
+                    lista->ant = novo;
+                } else { //Novo vai antes do final
+                    novo = (LDE*) malloc(sizeof(LDE));
+                    novo->qtde = 1;
+                    strcpy(novo->nome, nome);
+                    novo->prox = auxiliar;
+                    novo->ant = auxiliar->ant->prox;
+                    auxiliar->ant->prox = novo;
+                    auxiliar->ant = novo;
+                }
+            }
         }
 
-        // Se eu cheguei ate o final sem adicionar nada, coloco novo no inicio da lista
-        if(!adicionado)
-        {
-
-            //  Checo se o último da lista é o que preciso inserir
-            if(!(strcmp(nome, auxiliar->nome)))
-            {
-                auxiliar->qtde++;   // Aumento a quantidade
-            }
-            else     // Caso contrario, vou inserir no final da lista
-            {
-                novo = (LDE*) malloc(sizeof(LDE));  // Aloco o espaço
-                novo->qtde = 1;                             // Primeira vez que a cidade aparece
-                strcpy(novo->nome, nome);                 // Salvo o nome da cidade
-
-                novo->prox = NULL;                         // Próximo na lista é vazio
-                novo->ant = auxiliar;                       // Anterior é o auxiliar
-
-                auxiliar->prox = novo;                      // Ponho o novo no final da lista
-            }
-        }
     }
     else    // Senão, crio um novo nodo
     {
         novo = (LDE*) malloc(sizeof(LDE));
-        novo->prox = NULL;
-        novo->ant = NULL;
+        novo->prox = novo;
+        novo->ant = novo;
         novo->qtde = 1;
         strcpy(novo->nome, nome);
         lista = novo;
     }
 
     return lista;
+}
+/// Função iterativa para printar todos os nomes e a quantidade de acessos de uma lista duplamente encadeada circular
+void printaLDE(LDE* lista)
+{
+    LDE* auxiliar = lista;
+
+    if(lista)
+    {
+        while(auxiliar->prox != lista)
+        {
+            printf("Nome: %s - Acessos:%d\n", auxiliar->nome, auxiliar->qtde);
+            auxiliar = auxiliar->prox;
+        }
+        printf("Nome: %s - Acessos: %d\n", auxiliar->nome, auxiliar->qtde);
+    }
 }
