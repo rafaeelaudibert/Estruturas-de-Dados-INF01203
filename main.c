@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
+// #include <windows.h> -> DESCOMENTAR PARA RODAR O BENCHMARK NO WINDOWS
 
 
 /* INCLUSÃO DAS BIBLIIOTECAS CRIADAS PELO GRUPO */
@@ -19,13 +20,13 @@
 #define F_SAIDA "data/saida.txt"
 
 /* PROTÓTIPO DA FUNÇÃO BENCHMARK */
-Consulta* consultaBenchmark(Consulta*(*function)(FILE*), FILE*);
+Info* infoBenchmark(Info*(*function)(FILE*), FILE*);
 
 /* MAIN */
 int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
-    Consulta* arvore;
+    Info* dados = {NULL, NULL};
 
     setlocale(LC_ALL, "Portuguese");
 
@@ -43,11 +44,15 @@ int main(int argc, char **argv){
        return 3;
     }
 
-    // Entrada dos dados na arvore
-    arvore = entradaDados(entrada);
+    // Entrada dos dados padrão
+    dados = entradaDados(entrada);
 
-    // Realiza operacoes com os dados colocados na arvore
-    realizaOperacoes(operacoes, arvore);
+    // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
+    //dados = infoBenchmark(entradaDados, entrada);
+
+    // Realiza operacoes com os dados
+    realizaOperacoes(operacoes, dados);
+
     // Fechamento dos arquivos
     fclose(entrada);
     fclose(operacoes);
@@ -59,20 +64,20 @@ int main(int argc, char **argv){
 
 /// Função que faz o benchmark (tempo gasto em uma função) que retorna uma consulta
 /// INPUT:
-///         Consulta*(*function)(FILE*)  -> Função a ser feita o benchmark, deve retornar uma consulta e receber um arquivo
+///         Info*(*function)(FILE*)  -> Função a ser feita o benchmark, deve retornar uma estrutura Info* e receber um arquivo
 ///         FILE*                        -> Ponteiro para arquivo que a função vai receber
 /// OUTPUT:
-///         Consulta*                    -> Retorno da função que foi feita o benchmark
-Consulta* consultaBenchmark(Consulta*(*function)(FILE*), FILE* entrada){
+///         Info*                    -> Retorno da função que foi feita o benchmark
+Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
 
-    Consulta *arvore;
+    Info *dados;
     //__int64 freq,start,stop;
     //QueryPerformanceFrequency((LARGE_INTEGER *)&freq); //Seta a frequencia do processador
 
     //QueryPerformanceCounter((LARGE_INTEGER *)&start);
-    arvore = function(entrada);
+    dados = function(entrada);
     //QueryPerformanceCounter((LARGE_INTEGER *)&stop);
     //printf("Tempo gasto na insercao dos dados: %.4fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
 
-    return arvore;
+    return dados;
 }

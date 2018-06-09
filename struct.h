@@ -29,5 +29,12 @@ typedef struct abp{
 } Consulta;
 
 
+/* ESTRUTURA PRINCIPAL VISANDO FACILITAR ALGUMAS FUNÇÕES */
+typedef struct descritor{
+    Consulta  *arvore;
+    LDE *termos;
+} Info;
+
+
 
 #endif

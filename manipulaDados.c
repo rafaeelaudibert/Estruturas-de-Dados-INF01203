@@ -17,13 +17,17 @@
 /// INPUT:
 ///         FILE*                ->  Ponteiro para o arquivo com os dados de entrada
 /// OUTPUT:
-///         Consulta*            ->  Árvore binária contendo todos os dados do arquivo de entrada
-Consulta* entradaDados(FILE* entrada)
+///         Info*                ->  Estrutura que contem todas as informações recebidas
+Info* entradaDados(FILE* entrada)
 {
     int qtdTermos = 0;
     char str[201], cidade[100], *termo = NULL;
-    Consulta *arvore = criaArvore();
+    Info *dados = (Info*)malloc(sizeof(Info));
     LSE* listaTermos;
+
+    // Inicialização dos dados
+    dados->arvore = criaArvore();
+    dados->termos = inicializaLDE();
 
     //printf("DADOS DE ENTRADA: \n");
     while(fgets(str, 200, entrada))
@@ -47,19 +51,18 @@ Consulta* entradaDados(FILE* entrada)
             listaTermos = insereLSE(listaTermos, termo);        // Insere o termo na sua lista
             qtdTermos++;                                        // Incrementa o contador de termos
         }
-
-        arvore = insereNodoArvore(arvore, listaTermos, qtdTermos, cidade);
+        dados->arvore = insereNodoArvore(dados->arvore, listaTermos, qtdTermos, cidade);
     }
 
-    return arvore;
+    return dados;
 }
 
 
 /// Função responsável por realizar todas as operações contidas no arquivo de operações utilizando a árvore que possui todos os dados
 /// INPUT:
 ///         FILE*                ->  Ponteiro para o arquivo com as operações a serem realizadas na árvore
-///         Consulta*            ->  Árvore contendo todos os dados
-void realizaOperacoes(FILE* operacoes, Consulta* arvore)
+///         Info*                ->  Estrutura contendo toda a informação necessária
+void realizaOperacoes(FILE* operacoes, Info* dados)
 {
 
     char str[201], operacao, *localidade;
@@ -78,29 +81,29 @@ void realizaOperacoes(FILE* operacoes, Consulta* arvore)
         {
         case 'a':
             //Recebe a localidade e a quantidade de consultas
-            consultasPorLocalidade(arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
+            consultasPorLocalidade(dados->arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
             break;
         case 'b':
             //Recebe a quantidade de consultas
-            consultasArquivo(arvore, atoi(strtok(NULL, ";")));
+            consultasArquivo(dados->arvore, atoi(strtok(NULL, ";")));
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
-            termosPorLocalidade(arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
+            termosPorLocalidade(dados->arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
             break;
         case 'd':
             //Recebe a quantidade de consultas
-            termosArquivo(arvore, atoi(strtok(NULL, ";")));
+            termosArquivo(dados->arvore, atoi(strtok(NULL, ";")));
             break;
         case 'e':
             // Recebe uma localidade
             localidade = strtok(NULL, ";");
-            tamanho = mediaTamanhoConsultasLocalidade(arvore, localidade);
-            printf("Tamanho media das consultas em %s: %d", localidade, tamanho);
+            tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidade);
+            printf("Media de termos em %s: %d", localidade, tamanho);
             break;
         case 'f':
-            tamanho = mediaTamanhoConsultasArquivo(arvore);
-            printf("Tamanho medio das consultas no arquivo: %d", tamanho);
+            tamanho = mediaTamanhoConsultasArquivo(dados->arvore);
+            printf("Media de termos no arquivo: %d", tamanho);
             break;
         }
     }

@@ -49,7 +49,7 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
     else        // Arvore vazia
     {
         arvore = (Consulta*) malloc(sizeof(Consulta));          // Inicializa um nó
-        arvore->cidades = insereLDE(inicializaLDE(), cidade);                      // Inicializa a LDE das cidades
+        arvore->cidades = insereLDE(inicializaLDE(), cidade);   // Inicializa a LDE das cidades
         arvore->termos = listaTermos;                           // Variável temporária para guardar os termos
         arvore->esq = NULL;                                     // Arvore da esquerda é nula
         arvore->dir = NULL;                                     // Arvore da direita é nula
