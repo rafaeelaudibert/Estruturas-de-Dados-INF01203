@@ -6,6 +6,7 @@
 #include "manipulaString.h"
 #include "lde.h"
 #include "lse.h"
+#include "operacoes.h"
 
 /* DEFINES PARA A FLAG DE INSERÇÃO */
 #define PENDING 0
@@ -61,14 +62,47 @@ Consulta* entradaDados(FILE* entrada)
 void realizaOperacoes(FILE* operacoes, Consulta* arvore)
 {
 
-    char str[201];
+    char str[201], operacao, *localidade;
+    int tamanho; //Usado nas operações 'e' & 'f'
 
-    //printf("\nOPERACOES A SEREM REALIZADAS: \n");
+    printf("\nOPERACOES A SEREM REALIZADAS: \n");
     while(fgets(str, 200, operacoes))
     {
         converteAcentos(str);
         removeCaracteres(str);
-        //printf("%s", str);
+        printf("%s", str);
+        operacao =  *(strtok(str, ";"));
+
+        // Operacoes de consulta no arquivo
+        switch(operacao)
+        {
+        case 'a':
+            //Recebe a localidade e a quantidade de consultas
+            consultasPorLocalidade(arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
+            break;
+        case 'b':
+            //Recebe a quantidade de consultas
+            consultasArquivo(arvore, atoi(strtok(NULL, ";")));
+            break;
+        case 'c':
+            //Recebe a localidade e a quantidade de termos
+            termosPorLocalidade(arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
+            break;
+        case 'd':
+            //Recebe a quantidade de consultas
+            termosArquivo(arvore, atoi(strtok(NULL, ";")));
+            break;
+        case 'e':
+            // Recebe uma localidade
+            localidade = strtok(NULL, ";");
+            tamanho = mediaTamanhoConsultasLocalidade(arvore, localidade);
+            printf("Tamanho media das consultas em %s: %d", localidade, tamanho);
+            break;
+        case 'f':
+            tamanho = mediaTamanhoConsultasArquivo(arvore);
+            printf("Tamanho medio das consultas no arquivo: %d", tamanho);
+            break;
+        }
     }
 
     return;
