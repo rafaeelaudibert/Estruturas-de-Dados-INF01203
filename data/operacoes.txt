@@ -1,3 +1,6 @@
+a;Porto Alegre;4
+b;4
 c;Porto Alegre;4
+d;4
 e;Porto Alegre;3
-d;5
+f;
