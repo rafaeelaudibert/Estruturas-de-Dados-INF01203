@@ -66,14 +66,12 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
 {
 
     char str[201], operacao, *localidade;
+    LDE *termos;
     int tamanho; //Usado nas operações 'e' & 'f'
-
-    printf("\nOPERACOES A SEREM REALIZADAS: \n");
     while(fgets(str, 200, operacoes))
     {
         converteAcentos(str);
         removeCaracteres(str);
-        printf("%s", str);
         operacao =  *(strtok(str, ";"));
 
         // Operacoes de consulta no arquivo
@@ -92,18 +90,19 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
             termosPorLocalidade(dados->arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
             break;
         case 'd':
-            //Recebe a quantidade de consultas
-            termosArquivo(dados->arvore, atoi(strtok(NULL, ";")));
+            //Recebe a quantidade de termos
+            termos = termosArquivo(dados->termos, atoi(strtok(NULL, ";")));
+            printaLDE(termos);
             break;
         case 'e':
             // Recebe uma localidade
             localidade = strtok(NULL, ";");
             tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidade);
-            printf("Media de termos em %s: %d", localidade, tamanho);
+            printf("Media de termos em %s: %d\n", localidade, tamanho);
             break;
         case 'f':
             tamanho = mediaTamanhoConsultasArquivo(dados->arvore);
-            printf("Media de termos no arquivo: %d", tamanho);
+            printf("Media de termos no arquivo: %d\n", tamanho);
             break;
         }
     }

@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <string.h>
 #include "operacoes.h"
 
 /// Função que retorna as consultas mais consultadas em uma determinada localidade
@@ -8,7 +10,8 @@
 ///         int*                ->  Quantidade de consultas que devem ser retornadas
 /// OUTPUT:
 ///         Consulta*           ->  Arvore com somente as qtdConsultas mais realizadas
-void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas){
+void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
+{
 
     return;
 }
@@ -20,7 +23,8 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas){
 ///         int*                ->  Quantidade de consultas que devem ser retornadas
 /// OUTPUT:
 ///         Consulta*           ->  Arvore com somente as qtdConsultas mais realizadas
-void consultasArquivo(Consulta* arvore, int qtdConsultas){
+void consultasArquivo(Consulta* arvore, int qtdConsultas)
+{
 
     return;
 }
@@ -33,7 +37,8 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas){
 ///         int*                ->  Quantidade de termos que devem ser retornados
 /// OUTPUT:
 ///         LDE*                ->  Lista duplamente encadeada contendo os qtdTermos termos mais pesquisados nessa localidade
-void termosPorLocalidade(Consulta* arvore, char* cidade, int qtdTermos){
+void termosPorLocalidade(Consulta* arvore, char* cidade, int qtdTermos)
+{
 
     return;
 }
@@ -45,9 +50,49 @@ void termosPorLocalidade(Consulta* arvore, char* cidade, int qtdTermos){
 ///         int*                ->  Quantidade de termos que devem ser retornados
 /// OUTPUT:
 ///         LDE*                ->  Lista duplamente encadeada contendo os qtdTermos termos mais pesquisados
-void termosArquivo(Consulta* arvore, int qtdTermos){
+LDE* termosArquivo(LDE* listaTermos, int qtdTermos)
+{
 
-    return;
+    int i;
+    LDE *listaRetorno, *novo, *auxiliar;
+
+    if(qtdTermos == 0)
+    {
+        listaRetorno = listaTermos;
+    }
+    else
+    {
+
+        // Cria o primeiro nodo
+        novo = (LDE*)malloc(sizeof(LDE));
+        novo->ant = NULL;
+        novo->prox = NULL;
+        novo->qtde = listaTermos->qtde;
+        strcpy(novo->nome, listaTermos->nome);
+        listaRetorno = novo;
+
+        // Seta o auxiliar
+        auxiliar = listaRetorno;
+
+        // Insiro os qtdTermos - 1 nodos restantes
+        for(i=1, listaTermos = listaTermos->prox; i<qtdTermos; i++, auxiliar=novo, listaTermos = listaTermos->prox)
+        {
+            if (listaTermos == NULL) // Ja passei a lista inteira
+                break;
+
+            // Cria o nodo
+            novo = (LDE*)malloc(sizeof(LDE));
+            novo->ant = auxiliar;
+            novo->prox = NULL;
+            novo->qtde = listaTermos->qtde;
+            strcpy(novo->nome, listaTermos->nome);
+            auxiliar->prox = novo;
+        }
+    }
+
+
+
+    return listaRetorno;
 }
 
 /// Função que retorna a média do tamanho das consultas realizadas em uma determinada localidade
@@ -56,7 +101,8 @@ void termosArquivo(Consulta* arvore, int qtdTermos){
 ///         char*               -> Localidade desejada
 /// OUTPUT:
 ///         int                 -> Média de tamanho das consultas da localidade
-int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade){
+int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade)
+{
 
     return 0;
 }
@@ -67,7 +113,8 @@ int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade){
 ///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
 /// OUTPUT:
 ///         int                 -> Média de tamanho das consultas do arquivo
-int mediaTamanhoConsultasArquivo(Consulta* arvore){
+int mediaTamanhoConsultasArquivo(Consulta* arvore)
+{
 
     int totalTermos = 0, totalConsultas = 0;
 
@@ -88,10 +135,12 @@ int mediaTamanhoConsultasArquivo(Consulta* arvore){
 ///         int*                ->  Ponteiro para int que armazena o total de consultas
 /// OUTPUT:
 ///         int                 -> Média de tamanho das consultas do arquivo
-void auxiliarMediaTamanhoConsultasArquivo(Consulta *arvore, int *totTermos, int *totConsultas){
+void auxiliarMediaTamanhoConsultasArquivo(Consulta *arvore, int *totTermos, int *totConsultas)
+{
 
     // Se tenho um nodo da arvore
-    if (arvore){
+    if (arvore)
+    {
         *totTermos += arvore->qtdeTermos;   // Somo ao total de termos, a qtde de termos desse nodo
         *totConsultas += 1;                 // Somo 1 ao total de nodos da arvore
         auxiliarMediaTamanhoConsultasArquivo(arvore->esq, totTermos, totConsultas);     // Recursão para avore esquerda

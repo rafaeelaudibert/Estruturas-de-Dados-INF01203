@@ -276,10 +276,10 @@ void printaLDE(LDE* lista)
     {
         while(auxiliar->prox != lista && auxiliar->prox)
         {
-            printf("Nome: %s - Acessos:%d\n", auxiliar->nome, auxiliar->qtde);
+            printf("%s %d\n", auxiliar->nome, auxiliar->qtde);
             auxiliar = auxiliar->prox;
         }
-        printf("Nome: %s - Acessos: %d\n", auxiliar->nome, auxiliar->qtde);
+        printf("%s %d\n", auxiliar->nome, auxiliar->qtde);
     }
     else
     {
