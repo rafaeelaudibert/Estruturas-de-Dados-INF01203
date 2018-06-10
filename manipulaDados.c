@@ -38,7 +38,6 @@ Info* entradaDados(FILE* entrada)
 
         /* PEGA A CIDADE */
         strcpy(cidade, strtok(str, ";"));
-        printf("\nCIDADE: --> %s\n", cidade);
 
         /* PEGA OS TERMOS */
         listaTermos = inicializaLSE();                          // Zera a lista de termos
@@ -48,8 +47,9 @@ Info* entradaDados(FILE* entrada)
             if(termo[strlen(termo) - 1] == '\n')                // Tira o \n caso ele exista
                 termo[strlen(termo) - 1] = '\0';
 
-            listaTermos = insereLSE(listaTermos, termo);        // Insere o termo na sua lista
-            qtdTermos++;                                        // Incrementa o contador de termos
+            listaTermos = insereLSE(listaTermos, termo);                // Insere o termo na sua lista
+            dados->termos = insereLDENumerico(dados->termos, termo);    // Insere o termo na lista geral
+            qtdTermos++;                                                // Incrementa o contador de termos
         }
         dados->arvore = insereNodoArvore(dados->arvore, listaTermos, qtdTermos, cidade);
     }

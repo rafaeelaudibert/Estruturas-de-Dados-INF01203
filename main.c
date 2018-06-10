@@ -77,7 +77,7 @@ Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
     //QueryPerformanceCounter((LARGE_INTEGER *)&start);
     dados = function(entrada);
     //QueryPerformanceCounter((LARGE_INTEGER *)&stop);
-    //printf("Tempo gasto na insercao dos dados: %.4fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
+    //printf("Tempo gasto na insercao dos dados: %3.8fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
 
     return dados;
 }

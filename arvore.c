@@ -27,10 +27,7 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
             if(LSEigual(listaTermos, arvore->termos)) // Se eu estou em uma consulta com os mesmos termos que a minha inserção
             {
                 arvore->qtdeAcessos++;    // Aumento a quantidade de acessos a essa consulta
-                arvore->cidades = insereLDE(arvore->cidades, cidade);   // Insiro a cidade
-
-                printf("TERMOS (nodo ja existente):\n");
-                printaLSE(arvore->termos);
+                arvore->cidades = insereLDEAlfabetico(arvore->cidades, cidade);   // Insiro a cidade
             }
             else
             {
@@ -49,15 +46,12 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
     else        // Arvore vazia
     {
         arvore = (Consulta*) malloc(sizeof(Consulta));          // Inicializa um nó
-        arvore->cidades = insereLDE(inicializaLDE(), cidade);   // Inicializa a LDE das cidades
+        arvore->cidades = insereLDEAlfabetico(inicializaLDE(), cidade);   // Inicializa a LDE das cidades
         arvore->termos = listaTermos;                           // Variável temporária para guardar os termos
         arvore->esq = NULL;                                     // Arvore da esquerda é nula
         arvore->dir = NULL;                                     // Arvore da direita é nula
         arvore->qtdeAcessos = 1;                                // Primeira vez que essa árvore é acessada
         arvore->qtdeTermos = qtdTermos;                         // Zera o contador de termos para poder ser incrementado abaixo
-
-        printf("TERMOS (nodo novo!):\n");
-        printaLSE(arvore->termos);
     }
 
     return arvore;
