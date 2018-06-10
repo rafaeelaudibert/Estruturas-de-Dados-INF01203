@@ -64,9 +64,9 @@ Info* entradaDados(FILE* entrada)
 ///         Info*                ->  Estrutura contendo toda a informação necessária
 void realizaOperacoes(FILE* operacoes, Info* dados)
 {
-
+    char termoCidade[100];
     char str[201], operacao, *localidade;
-    LDE *termos;
+    LDE *termos, *termosLocal;
     int tamanho; //Usado nas operações 'e' & 'f'
     while(fgets(str, 200, operacoes))
     {
@@ -87,7 +87,8 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
-            termosPorLocalidade(dados->arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
+            strcpy(termoCidade,strtok(NULL, ";"));
+            termosLocal = termosPorLocalidade(dados->arvore, termoCidade, atoi(strtok(NULL, ";")));
             break;
         case 'd':
             //Recebe a quantidade de termos
@@ -98,7 +99,7 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
             // Recebe uma localidade
             localidade = strtok(NULL, ";");
             tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidade);
-            printf("Media de termos em %s: %d\n", localidade, tamanho);
+            printf("Media de termos em: %s = %d\n", localidade, tamanho);
             break;
         case 'f':
             tamanho = mediaTamanhoConsultasArquivo(dados->arvore);

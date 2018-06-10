@@ -5,11 +5,11 @@
 
 void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas);
 void consultasArquivo(Consulta* arvore, int qtdConsultas);
-void termosPorLocalidade(Consulta* arvore, char* cidade, int qtdTermos);
+LDE* termosPorLocalidade(Consulta* arvore, char* cidade, int qtdTermos);
 LDE* termosArquivo(LDE* listaTermos, int qtdTermos);
-int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade);
+int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade);//, char* cidade);
 int mediaTamanhoConsultasArquivo(Consulta* arvore);
 
-/* FUNÇÕES AUXILIARES */
+/* FUNÃ‡Ã•ES AUXILIARES */
 void auxiliarMediaTamanhoConsultasArquivo(Consulta*, int*, int*);
 #endif // OPERACOES_H_

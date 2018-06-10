@@ -27,7 +27,6 @@ int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
     Info* dados = {NULL, NULL};
-
     setlocale(LC_ALL, "Portuguese");
 
     // Abertura dos arquivos, com checagem dos erros
@@ -43,6 +42,8 @@ int main(int argc, char **argv){
        printf("Erro na abertura do arquivo");
        return 3;
     }
+
+    printf("debug\n");
 
     // Entrada dos dados padrão
     dados = entradaDados(entrada);
