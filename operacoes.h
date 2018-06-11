@@ -12,4 +12,11 @@ int mediaTamanhoConsultasArquivo(Consulta* arvore);
 
 /* FUNÇÕES AUXILIARES */
 void auxiliarMediaTamanhoConsultasArquivo(Consulta*, int*, int*);
+
+void auxiliarMediaTamanhoConsultasLocalidade(Consulta *arvore, int *totTermos, int *totConsultas, char* cidade);
+int temCidadeNaLista(char* cidade, LDE* lista);
+
+void achaVetorReps(Consulta* arvore, int *vetor, int pos);
+void copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos);
+
 #endif // OPERACOES_H_

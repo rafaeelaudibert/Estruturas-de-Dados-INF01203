@@ -83,7 +83,7 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
             break;
         case 'b':
             //Recebe a quantidade de consultas
-            consultasArquivo(dados->arvore, atoi(strtok(NULL, ";")));
+            consultasArquivo(dados->arvore, 3);//atoi(strtok(NULL, ";")));
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
@@ -99,7 +99,7 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
             // Recebe uma localidade
             localidade = strtok(NULL, ";");
             tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidade);
-            printf("Media de termos em: %s = %d\n", localidade, tamanho);
+            printf("Media de termos em %s: %d\n", localidade, tamanho);
             break;
         case 'f':
             tamanho = mediaTamanhoConsultasArquivo(dados->arvore);

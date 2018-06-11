@@ -43,10 +43,12 @@ int main(int argc, char **argv){
        return 3;
     }
 
-    printf("debug\n");
+    printf("Sem esse print da segmentation fault no meu pc\n\n");
 
     // Entrada dos dados padrão
     dados = entradaDados(entrada);
+
+    //printaArvore(dados->arvore,0,QTD_ACESSOS);
 
     // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
     //dados = infoBenchmark(entradaDados, entrada);
