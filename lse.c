@@ -66,7 +66,6 @@ LSE* insereLSE(LSE* lista, char* termo)
 ///         int                 ->  1 se as strings forem iguais em toda LSE, 0 se não forem
 int LSEigual(LSE* lse1, LSE* lse2)
 {
-
     if(lse1 && lse2)   // Se ainda tenho string NOS DOIS
     {
         // Se as strings forem diferentes, retorno 0, pois a afirmação é falsa

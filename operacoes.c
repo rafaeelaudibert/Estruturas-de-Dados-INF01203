@@ -33,7 +33,7 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
 void consultasArquivo(Consulta* arvore, int qtdConsultas)
 {
 
-     Consulta* retorno = criaArvore(); //arvore de retorno
+    //Consulta* retorno = criaArvore(); //arvore de retorno
 
     int vetor[TAM_VET], i, j, aux; //vetor de ordenamento
 
@@ -96,7 +96,6 @@ void copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int p
 {
 
     printf("Pos: %d\nQTD: %d\n", pos, qtd);
-    int i;
     if(arvore)
     {
         if (pos < qtd)
@@ -133,9 +132,9 @@ void copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int p
 LDE* termosPorLocalidade(Consulta* arvore, char cidade[], int qtdTermos)
 {
 
-    LDE *listaRetorno;
+    //LDE *listaRetorno;
 
-    return listaRetorno;
+    return NULL;//listaRetorno;
 }
 
 /// Função que retorna os termos mais consultados em todo o arquivo

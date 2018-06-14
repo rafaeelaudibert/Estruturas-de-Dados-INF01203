@@ -21,7 +21,7 @@
 Info* entradaDados(FILE* entrada)
 {
     int qtdTermos = 0;
-    char str[201], cidade[100], *termo = NULL;
+    char str[1001], cidade[200], *termo = NULL;
     Info *dados = (Info*)malloc(sizeof(Info));
     LSE* listaTermos;
 
@@ -30,7 +30,7 @@ Info* entradaDados(FILE* entrada)
     dados->termos = inicializaLDE();
 
     //printf("DADOS DE ENTRADA: \n");
-    while(fgets(str, 200, entrada))
+    while(fgets(str, 1000, entrada))
     {
         // String parse
         converteAcentos(str);
@@ -62,7 +62,7 @@ Info* entradaDados(FILE* entrada)
 /// INPUT:
 ///         FILE*                ->  Ponteiro para o arquivo com as operações a serem realizadas na árvore
 ///         Info*                ->  Estrutura contendo toda a informação necessária
-void realizaOperacoes(FILE* operacoes, Info* dados)
+void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
 {
     char termoCidade[100];
     char str[201], operacao, *localidade;
@@ -73,22 +73,23 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
         converteAcentos(str);
         removeCaracteres(str);
         operacao =  *(strtok(str, ";"));
+        printf("Operação: %c\n", operacao);
 
         // Operacoes de consulta no arquivo
         switch(operacao)
         {
         case 'a':
             //Recebe a localidade e a quantidade de consultas
-            consultasPorLocalidade(dados->arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
+            //consultasPorLocalidade(dados->arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
             break;
         case 'b':
             //Recebe a quantidade de consultas
-            consultasArquivo(dados->arvore, 3);//atoi(strtok(NULL, ";")));
+            //consultasArquivo(dados->arvore, 3);//atoi(strtok(NULL, ";")));
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
-            strcpy(termoCidade,strtok(NULL, ";"));
-            termosLocal = termosPorLocalidade(dados->arvore, termoCidade, atoi(strtok(NULL, ";")));
+            //strcpy(termoCidade,strtok(NULL, ";"));
+            //termosLocal = termosPorLocalidade(dados->arvore, termoCidade, atoi(strtok(NULL, ";")));
             break;
         case 'd':
             //Recebe a quantidade de termos

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "arvore.h"
 #include "lde.h"
 #include "lse.h"
@@ -20,14 +21,19 @@ Consulta* criaArvore()
 
 Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, char* cidade)
 {
+
     if(arvore)  // Se eu tenho arvore aqui
     {
+
         if(arvore->qtdeTermos == qtdTermos) // Se eu estou em um nó com a mesma quantidade de termos que a minha inserção
         {
+
             if(LSEigual(listaTermos, arvore->termos)) // Se eu estou em uma consulta com os mesmos termos que a minha inserção
             {
-                arvore->qtdeAcessos++;    // Aumento a quantidade de acessos a essa consulta
                 arvore->cidades = insereLDEAlfabetico(arvore->cidades, cidade);   // Insiro a cidade
+                arvore->qtdeAcessos++;    // Aumento a quantidade de acessos a essa consulta
+
+
             }
             else
             {
@@ -86,4 +92,14 @@ void printaArvore(Consulta* tree, int grau, int choice)
 
     return;
 
+}
+
+void printaInfoNodo(Consulta *nodo){
+
+    printf("Cidades:\n");
+    printaLDE(nodo->cidades);
+    printf("Pra direita: %p e pra esquerda: %p\n", nodo->dir, nodo->esq);
+    printf("Qtde acessos: %d e de termos: %d\n", nodo->qtdeAcessos, nodo->qtdeTermos);
+    printf("Lista de termos:\n");
+    printaLSE(nodo->termos);
 }

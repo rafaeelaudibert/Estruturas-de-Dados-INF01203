@@ -90,7 +90,7 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
 
             do
             {
-                if(strcmp(auxiliar->nome, nome) == 0)
+                if(strcmp(nome, auxiliar->nome) == 0)
                 {
                     auxiliar->qtde++;
                     adicionado = 1;
@@ -103,13 +103,14 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                     novo->prox = auxiliar;
                     novo->ant = auxiliar->ant;
                     auxiliar->ant->prox = novo;
+                    auxiliar->ant = novo;
                     adicionado = 1;
 
                     if (auxiliar == lista)
                         lista = novo;
                 }
 
-                auxiliar = auxiliar->ant;
+                auxiliar = auxiliar->prox;
             }
             while(auxiliar->prox != lista && !adicionado);
 

@@ -15,7 +15,7 @@
 #include "lde.h"
 
 /* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */
-#define F_ENTRADA "data/entrada.txt"
+#define F_ENTRADA "data/input.txt"
 #define F_OPERACOES "data/operacoes.txt"
 #define F_SAIDA "data/saida.txt"
 
@@ -26,8 +26,10 @@ Info* infoBenchmark(Info*(*function)(FILE*), FILE*);
 int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
-    Info* dados = {NULL, NULL};
+    Info* dados;
     setlocale(LC_ALL, "Portuguese");
+    fflush(stdin);
+    printf("\n");
 
     // Abertura dos arquivos, com checagem dos erros
     if(!(entrada = fopen(F_ENTRADA, "r"))){
@@ -39,22 +41,17 @@ int main(int argc, char **argv){
        return 2;
     }
     if(!(saida = fopen(F_SAIDA, "w"))){
-       printf("Erro na abertura do arquivo");
+       printf("Erro na abertura do arquivo de saída");
        return 3;
     }
-
-    printf("Sem esse print da segmentation fault no meu pc\n\n");
-
     // Entrada dos dados padrão
     dados = entradaDados(entrada);
-
-    //printaArvore(dados->arvore,0,QTD_ACESSOS);
 
     // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
     //dados = infoBenchmark(entradaDados, entrada);
 
     // Realiza operacoes com os dados
-    realizaOperacoes(operacoes, dados);
+    realizaOperacoes(operacoes, saida, dados);
 
     // Fechamento dos arquivos
     fclose(entrada);
