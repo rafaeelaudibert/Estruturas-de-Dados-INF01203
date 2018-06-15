@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
-// #include <windows.h> -> DESCOMENTAR PARA RODAR O BENCHMARK NO WINDOWS
+#include <windows.h> //-> DESCOMENTAR PARA RODAR O BENCHMARK NO WINDOWS
 
 
 /* INCLUSÃO DAS BIBLIIOTECAS CRIADAS PELO GRUPO */
@@ -28,8 +28,7 @@ int main(int argc, char **argv){
     FILE *entrada, *operacoes, *saida;
     Info* dados;
     setlocale(LC_ALL, "Portuguese");
-    fflush(stdin);
-    printf("\n");
+    printf("");
 
     // Abertura dos arquivos, com checagem dos erros
     if(!(entrada = fopen(F_ENTRADA, "r"))){
@@ -45,10 +44,10 @@ int main(int argc, char **argv){
        return 3;
     }
     // Entrada dos dados padrão
-    dados = entradaDados(entrada);
+    //dados = entradaDados(entrada);
 
     // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
-    //dados = infoBenchmark(entradaDados, entrada);
+    dados = infoBenchmark(entradaDados, entrada);
 
     // Realiza operacoes com os dados
     realizaOperacoes(operacoes, saida, dados);
@@ -71,13 +70,19 @@ int main(int argc, char **argv){
 Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
 
     Info *dados;
-    //__int64 freq,start,stop;
-    //QueryPerformanceFrequency((LARGE_INTEGER *)&freq); //Seta a frequencia do processador
+    double tempoGasto;
+    __int64 freq,start,stop;
+    QueryPerformanceFrequency((LARGE_INTEGER *)&freq); //Seta a frequencia do processador
 
-    //QueryPerformanceCounter((LARGE_INTEGER *)&start);
+    QueryPerformanceCounter((LARGE_INTEGER *)&start);
     dados = function(entrada);
-    //QueryPerformanceCounter((LARGE_INTEGER *)&stop);
-    //printf("Tempo gasto na insercao dos dados: %3.8fus (microssegundos)", ((double)stop-(double)start) / (double)freq * 1000000);
+    QueryPerformanceCounter((LARGE_INTEGER *)&stop);
+    tempoGasto = ((double)stop-(double)start) / (double)freq * 1000000;
+
+    if(tempoGasto < 1000)
+        printf("Tempo gasto na insercao dos dados: %3.8fus (microssegundos)\n", tempoGasto);
+    else
+        printf("Tempo gasto na insercao dos dados: %3.8fms (milissegundos)\n", tempoGasto/1000);
 
     return dados;
 }

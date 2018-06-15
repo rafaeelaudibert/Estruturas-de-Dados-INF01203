@@ -41,7 +41,11 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                 }
                 else if(strcmp(nome, auxiliar->nome) > 0)    //Se tenho um texto "maior" que aquele, insiro depois do auxiliar
                 {
-                    novo = (LDE*) malloc(sizeof(LDE));
+                    // Força alocação de memória
+                    do{
+                        novo = (LDE*) malloc(sizeof(LDE));
+                    }while(novo == NULL);
+
                     novo->qtde = 1;
                     strcpy(novo->nome, nome);
                     novo->prox = auxiliar->prox;
@@ -63,7 +67,11 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                 }
                 else if(strcmp(lista->nome, nome) > 0)    //Lista é maior, então o novo vai antes de lista
                 {
-                    novo = (LDE*) malloc(sizeof(LDE));
+                    // Força alocação de memória
+                    do{
+                        novo = (LDE*) malloc(sizeof(LDE));
+                    }while(novo == NULL);
+
                     novo->qtde = 1;
                     strcpy(novo->nome, nome);
                     novo->ant = lista->ant;
@@ -74,7 +82,11 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                 }
                 else     //Novo vai depois da lista
                 {
-                    novo = (LDE*) malloc(sizeof(LDE));
+                    // Força alocação de memória
+                    do{
+                        novo = (LDE*) malloc(sizeof(LDE));
+                    }while(novo == NULL);
+
                     novo->qtde = 1;
                     strcpy(novo->nome, nome);
                     novo->ant = lista;
@@ -97,7 +109,11 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                 }
                 else if(strcmp(nome, auxiliar->nome) < 0)    //Se tenho um texto "menor" que aquele, insiro antes
                 {
-                    novo = (LDE*) malloc(sizeof(LDE));
+                    // Força alocação de memória
+                    do{
+                        novo = (LDE*) malloc(sizeof(LDE));
+                    }while(novo == NULL);
+
                     novo->qtde = 1;
                     strcpy(novo->nome, nome);
                     novo->prox = auxiliar;
@@ -122,7 +138,11 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                 }
                 else if(strcmp(nome, auxiliar->nome) > 0)    //Novo é maior que o fim da lista, vai pro final
                 {
-                    novo = (LDE*) malloc(sizeof(LDE));
+                    // Força alocação de memória
+                    do{
+                        novo = (LDE*) malloc(sizeof(LDE));
+                    }while(novo == NULL);
+
                     novo->qtde = 1;
                     strcpy(novo->nome, nome);
                     novo->ant = lista->ant;
@@ -132,7 +152,11 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                 }
                 else     //Novo vai antes do final
                 {
-                    novo = (LDE*) malloc(sizeof(LDE));
+                    // Força alocação de memória
+                    do{
+                        novo = (LDE*) malloc(sizeof(LDE));
+                    }while(novo == NULL);
+
                     novo->qtde = 1;
                     strcpy(novo->nome, nome);
                     novo->prox = auxiliar;
@@ -146,7 +170,11 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
     }
     else    // Senão, crio um novo nodo
     {
-        novo = (LDE*) malloc(sizeof(LDE));
+        // Força alocação de memória
+        do{
+            novo = (LDE*) malloc(sizeof(LDE));
+        }while(novo == NULL);
+
         novo->prox = novo;
         novo->ant = novo;
         novo->qtde = 1;
@@ -179,7 +207,11 @@ LDE* insereLDENumerico(LDE* lista, char *nome)
         {
             if((auxiliar = auxiliar->prox) == NULL)  // Se só tenho UM termo na lista
             {
-                novo = (LDE*) malloc(sizeof(LDE));
+                // Força alocação de memória
+                do{
+                    novo = (LDE*) malloc(sizeof(LDE));
+                }while(novo == NULL);
+
                 novo->qtde = 1;
                 strcpy(novo->nome, nome);
 
@@ -243,7 +275,11 @@ LDE* insereLDENumerico(LDE* lista, char *nome)
                 }
                 else     // Se não, preciso me adicionar no final
                 {
-                    novo = (LDE*) malloc(sizeof(LDE));
+                    // Força alocação de memória
+                    do{
+                        novo = (LDE*) malloc(sizeof(LDE));
+                    }while(novo == NULL);
+
                     novo->qtde = 1;
                     strcpy(novo->nome, nome);
 
@@ -256,7 +292,11 @@ LDE* insereLDENumerico(LDE* lista, char *nome)
     }
     else // Lista vazia
     {
-        novo = (LDE*) malloc(sizeof(LDE));
+        // Força alocação de memória
+        do{
+            novo = (LDE*) malloc(sizeof(LDE));
+        }while(novo == NULL);
+
         novo->prox = NULL;
         novo->ant = NULL;
         novo->qtde = 1;

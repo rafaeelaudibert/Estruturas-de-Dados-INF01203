@@ -22,8 +22,13 @@ Info* entradaDados(FILE* entrada)
 {
     int qtdTermos = 0;
     char str[1001], cidade[200], *termo = NULL;
-    Info *dados = (Info*)malloc(sizeof(Info));
+    Info *dados;
     LSE* listaTermos;
+
+    // Forçando alocação
+    do{
+        dados = (Info*)malloc(sizeof(Info));
+    }while(dados == NULL);
 
     // Inicialização dos dados
     dados->arvore = criaArvore();
@@ -73,7 +78,6 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
         converteAcentos(str);
         removeCaracteres(str);
         operacao =  *(strtok(str, ";"));
-        printf("Operação: %c\n", operacao);
 
         // Operacoes de consulta no arquivo
         switch(operacao)
@@ -100,11 +104,11 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
             // Recebe uma localidade
             localidade = strtok(NULL, ";");
             tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidade);
-            printf("Media de termos em %s: %d\n", localidade, tamanho);
+            fprintf(saida, "Media de termos em %s: %d\n", localidade, tamanho);
             break;
         case 'f':
             tamanho = mediaTamanhoConsultasArquivo(dados->arvore);
-            printf("Media de termos no arquivo: %d\n", tamanho);
+            fprintf(saida, "Media de termos no arquivo: %d\n", tamanho);
             break;
         }
     }

@@ -159,7 +159,10 @@ LDE* termosArquivo(LDE* listaTermos, int qtdTermos)
     {
 
         // Cria o primeiro nodo
-        novo = (LDE*)malloc(sizeof(LDE));
+        do{
+            novo = (LDE*)malloc(sizeof(LDE));
+        }while(novo == NULL);
+
         novo->ant = NULL;
         novo->prox = NULL;
         novo->qtde = listaTermos->qtde;
@@ -176,7 +179,9 @@ LDE* termosArquivo(LDE* listaTermos, int qtdTermos)
                 break;
 
             // Cria o nodo
-            novo = (LDE*)malloc(sizeof(LDE));
+            do{
+                novo = (LDE*)malloc(sizeof(LDE));
+            }while(novo == NULL);
             novo->ant = auxiliar;
             novo->prox = NULL;
             novo->qtde = listaTermos->qtde;
@@ -204,7 +209,7 @@ int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade)
     int totalTermos = 0, totalConsultas = 0;
 
     // Função auxiliar que vai contar o total de termos e o total de consultas;
-    auxiliarMediaTamanhoConsultasLocalidade(arvore, &totalTermos, &totalConsultas, cidade);
+    //auxiliarMediaTamanhoConsultasLocalidade(arvore, &totalTermos, &totalConsultas, cidade);
 
     // Faz a média divindo o total de termos pelo total de consultas
     return totalTermos / totalConsultas;

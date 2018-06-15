@@ -23,6 +23,10 @@ LSE* insereLSE(LSE* lista, char* termo)
     LSE *novo = (LSE*)malloc(sizeof(LSE)), *auxiliar = lista, *anterior = NULL;
     strcpy(novo->termo, termo);
 
+    do{
+        novo = (LSE*)malloc(sizeof(LSE));
+    }while(novo == NULL);
+
     if (auxiliar)                       // Se tiver uma lista, procuro a posição alfabetica para inserir o novo termo
     {
 
