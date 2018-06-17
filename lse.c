@@ -97,10 +97,10 @@ void printaLSE(LSE* lista)
 
     while(lista)
     {
-        printf("%s\n", lista->termo);
+        printf("%s ", lista->termo);
         lista = lista->prox;
     }
-
+    printf("\n");
     return;
 }
 

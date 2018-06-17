@@ -65,9 +65,9 @@ Info* entradaDados(FILE* entrada)
 void realizaOperacoes(FILE* operacoes, Info* dados)
 {
     char termoCidade[100];
-    char str[201], operacao, *localidade;
+    char str[201], operacao, localidadeMedia[100], localidadeTermos[100];
     LDE *termos, *termosLocal;
-    int tamanho; //Usado nas operações 'e' & 'f'
+    int tamanho, qtdTermos, qtdTermosCidade; //Usado nas operações 'e' & 'f'
     while(fgets(str, 200, operacoes))
     {
         converteAcentos(str);
@@ -79,11 +79,16 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
         {
         case 'a':
             //Recebe a localidade e a quantidade de consultas
-            consultasPorLocalidade(dados->arvore, strtok(NULL, ";"), atoi(strtok(NULL, ";")));
+            //strcpy(localidadeTermos,strtok(NULL, ";"));
+            //printf("Quantidade de Consultas em %s: \n", localidadeTermos);
+            //qtdTermosCidade = atoi(strtok(NULL, ";"));
+            //consultasPorLocalidade(dados->arvore, localidadeTermos, qtdTermosCidade);
             break;
         case 'b':
             //Recebe a quantidade de consultas
-            consultasArquivo(dados->arvore, 3);//atoi(strtok(NULL, ";")));
+            printf("\nQuantidade de Consultas:\n");
+            qtdTermos = atoi(strtok(NULL, ";"));
+            consultasArquivo(dados->arvore, qtdTermos);
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
@@ -92,18 +97,19 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
             break;
         case 'd':
             //Recebe a quantidade de termos
+            printf("\nQuantidade de Termos:\n");
             termos = termosArquivo(dados->termos, atoi(strtok(NULL, ";")));
             printaLDE(termos);
             break;
         case 'e':
             // Recebe uma localidade
-            localidade = strtok(NULL, ";");
-            tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidade);
-            printf("Media de termos em %s: %d\n", localidade, tamanho);
+            strcpy(localidadeMedia,strtok(NULL, ";"));
+            tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidadeMedia);
+            printf("\nMedia de termos em %s: %d\n", localidadeMedia, tamanho);
             break;
         case 'f':
             tamanho = mediaTamanhoConsultasArquivo(dados->arvore);
-            printf("Media de termos no arquivo: %d\n", tamanho);
+            printf("\nMedia de termos no arquivo: %d\n", tamanho);
             break;
         }
     }

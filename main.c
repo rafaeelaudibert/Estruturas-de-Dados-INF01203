@@ -15,7 +15,7 @@
 #include "lde.h"
 
 /* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */
-#define F_ENTRADA "data/entrada.txt"
+#define F_ENTRADA "data/input.txt"
 #define F_OPERACOES "data/operacoes.txt"
 #define F_SAIDA "data/saida.txt"
 

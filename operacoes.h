@@ -17,6 +17,6 @@ void auxiliarMediaTamanhoConsultasLocalidade(Consulta *arvore, int *totTermos, i
 int temCidadeNaLista(char* cidade, LDE* lista);
 
 void achaVetorReps(Consulta* arvore, int *vetor, int pos);
-void copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos);
+void copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep);
 
 #endif // OPERACOES_H_
