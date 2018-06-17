@@ -26,8 +26,9 @@ Info* infoBenchmark(Info*(*function)(FILE*), FILE*);
 int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
-    Info* dados = {NULL, NULL};
+    Info* dados = NULL;
     setlocale(LC_ALL, "Portuguese");
+    printf("    \n");
 
     // Abertura dos arquivos, com checagem dos erros
     if(!(entrada = fopen(F_ENTRADA, "r"))){
@@ -43,18 +44,13 @@ int main(int argc, char **argv){
        return 3;
     }
 
-    printf("Sem esse print da segmentation fault no meu pc\n\n");
 
-    // Entrada dos dados padrão
-    dados = entradaDados(entrada);
+    dados = entradaDados(entrada); // Entrada dos dados padrão
+    //printf("\n\nMaior nivel: %d", percorreArvore(dados->arvore, 1)); //DEBUG ONLY
 
-    //printaArvore(dados->arvore,0,QTD_ACESSOS);
+    //dados = infoBenchmark(entradaDados, entrada); // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
 
-    // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
-    //dados = infoBenchmark(entradaDados, entrada);
-
-    // Realiza operacoes com os dados
-    realizaOperacoes(operacoes, dados);
+    realizaOperacoes(operacoes, dados); // Realiza operacoes com os dados
 
     // Fechamento dos arquivos
     fclose(entrada);

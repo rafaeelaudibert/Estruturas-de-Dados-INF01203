@@ -34,7 +34,7 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
                 arvore->dir = insereNodoArvore(arvore->dir, listaTermos, qtdTermos, cidade); // Se não, vou tentar inserir a direita
             }
         }
-        else if(arvore->qtdeTermos < qtdTermos) // Se tenho menos termos, tento inserir a direita
+        else if(arvore->qtdeTermos > qtdTermos) // Se tenho menos termos, tento inserir a direita
         {
             arvore->esq = insereNodoArvore(arvore->esq, listaTermos, qtdTermos, cidade);
         }
@@ -86,4 +86,28 @@ void printaArvore(Consulta* tree, int grau, int choice)
 
     return;
 
+}
+
+int percorreArvore(Consulta *nodo, int nivel){
+
+    int esq, dir;
+    if(nodo){
+
+        printf("\nMeu nivel: %d", nivel);
+        printf("\nEu mesmo: %p", nodo);
+        printf("\nCidades:\n");
+        printaLDE(nodo->cidades);
+        printf("Ponteiro para a esquerda/direita: %p/%p", nodo->esq, nodo->dir);
+        printf("\nQuantidade de acessos: %d", nodo->qtdeAcessos);
+        printf("\nQuantidade de termos: %d", nodo->qtdeTermos);
+        printf("\nTermos: ");
+        printaLSE(nodo->termos);
+
+        esq = percorreArvore(nodo->esq, nivel+1);
+        dir = percorreArvore(nodo->dir, nivel+1);
+
+        return (esq > dir ? esq : dir);
+    }
+
+    return nivel - 1;
 }

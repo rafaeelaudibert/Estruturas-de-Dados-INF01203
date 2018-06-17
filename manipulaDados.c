@@ -8,11 +8,6 @@
 #include "lse.h"
 #include "operacoes.h"
 
-/* DEFINES PARA A FLAG DE INSERÇÃO */
-#define PENDING 0
-#define EXISTE 1
-#define NOVO 2
-
 /// Função responsável por receber todos os dados do arquivo de entrada e realizar a inserção deles na estrutura correspondente
 /// INPUT:
 ///         FILE*                ->  Ponteiro para o arquivo com os dados de entrada
@@ -21,7 +16,7 @@
 Info* entradaDados(FILE* entrada)
 {
     int qtdTermos = 0;
-    char str[201], cidade[100], *termo = NULL;
+    char str[401], cidade[100], *termo = NULL;
     Info *dados = (Info*)malloc(sizeof(Info));
     LSE* listaTermos;
 
@@ -30,7 +25,7 @@ Info* entradaDados(FILE* entrada)
     dados->termos = inicializaLDE();
 
     //printf("DADOS DE ENTRADA: \n");
-    while(fgets(str, 200, entrada))
+    while(fgets(str, 400, entrada))
     {
         // String parse
         converteAcentos(str);
@@ -65,7 +60,7 @@ Info* entradaDados(FILE* entrada)
 void realizaOperacoes(FILE* operacoes, Info* dados)
 {
     char termoCidade[100];
-    char str[201], operacao, localidadeMedia[100], localidadeTermos[100];
+    char str[201], localidadeMedia[100], localidadeTermos[100], operacao;
     LDE *termos, *termosLocal;
     int tamanho, qtdTermos, qtdTermosCidade; //Usado nas operações 'e' & 'f'
     while(fgets(str, 200, operacoes))
@@ -79,35 +74,36 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
         {
         case 'a':
             //Recebe a localidade e a quantidade de consultas
+            //printf("Operacao A: \n");
             //strcpy(localidadeTermos,strtok(NULL, ";"));
-            //printf("Quantidade de Consultas em %s: \n", localidadeTermos);
-            //qtdTermosCidade = atoi(strtok(NULL, ";"));
+            //qtdTermosCidade = atoi(strtok(NULL, ";"));            
             //consultasPorLocalidade(dados->arvore, localidadeTermos, qtdTermosCidade);
             break;
         case 'b':
             //Recebe a quantidade de consultas
-            printf("\nQuantidade de Consultas:\n");
-            qtdTermos = atoi(strtok(NULL, ";"));
-            consultasArquivo(dados->arvore, qtdTermos);
+            //qtdTermos = atoi(strtok(NULL, ";"));
+            //consultasArquivo(dados->arvore, qtdTermos);
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
-            strcpy(termoCidade,strtok(NULL, ";"));
-            termosLocal = termosPorLocalidade(dados->arvore, termoCidade, atoi(strtok(NULL, ";")));
+            //strcpy(termoCidade,strtok(NULL, ";"));
+            //termosLocal = termosPorLocalidade(dados->arvore, termoCidade, atoi(strtok(NULL, ";")));
+            //printf("Termos na cidade de %s:\n", termoCidade);
+            //printaLDE(termosLocal);
             break;
         case 'd':
-            //Recebe a quantidade de termos
-            printf("\nQuantidade de Termos:\n");
+            //Devolve os n termos mais consultados no arquivo
             termos = termosArquivo(dados->termos, atoi(strtok(NULL, ";")));
             printaLDE(termos);
             break;
         case 'e':
-            // Recebe uma localidade
+            // Média de termos por consulta em uma dada localidade
             strcpy(localidadeMedia,strtok(NULL, ";"));
             tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidadeMedia);
             printf("\nMedia de termos em %s: %d\n", localidadeMedia, tamanho);
             break;
         case 'f':
+            // Média de termos por consulta em todo o arquivo
             tamanho = mediaTamanhoConsultasArquivo(dados->arvore);
             printf("\nMedia de termos no arquivo: %d\n", tamanho);
             break;

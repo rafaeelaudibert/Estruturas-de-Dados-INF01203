@@ -1,6 +1,8 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "operacoes.h"
+#include "lse.h"
 
 #define TAM_VET 10000
 
