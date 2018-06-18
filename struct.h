@@ -36,5 +36,11 @@ typedef struct descritor{
 } Info;
 
 
+typedef struct s_qtdCons
+{
+    int qtd;
+    LSE* termos;
+} Qtdcons;
+
 
 #endif

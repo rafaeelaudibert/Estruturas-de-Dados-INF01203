@@ -19,139 +19,91 @@
 //pensei em salvar todas as quantidades de acesso em um vetor, ordenar o vetor em decrescente, e
 //depois passar em toda a arvore copiando os nodos que tivessem a quantidade igual a do
 //inicio do vetor.
+
 void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
 {
+
+
     if(qtdConsultas == 0)
     {
-        qtdConsultas = 1000000;
+        qtdConsultas = TAM_VET;
     }
-    Consulta retorno[TAM_VET];//arvore de retorno
-    int vezesRep = 0;
-    int vetor[TAM_VET], i; //vetor de ordenamento
-    int vetorOrdenado[TAM_VET];
+
+    int vetor[TAM_VET], i, j; //vetor de ordenamento
+    Qtdcons qtdCons[TAM_VET], aux;
     for (i = 0; i < TAM_VET; i++) //zera o vetor
     {
         vetor[i] = 0;
     }
     int contador = 0;
 
-
     //copia todas as quantidades de acesso de cada consulta da arvore pra um vetor
-    contador = achaVetorRepsLocalidade(arvore, vetor, contador, cidade);
-    //ordena o vetor de quantidades de acesso
-    quick_sort(vetor, 0, TAM_VET-1);
-    for(i=0; i<TAM_VET; i++)
-    {
-        vetorOrdenado[i] = vetor[TAM_VET-1-i];
-    }
+    contador = achaVetorRepsLocalidade(arvore, vetor, contador, cidade, qtdCons);
 
-    //printa vetor ordenado
-    /*for (i = 0; i < TAM_VET; i++)
+    //double_quick_sort(qtdCons, 0, TAM_VET-1);
+    for(i=0; i<TAM_VET && (qtdCons+i)->termos != NULL; i++)
     {
-        printf("%d ", vetorOrdenado[i]);
-    }
-    printf("\n\n");*/
-
-    //após isso, para cada posição do vetor ordenado por quantidade de acesso,
-    //vai percorrer a árvore procurando pelos nodos cuja
-    //quantidade de acesso sejam iguais as do vetor ordenado
-    //salva esses nodos da arvore em um outro vetor de Consultas
-    for (i = 0; i < TAM_VET && vetorOrdenado[i] != 0; i++)
-    {
-        if(i != 0)
+        for(j=0; j<TAM_VET && (qtdCons+j)->termos != NULL; j++)
         {
-            if(vetorOrdenado[i-1] == vetorOrdenado[i])
-                vezesRep++;
-            else
-                vezesRep = 0;
+            if((qtdCons+i)->qtd > (qtdCons+j)->qtd)
+            {
+                aux = *(qtdCons+i);
+                *(qtdCons+i) = *(qtdCons+j);
+                *(qtdCons+j) = aux;
+            }
         }
-        //printf("\n%d VEZESREP: %d \n", vetor[i], vezesRep);
-        //printf("______________________________\n");
-        copiaArvoreLocalidade(arvore, retorno, vetorOrdenado, qtdConsultas, i, vezesRep, cidade); //copiar os nodos com mais acesso para o vetor
+
     }
 
-    //no final, printa na tela (substituir por arquivo)
-    //todas as consutas encontradas
-    for (i = 0; i < qtdConsultas && vetorOrdenado[i] != 0; i++)
+    for(i=0; i<TAM_VET && ((qtdCons+i)->qtd) != 0 && i < qtdConsultas; i++)
     {
-        printf("%d ",(retorno+i)->qtdeAcessos);
-        printaLSE((retorno+i)->termos);
+        printf("%d ", (qtdCons+i)->qtd);
+        printaLSE((qtdCons+i)->termos);
     }
+
+
     return;
 }
-int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *cidade)
+int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *cidade, Qtdcons *qtdCons)
 {
+
     int temCidade = temCidadeNaLista(cidade, arvore->cidades);
-    //printf("%d - ", temCidade);
-    //printaLSE(arvore->termos);
+
+    if(temCidade > 0)
+    {
+
+        //printf("%d - ", temCidade);
+        (qtdCons+contador)->qtd = temCidade;
+
+        //printaLSE(arvore->termos);
+        (qtdCons+contador)->termos = arvore->termos;
+
+        contador++;
+    }
 
     if(arvore == NULL)
         return contador;
 
-    if(temCidade != 0)
+    /*if(temCidade != 0)
     {
         vetor[contador] = arvore->qtdeAcessos;
+        (qtdCons+contador)->qtd = temCidade;
+        //printf("%d - ", temCidade);
+        (qtdCons+contador)->termos = arvore->termos;
         contador++;
     }
-
+    */
     if(arvore->esq != NULL)
     {
-        contador = achaVetorRepsLocalidade(arvore->esq, vetor, contador, cidade);
+        contador = achaVetorRepsLocalidade(arvore->esq, vetor, contador, cidade, qtdCons);
     }
     if(arvore->dir != NULL)
     {
-        contador = achaVetorRepsLocalidade(arvore->dir, vetor, contador, cidade);
+        contador = achaVetorRepsLocalidade(arvore->dir, vetor, contador, cidade, qtdCons);
     }
     //printf("%d %d\n", contador, arvore->qtdeAcessos);
     return contador;
 }
-int copiaArvoreLocalidade(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep, char *cidade)
-{
-    int temCidade = temCidadeNaLista(cidade, arvore->cidades);
-    //printf("Pos: %d  ---  QTD: %d  ---  VREP %d\n", pos, qtd, vezesRep);
-    if(arvore == NULL)
-    {
-        return vezesRep;
-    }
-    if (pos < qtd)
-    {
-        if (vetor[pos] == arvore->qtdeAcessos)
-        {
-            if(temCidade != 0)
-            {
-                //      printf("VEZES: %d\n", vezesRep);
-                if(vezesRep <= 0)
-                {
-
-                    retorno[pos] = *arvore;
-                    //printaLSE(arvore->termos);
-                    return 10000000;
-                }
-
-                else
-                {
-                    --vezesRep;
-                }
-            }
-            //o problema com certeza é na inserção, pois as logicas do vetor estão certas
-            //printf("%d", (retorno+pos)->qtdeAcessos);
-            //printf("    Vet = ");
-            //printaLSE((retorno+pos)->termos);
-            //printf("    Arvore =");
-            //printaLSE(arvore->termos);
-        }
-        if(arvore->esq != NULL && qtd != -1)
-            vezesRep = copiaArvoreLocalidade(arvore->esq, retorno, vetor, qtd, pos, vezesRep, cidade);
-        if(arvore->dir != NULL && qtd != -1)
-            vezesRep = copiaArvoreLocalidade(arvore->dir, retorno, vetor, qtd, pos, vezesRep, cidade);
-    }
-    else
-    {
-        return vezesRep;
-    }
-    return vezesRep;
-}
-
 
 /// Função que retorna as consultas mais consultadas em todo o arquivo
 /// Se for passado 0 como qtdConsultas, retorna todas as consultas realizadas
@@ -165,7 +117,7 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas)
 
     if(qtdConsultas == 0)
     {
-        qtdConsultas = 1000000;
+        qtdConsultas = TAM_VET;
     }
     Consulta retorno[TAM_VET];//arvore de retorno
     int vezesRep = 0;
@@ -224,6 +176,7 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas)
     }
     return;
 }
+
 
 /// Copia a quantidade de acessos de cada nodo da arvore pra posições de um vetor
 /// INPUT:
