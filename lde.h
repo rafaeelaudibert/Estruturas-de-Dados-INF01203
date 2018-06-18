@@ -4,7 +4,7 @@
 #define CIDADES_H_
 
 LDE* inicializaLDE();
-LDE* insereLDEAlfabetico(LDE* lista, char* nome);
-LDE* insereLDENumerico(LDE* lista, char* nome, int qtde);
-void printaLDE(LDE* lista, int qtde);
+LDE* insereLDEAlfabetico(LDE*, char*);
+LDE* insereLDENumerico(LDE*, char*, int);
+void printaLDE(LDE*, int);
 #endif // CIDADES_H_

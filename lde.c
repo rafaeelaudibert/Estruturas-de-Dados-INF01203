@@ -13,7 +13,7 @@ LDE* inicializaLDE()
 
 /// Função chamada quando uma consulta foi feita para um determinado elemento da LDE, decide o que fazer com o elemento
 /// Caso já tenha acontecido uma consulta idêntica nesse elemento, incrementa o contador de consultas
-/// Caso contrário, insere um novo elemento em ordem alfabética
+/// Caso contrário, insere um novo elemento respeitando a ordem alfabética dos nomes
 /// INPUT:
 ///         LDE*                ->  Lista duplamente encadeada
 ///         char*               ->  String
@@ -292,7 +292,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
                     }
 
                 }
-                else     // Se não, preciso me adicionar no final
+                else     // Se não, /* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */preciso me adicionar no final
                 {
                     // Força alocação de memória
                     do
@@ -331,11 +331,16 @@ LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
 }
 
 
-/// Função iterativa para printar todos os nomes e a quantidade de acessos de uma lista duplamente encadeada circular
+/// Função iterativa para printar uma determinada quantidade dos nomes e valores armazenados em uma lista duplamente encadeada [circular ou não]
+/// INPUT:
+///         LDE*                ->  Lista duplamente encadeada
+///         int                 ->  Quantidade de termos a serem printados [Se for 0, printa todos os termos]
 void printaLDE(LDE* lista, int qtde)
 {
+    // Ponteiro auxiliar para percorrer a lista
     LDE* auxiliar = lista;
 
+    // Se tenho uma lista, irei tentar printa-la
     if(auxiliar)
     {
 
@@ -343,15 +348,15 @@ void printaLDE(LDE* lista, int qtde)
         {
             while(auxiliar->prox != lista && auxiliar->prox)
             {
-                printf("%s %d\n", auxiliar->nome, auxiliar->qtde);
+                printf("%s %d\n", auxiliar->nome, auxiliar->qtde); //Printa "string valor"
                 auxiliar = auxiliar->prox;
             }
-            printf("%s %d\n", auxiliar->nome, auxiliar->qtde);
+            printf("%s %d\n", auxiliar->nome, auxiliar->qtde);  // Printa o que estava faltando
         }
         else // Printa a quantidade vezes passada em qtde
         {
 
-            while(auxiliar->prox != lista && auxiliar->prox && --qtde > 0)
+            while(auxiliar->prox != lista && auxiliar->prox && --qtde > 0)  // Decrementa o contador, para printar somente 'qtde' nodos
             {
                 printf("%s %d\n", auxiliar->nome, auxiliar->qtde);
                 auxiliar = auxiliar->prox;
@@ -361,6 +366,6 @@ void printaLDE(LDE* lista, int qtde)
     }
     else
     {
-        printf("LISTA VAZIA!");
+        printf("Lista Vazia!");
     }
 }
