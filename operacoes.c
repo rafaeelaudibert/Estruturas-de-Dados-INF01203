@@ -310,7 +310,7 @@ int copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int po
 /// OUTPUT:
 ///         LDE*                ->  Lista duplamente encadeada contendo os qtdTermos termos mais pesquisados nessa localidade
 
-LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[], int qtdTermos)
+LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[])
 {
     int quantidade;
 
@@ -324,8 +324,8 @@ LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[], int qtdTer
             lista = insereTermosNodo(lista, arvore->termos, quantidade);
         }
 
-        lista = termosPorLocalidade(arvore->esq, lista, cidade, qtdTermos);
-        lista = termosPorLocalidade(arvore->dir, lista, cidade, qtdTermos);
+        lista = termosPorLocalidade(arvore->esq, lista, cidade);
+        lista = termosPorLocalidade(arvore->dir, lista, cidade);
     }
 
     return lista;
@@ -350,56 +350,11 @@ LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde){
 ///         int*                ->  Quantidade de termos que devem ser retornados
 /// OUTPUT:
 ///         LDE*                ->  Lista duplamente encadeada contendo os qtdTermos termos mais pesquisados
-LDE* termosArquivo(LDE* listaTermos, int qtdTermos)
+LDE* termosArquivo(LDE* listaTermos)
 {
-    //printf("%d", qtdTermos);
-    //printf("%s", cidade);
-    int i;
-    LDE *listaRetorno, *novo, *auxiliar;
 
-    if(qtdTermos == 0)
-    {
-        listaRetorno = listaTermos;
-    }
-    else
-    {
+    return listaTermos;
 
-        // Cria o primeiro nodo
-        do
-        {
-            novo = (LDE*)malloc(sizeof(LDE));
-        }
-        while(novo == NULL);
-
-        novo->ant = NULL;
-        novo->prox = NULL;
-        novo->qtde = listaTermos->qtde;
-        strcpy(novo->nome, listaTermos->nome);
-        listaRetorno = novo;
-
-        // Seta o auxiliar
-        auxiliar = listaRetorno;
-
-        // Insiro os qtdTermos - 1 nodos restantes
-        for(i=1, listaTermos = listaTermos->prox; i<qtdTermos; i++, auxiliar=novo, listaTermos = listaTermos->prox)
-        {
-            if (listaTermos == NULL) // Ja passei a lista inteira
-                break;
-
-            // Cria o nodo
-            do
-            {
-                novo = (LDE*)malloc(sizeof(LDE));
-            }
-            while(novo == NULL);
-            novo->ant = auxiliar;
-            novo->prox = NULL;
-            novo->qtde = listaTermos->qtde;
-            strcpy(novo->nome, listaTermos->nome);
-            auxiliar->prox = novo;
-        }
-    }
-    return listaRetorno;
 }
 
 LDE* termosArquivoLocalidade(LDE* listaTermos, int qtdTermos, char* localidade)

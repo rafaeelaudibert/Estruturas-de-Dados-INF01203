@@ -80,28 +80,34 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
         case 'a':
             //Recebe a localidade e a quantidade de consultas
             strcpy(localidade,strtok(NULL, ";"));
-            printf("\nConsultas em %s: \n", localidade);
             qtdTermos = atoi(strtok(NULL, ";"));
+
+            printf("\n%d consultas mais realizadas em %s: \n", qtdTermos, localidade);
             consultasPorLocalidade(dados->arvore, localidade, qtdTermos);
             break;
         case 'b':
             //Recebe a quantidade de consultas
-            printf("\nConstultas no arquivo:\n");
             qtdTermos = atoi(strtok(NULL, ";"));
+
+            printf("\n%d consultas mais realizadas no arquivo:\n", qtdTermos);
             consultasArquivo(dados->arvore, qtdTermos);
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
             strcpy(localidade, strtok(NULL, ";"));
-            termos = termosPorLocalidade(dados->arvore,  inicializaLDE(), localidade, atoi(strtok(NULL, ";")));
-            printf("\nTermos na cidade de %s:\n", localidade);
-            printaLDE(termos);
+            qtdTermos = atoi(strtok(NULL, ";"));
+
+            printf("\n%d termos que mais aparecem em %s:\n", qtdTermos, localidade);
+            termos = termosPorLocalidade(dados->arvore,  inicializaLDE(), localidade);
+            printaLDE(termos, qtdTermos);
             break;
         case 'd':
             //Devolve os n termos mais consultados no arquivo
-            printf("\nTermos no arquivo:\n");
-            termos = termosArquivo(dados->termos, atoi(strtok(NULL, ";")));
-            printaLDE(termos);
+            qtdTermos = atoi(strtok(NULL, ";"));
+
+            printf("\n%d termos mais consultados no arquivo:\n", qtdTermos);
+            termos = termosArquivo(dados->termos);
+            printaLDE(termos, qtdTermos);
             break;
         case 'e':
             //Média de termos por consulta em uma dada localidade

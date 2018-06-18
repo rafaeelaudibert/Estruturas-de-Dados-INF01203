@@ -5,9 +5,9 @@
 
 void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas);
 void consultasArquivo(Consulta* arvore, int qtdConsultas);
-LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[], int qtdTermos);
+LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[]);
 LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde);
-LDE* termosArquivo(LDE* listaTermos, int qtdTermos);
+LDE* termosArquivo(LDE* listaTermos);
 int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade);//, char* cidade);
 int mediaTamanhoConsultasArquivo(Consulta* arvore);
 
