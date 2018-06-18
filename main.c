@@ -26,9 +26,10 @@ Info* infoBenchmark(Info*(*function)(FILE*), FILE*);
 int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
-    Info* dados;
+
+    Info* dados = NULL;
     setlocale(LC_ALL, "Portuguese");
-    printf("");
+    printf("    \n");
 
     // Abertura dos arquivos, com checagem dos erros
     if(!(entrada = fopen(F_ENTRADA, "r"))){
@@ -43,14 +44,13 @@ int main(int argc, char **argv){
        printf("Erro na abertura do arquivo de saída");
        return 3;
     }
-    // Entrada dos dados padrão
-    //dados = entradaDados(entrada);
+  
+    dados = entradaDados(entrada); // Entrada dos dados padrão
+    //printf("\n\nMaior nivel: %d", percorreArvore(dados->arvore, 1)); //DEBUG ONLY
 
-    // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
-    dados = infoBenchmark(entradaDados, entrada);
+    //dados = infoBenchmark(entradaDados, entrada); // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
 
-    // Realiza operacoes com os dados
-    realizaOperacoes(operacoes, saida, dados);
+    realizaOperacoes(operacoes, saida, dados); // Realiza operacoes com os dados
 
     // Fechamento dos arquivos
     fclose(entrada);

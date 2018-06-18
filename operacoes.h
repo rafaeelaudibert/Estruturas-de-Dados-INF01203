@@ -15,8 +15,12 @@ void auxiliarMediaTamanhoConsultasArquivo(Consulta*, int*, int*);
 
 void auxiliarMediaTamanhoConsultasLocalidade(Consulta *arvore, int *totTermos, int *totConsultas, char* cidade);
 int temCidadeNaLista(char* cidade, LDE* lista);
+int copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep);
 
-void achaVetorReps(Consulta* arvore, int *vetor, int pos);
-void copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos);
+int achaVetorReps(Consulta* arvore, int *vetor, int contador);
 
+void achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int pos, char *cidade, int* qtdReps);
+void double_quick_sort(int *a, int *b, int left, int right);
+void quick_sort(int *a, int left, int right);
+void copiaArvoreLocalidade(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep, char *cidade);
 #endif // OPERACOES_H_

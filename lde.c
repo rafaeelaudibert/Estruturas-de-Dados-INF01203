@@ -118,6 +118,7 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                     strcpy(novo->nome, nome);
                     novo->prox = auxiliar;
                     novo->ant = auxiliar->ant;
+                    //asdasdasdasd
                     auxiliar->ant->prox = novo;
                     auxiliar->ant = novo;
                     adicionado = 1;
@@ -125,7 +126,6 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
                     if (auxiliar == lista)
                         lista = novo;
                 }
-
                 auxiliar = auxiliar->prox;
             }
             while(auxiliar->prox != lista && !adicionado);

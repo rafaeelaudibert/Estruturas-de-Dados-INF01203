@@ -9,5 +9,5 @@
 Consulta* criaArvore();
 Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, char* cidade);
 void printaArvore(Consulta*, int, int);
-void printaInfoNodo(Consulta*);
+int percorreArvore(Consulta *nodo, int nivel);
 #endif // ARVORE_H_
