@@ -97,5 +97,4 @@ f
 d;10
 a;Teresina;10
 e;Goiânia;10
-c;Teresina;20
-c;Carlos Barbosa;20
+c;Cuiabá;20

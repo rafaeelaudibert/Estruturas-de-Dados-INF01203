@@ -17,7 +17,7 @@
 
 /* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */
 #define F_ENTRADA "data/input.txt"
-#define F_OPERACOES "data/operacoes.txt"
+#define F_OPERACOES "data/operations.txt"
 #define F_SAIDA "data/saida.txt"
 
 /* PROTÓTIPO DA FUNÇÃO BENCHMARK */
