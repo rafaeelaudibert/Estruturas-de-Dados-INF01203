@@ -58,3 +58,6 @@ obj/
 #CodeBlocks garbage
 *.layout
 *.depend
+
+#Compiled program
+trabalhoED

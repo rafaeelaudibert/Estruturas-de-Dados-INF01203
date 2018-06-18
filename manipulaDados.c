@@ -76,13 +76,13 @@ void realizaOperacoes(FILE* operacoes, Info* dados)
             //Recebe a localidade e a quantidade de consultas
             //printf("Operacao A: \n");
             //strcpy(localidadeTermos,strtok(NULL, ";"));
-            //qtdTermosCidade = atoi(strtok(NULL, ";"));            
+            //qtdTermosCidade = atoi(strtok(NULL, ";"));
             //consultasPorLocalidade(dados->arvore, localidadeTermos, qtdTermosCidade);
             break;
         case 'b':
             //Recebe a quantidade de consultas
-            //qtdTermos = atoi(strtok(NULL, ";"));
-            //consultasArquivo(dados->arvore, qtdTermos);
+            qtdTermos = atoi(strtok(NULL, ";"));
+            consultasArquivo(dados->arvore, qtdTermos);
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
