@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
-#include <windows.h> //-> DESCOMENTAR PARA RODAR O BENCHMARK NO WINDOWS
+//#include <windows.h> //-> DESCOMENTAR PARA RODAR O BENCHMARK NO WINDOWS
 
 
 /* INCLUSÃO DAS BIBLIIOTECAS CRIADAS PELO GRUPO */
@@ -15,8 +15,8 @@
 #include "lde.h"
 
 /* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */
-#define F_ENTRADA "data/input.txt"
-#define F_OPERACOES "data/operacoes.txt"
+#define F_ENTRADA "data/entrada.txt"
+#define F_OPERACOES "data/operaEasy.txt"
 #define F_SAIDA "data/saida.txt"
 
 /* PROTÓTIPO DA FUNÇÃO BENCHMARK */
@@ -44,10 +44,11 @@ int main(int argc, char **argv){
        printf("Erro na abertura do arquivo de saída");
        return 3;
     }
-  
+
     dados = entradaDados(entrada); // Entrada dos dados padrão
     //printf("\n\nMaior nivel: %d", percorreArvore(dados->arvore, 1)); //DEBUG ONLY
 
+    //printaLDE(dados->termos);
     //dados = infoBenchmark(entradaDados, entrada); // Entrada dos dados com benchmark do tempo -> SÓ FUNCIONA NO WINDOWS
 
     realizaOperacoes(operacoes, saida, dados); // Realiza operacoes com os dados
@@ -67,7 +68,7 @@ int main(int argc, char **argv){
 ///         FILE*                        -> Ponteiro para arquivo que a função vai receber
 /// OUTPUT:
 ///         Info*                    -> Retorno da função que foi feita o benchmark
-Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
+/*Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
 
     Info *dados;
     double tempoGasto;
@@ -85,4 +86,4 @@ Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
         printf("Tempo gasto na insercao dos dados: %3.8fms (milissegundos)\n", tempoGasto/1000);
 
     return dados;
-}
+}*/

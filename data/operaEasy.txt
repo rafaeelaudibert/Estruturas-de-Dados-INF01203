@@ -1,0 +1,6 @@
+a;Porto Alegre;20
+b;3
+c;Natal;40
+d;60
+e;Boa Vista;70
+f

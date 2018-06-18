@@ -79,13 +79,14 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
         {
         case 'a':
             //Recebe a localidade e a quantidade de consultas
-            //printf("Operacao A: \n");
-            //strcpy(localidadeTermos,strtok(NULL, ";"));
-            //qtdTermosCidade = atoi(strtok(NULL, ";"));
-            //consultasPorLocalidade(dados->arvore, localidadeTermos, qtdTermosCidade);
+            printf("\nConsultas por Localidade: \n");
+            strcpy(localidadeTermos,strtok(NULL, ";"));
+            qtdTermosCidade = atoi(strtok(NULL, ";"));
+            consultasPorLocalidade(dados->arvore, localidadeTermos, qtdTermosCidade);
             break;
         case 'b':
             //Recebe a quantidade de consultas
+            printf("\nConstultas no arquivo:\n");
             qtdTermos = atoi(strtok(NULL, ";"));
             consultasArquivo(dados->arvore, qtdTermos);
             break;
@@ -98,14 +99,15 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
             break;
         case 'd':
             //Devolve os n termos mais consultados no arquivo
+            printf("\nTermos no arquivo:\n");
             termos = termosArquivo(dados->termos, atoi(strtok(NULL, ";")));
             printaLDE(termos);
             break;
         case 'e':
             // Média de termos por consulta em uma dada localidade
-            strcpy(localidadeMedia,strtok(NULL, ";"));
-            tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidadeMedia);
-            printf("\nMedia de termos em %s: %d\n", localidadeMedia, tamanho);
+            //strcpy(localidadeMedia,strtok(NULL, ";"));
+            //tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidadeMedia);
+            //printf("\nMedia de termos em %s: %d\n", localidadeMedia, tamanho);
             break;
         case 'f':
             // Média de termos por consulta em todo o arquivo
