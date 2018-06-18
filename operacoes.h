@@ -5,7 +5,8 @@
 
 void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas);
 void consultasArquivo(Consulta* arvore, int qtdConsultas);
-LDE* termosPorLocalidade(Consulta* arvore, char* cidade, int qtdTermos);
+LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[], int qtdTermos);
+LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde);
 LDE* termosArquivo(LDE* listaTermos, int qtdTermos);
 int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade);//, char* cidade);
 int mediaTamanhoConsultasArquivo(Consulta* arvore);
@@ -16,10 +17,11 @@ void auxiliarMediaTamanhoConsultasArquivo(Consulta*, int*, int*);
 void auxiliarMediaTamanhoConsultasLocalidade(Consulta *arvore, int *totTermos, int *totConsultas, char* cidade);
 int temCidadeNaLista(char* cidade, LDE* lista);
 
-//int achaVetorReps(Consulta* arvore, int *vetor);
+int achaVetorReps(Consulta* arvore, int *vetor, int contador);
 
-//void achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int pos, char *cidade, int* qtdReps);
+int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *cidade);
 void double_quick_sort(int *a, int *b, int left, int right);
 void quick_sort(int *a, int left, int right);
-//void copiaArvoreLocalidade(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep, char *cidade);
+int copiaArvoreLocalidade(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep, char *cidade);
+int copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep);
 #endif // OPERACOES_H_

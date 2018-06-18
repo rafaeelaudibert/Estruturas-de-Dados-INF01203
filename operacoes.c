@@ -107,7 +107,6 @@ int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *ci
 }
 int copiaArvoreLocalidade(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep, char *cidade)
 {
-    int flag = 0;
     int temCidade = temCidadeNaLista(cidade, arvore->cidades);
     //printf("Pos: %d  ---  QTD: %d  ---  VREP %d\n", pos, qtd, vezesRep);
     if(arvore == NULL)
@@ -215,7 +214,7 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas)
 
         copiaArvore(arvore, retorno, vetorOrdenado, qtdConsultas, i, vezesRep); //copiar os nodos com mais acesso para o vetor
     }
-     //printf("%d \n\n", qtdAux);
+    //printf("%d \n\n", qtdAux);
     //no final, printa na tela (substituir por arquivo)
     //todas as consutas encontradas
     for (i = 0; i < qtdConsultas && vetorOrdenado[i] != 0; i++)
@@ -262,7 +261,6 @@ int achaVetorReps(Consulta* arvore, int *vetor, int contador)
 ///         int*                ->  Vetor com todas as quantidades de acesso
 int copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep)
 {
-    int flag = 0;
     //printf("Pos: %d  ---  QTD: %d  ---  VREP %d\n", pos, qtd, vezesRep);
     if(arvore == NULL)
     {
@@ -312,11 +310,37 @@ int copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int po
 /// OUTPUT:
 ///         LDE*                ->  Lista duplamente encadeada contendo os qtdTermos termos mais pesquisados nessa localidade
 
-LDE* termosPorLocalidade(Consulta* arvore, char cidade[], int qtdTermos)
+LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[], int qtdTermos)
 {
-    LDE *listaRetorno = inicializaLDE();
+    int quantidade;
 
-    return NULL;//listaRetorno;
+    if(arvore)
+    {
+        quantidade = temCidadeNaLista(cidade, arvore->cidades); //Quantidade de vezes que aparece a árvore nessa lista
+
+
+        if(quantidade)
+        {
+            lista = insereTermosNodo(lista, arvore->termos, quantidade);
+        }
+
+        lista = termosPorLocalidade(arvore->esq, lista, cidade, qtdTermos);
+        lista = termosPorLocalidade(arvore->dir, lista, cidade, qtdTermos);
+    }
+
+    return lista;
+}
+
+
+LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde){
+
+
+    while(termos){
+        lista = insereLDENumerico(lista, termos->termo, qtde);
+        termos = termos->prox;
+    }
+
+    return lista;
 }
 
 /// Função que retorna os termos mais consultados em todo o arquivo
@@ -341,9 +365,11 @@ LDE* termosArquivo(LDE* listaTermos, int qtdTermos)
     {
 
         // Cria o primeiro nodo
-        do{
+        do
+        {
             novo = (LDE*)malloc(sizeof(LDE));
-        }while(novo == NULL);
+        }
+        while(novo == NULL);
 
         novo->ant = NULL;
         novo->prox = NULL;
@@ -361,9 +387,11 @@ LDE* termosArquivo(LDE* listaTermos, int qtdTermos)
                 break;
 
             // Cria o nodo
-            do{
+            do
+            {
                 novo = (LDE*)malloc(sizeof(LDE));
-            }while(novo == NULL);
+            }
+            while(novo == NULL);
             novo->ant = auxiliar;
             novo->prox = NULL;
             novo->qtde = listaTermos->qtde;
@@ -431,7 +459,7 @@ int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade)
     int totalTermos = 0, totalConsultas = 0;
 
     // Função auxiliar que vai contar o total de termos e o total de consultas;
-    //auxiliarMediaTamanhoConsultasLocalidade(arvore, &totalTermos, &totalConsultas, cidade);
+    auxiliarMediaTamanhoConsultasLocalidade(arvore, &totalTermos, &totalConsultas, cidade);
 
     // Faz a média divindo o total de termos pelo total de consultas
     return totalTermos / totalConsultas;
@@ -472,21 +500,22 @@ void auxiliarMediaTamanhoConsultasLocalidade(Consulta *arvore, int *totTermos, i
 int temCidadeNaLista(char* cidade, LDE* lista)
 {
     LDE* auxiliar = lista;
-    int flag = 0;
+    int quantidade = 0;
     if(auxiliar)
     {
         while(auxiliar->prox != lista && auxiliar->prox)
         {
-            if(strcmp(auxiliar->nome,cidade) == 0)  flag = auxiliar->qtde;
+            if(strcmp(auxiliar->nome,cidade) == 0)
+            {
+                quantidade = auxiliar->qtde;
+                break;
+            }
             auxiliar = auxiliar->prox;
         }
-        if(strcmp(auxiliar->nome,cidade) == 0)  flag = auxiliar->qtde;
+        if(strcmp(auxiliar->nome,cidade) == 0)  quantidade = auxiliar->qtde;
     }
-    else
-    {
-        return flag;
-    }
-    return flag;
+
+    return quantidade;
 }
 
 

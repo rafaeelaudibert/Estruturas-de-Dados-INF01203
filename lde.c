@@ -192,7 +192,7 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
 ///         char*               ->  String
 /// OUTPUT:
 ///         LDE*                ->  Lista duplamente encadeada NÃO-CIRCULAR reordenada, com a inserção do novo elemento (ou incremento do seu contador)
-LDE* insereLDENumerico(LDE* lista, char *nome)
+LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
 {
 
     LDE *novo, *auxiliar = lista, *anterior;
@@ -202,7 +202,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome)
     if(auxiliar) //Tenho algum nodo na lista
     {
         if(strcmp(nome, auxiliar->nome) == 0) // Se for o primeiro, somente incrementa o contador
-            auxiliar->qtde++;
+            auxiliar->qtde += qtde;
         else                                // Caso contrario, vai iterar pela lista procurando minha posição
         {
             if((auxiliar = auxiliar->prox) == NULL)  // Se só tenho UM termo na lista
@@ -212,7 +212,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome)
                     novo = (LDE*) malloc(sizeof(LDE));
                 }while(novo == NULL);
 
-                novo->qtde = 1;
+                novo->qtde = qtde;
                 strcpy(novo->nome, nome);
 
                 // Se o meu novo nodo tiver menos acessor que a raiz, ou um nome "menor"
@@ -243,7 +243,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome)
 
                 if(auxiliar)  //Se saí por um break, então encontrei o meu nodo
                 {
-                    auxiliar->qtde++;
+                    auxiliar->qtde+=qtde;
 
                     // Preciso ordenar por numero e por nome
                     if(auxiliar->ant){
@@ -280,7 +280,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome)
                         novo = (LDE*) malloc(sizeof(LDE));
                     }while(novo == NULL);
 
-                    novo->qtde = 1;
+                    novo->qtde = qtde;
                     strcpy(novo->nome, nome);
 
                     novo->prox = NULL;
@@ -299,7 +299,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome)
 
         novo->prox = NULL;
         novo->ant = NULL;
-        novo->qtde = 1;
+        novo->qtde = qtde;
         strcpy(novo->nome, nome);
         lista = novo;
     }
