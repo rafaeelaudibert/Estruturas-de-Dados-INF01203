@@ -23,6 +23,10 @@ LSE* insereLSE(LSE* lista, char* termo)
     LSE *novo = (LSE*)malloc(sizeof(LSE)), *auxiliar = lista, *anterior = NULL;
     strcpy(novo->termo, termo);
 
+    do{
+        novo = (LSE*)malloc(sizeof(LSE));
+    }while(novo == NULL);
+
     if (auxiliar)                       // Se tiver uma lista, procuro a posição alfabetica para inserir o novo termo
     {
 
@@ -66,7 +70,6 @@ LSE* insereLSE(LSE* lista, char* termo)
 ///         int                 ->  1 se as strings forem iguais em toda LSE, 0 se não forem
 int LSEigual(LSE* lse1, LSE* lse2)
 {
-
     if(lse1 && lse2)   // Se ainda tenho string NOS DOIS
     {
         // Se as strings forem diferentes, retorno 0, pois a afirmação é falsa

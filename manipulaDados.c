@@ -16,16 +16,21 @@
 Info* entradaDados(FILE* entrada)
 {
     int qtdTermos = 0;
-    char str[401], cidade[100], *termo = NULL;
-    Info *dados = (Info*)malloc(sizeof(Info));
+    char str[601], cidade[100], *termo = NULL;
+    Info *dados;
     LSE* listaTermos;
+
+    // Forçando alocação
+    do{
+        dados = (Info*)malloc(sizeof(Info));
+    }while(dados == NULL);
 
     // Inicialização dos dados
     dados->arvore = criaArvore();
     dados->termos = inicializaLDE();
 
     //printf("DADOS DE ENTRADA: \n");
-    while(fgets(str, 400, entrada))
+    while(fgets(str, 600, entrada))
     {
         // String parse
         converteAcentos(str);
@@ -57,7 +62,7 @@ Info* entradaDados(FILE* entrada)
 /// INPUT:
 ///         FILE*                ->  Ponteiro para o arquivo com as operações a serem realizadas na árvore
 ///         Info*                ->  Estrutura contendo toda a informação necessária
-void realizaOperacoes(FILE* operacoes, Info* dados)
+void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
 {
     char termoCidade[100];
     char str[201], localidadeMedia[100], localidadeTermos[100], operacao;
