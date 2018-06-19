@@ -113,7 +113,7 @@ void printaLSE(LSE* lista)
 char *parseLSEtoString(LSE* lista, char *string){
 
     LSE* auxiliar = lista;
-
+    //int cont = 0;
     if(auxiliar){
         strcpy(string, auxiliar->termo);
         auxiliar = auxiliar->prox;
@@ -121,7 +121,7 @@ char *parseLSEtoString(LSE* lista, char *string){
         while(auxiliar){
 
             //Adiciona o ; e o novo termo
-            strcat(string, ";");
+            strcat(string, " ");
             strcat(string, auxiliar->termo);
 
             auxiliar = auxiliar->prox;

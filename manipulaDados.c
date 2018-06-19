@@ -82,14 +82,14 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
             strcpy(localidade,strtok(NULL, ";"));
             qtdTermos = atoi(strtok(NULL, ";"));
 
-            printf("\n%d consultas mais realizadas em %s: \n", qtdTermos, localidade);
+            //printf("\n%d consultas mais realizadas em %s: \n", qtdTermos, localidade);
             consultasPorLocalidade(dados->arvore, localidade, qtdTermos);
             break;
         case 'b':
             //Recebe a quantidade de consultas
             qtdTermos = atoi(strtok(NULL, ";"));
 
-            printf("\n%d consultas mais realizadas no arquivo:\n", qtdTermos);
+            //printf("\n%d consultas mais realizadas no arquivo:\n", qtdTermos);
             consultasArquivo(dados->arvore, qtdTermos);
             break;
         case 'c':
@@ -97,7 +97,7 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
             strcpy(localidade, strtok(NULL, ";"));
             qtdTermos = atoi(strtok(NULL, ";"));
 
-            printf("\n%d termos que mais aparecem em %s:\n", qtdTermos, localidade);
+            //printf("\n%d termos que mais aparecem em %s:\n", qtdTermos, localidade);
             termos = termosPorLocalidade(dados->arvore,  inicializaLDE(), localidade);
             printaLDE(termos, qtdTermos);
             break;
@@ -105,7 +105,7 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
             //Devolve os n termos mais consultados no arquivo
             qtdTermos = atoi(strtok(NULL, ";"));
 
-            printf("\n%d termos mais consultados no arquivo:\n", qtdTermos);
+            //printf("\n%d termos mais consultados no arquivo:\n", qtdTermos);
             termos = termosArquivo(dados->termos);
             printaLDE(termos, qtdTermos);
             break;
@@ -113,12 +113,12 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
             //Média de termos por consulta em uma dada localidade
             strcpy(localidade,strtok(NULL, ";"));
             tamanho = mediaTamanhoConsultasLocalidade(dados->arvore, localidade);
-            printf("\nMedia de termos em %s: %d\n", localidade, tamanho);
+            printf("Media de termos %d\n", tamanho);
             break;
         case 'f':
             // Média de termos por consulta em todo o arquivo
             tamanho = mediaTamanhoConsultasArquivo(dados->arvore);
-            printf("\nMedia de termos no arquivo: %d\n", tamanho);
+            printf("Media de termos %d\n", tamanho);
             break;
         }
     }

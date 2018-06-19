@@ -18,7 +18,6 @@ void auxiliarMediaTamanhoConsultasLocalidade(Consulta *arvore, int *totTermos, i
 int temCidadeNaLista(char* cidade, LDE* lista);
 
 int achaVetorReps(Consulta* arvore, int *vetor, int contador);
-
 int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *cidade, Qtdcons *qtdCons);
 void double_quick_sort(int *a, int *b, int left, int right);
 void quick_sort(int *a, int left, int right);

@@ -5,7 +5,7 @@
 #include "lse.h"
 #include "lde.h"
 
-#define TAM_VET 100000
+#define TAM_VET 12000
 
 /// Função que retorna as consultas mais consultadas em uma determinada localidade
 /// Se for passado 0 como qtdConsultas, retorna todas as consultas realizadas naquela localidade
@@ -18,7 +18,7 @@
 void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
 {
 
-    char strParse1[200] = "", strParse2[200] = "";
+    char strParse1[500] = {0}, strParse2[500] = {0};
 
     if(qtdConsultas == 0)
     {
@@ -39,12 +39,13 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
     //double_quick_sort(qtdCons, 0, TAM_VET-1);
     for(i=0; i<TAM_VET && (qtdCons+i)->termos != NULL; i++)
     {
+        strcpy(strParse1, "");
+        strcpy(strParse1, parseLSEtoString((qtdCons+i)->termos, strParse1));
         for(j=0; j<TAM_VET && (qtdCons+j)->termos != NULL; j++)
         {
 
             //Transforma LDE em string
-            strcpy(strParse1, "");
-            strcpy(strParse1, parseLSEtoString((qtdCons+i)->termos, strParse1));
+
             strcpy(strParse2, "");
             strcpy(strParse2, parseLSEtoString((qtdCons+j)->termos, strParse2));
 
@@ -63,8 +64,6 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
         printf("%d ", (qtdCons+i)->qtd);
         printaLSE((qtdCons+i)->termos);
     }
-
-
     return;
 }
 int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *cidade, Qtdcons *qtdCons)
@@ -122,9 +121,10 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas)
     {
         qtdConsultas = TAM_VET;
     }
-    Consulta retorno[TAM_VET];//arvore de retorno
+    Consulta retorno[TAM_VET], aux;
+    //int aux;//, aux;//arvore de retorno
     int vezesRep = 0;
-    int vetor[TAM_VET], i; //vetor de ordenamento
+    int vetor[TAM_VET], i, j; //vetor de ordenamento
     int vetorOrdenado[TAM_VET];
 
     for (i = 0; i < TAM_VET; i++) //zera o vetor
@@ -138,6 +138,19 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas)
     contador = achaVetorReps(arvore, vetor, contador);
     //ordena o vetor de quantidades de acesso
     quick_sort(vetor, 0, TAM_VET-1);
+ /*for (i = 0; i < TAM_VET; i++)  //ordena burramente o vetor, mas ordena
+    {
+        for (j = 0; j < TAM_VET; j++)
+        {
+            if (vetor[i] > vetor[j])
+            {
+                aux = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = aux;
+            }
+        }
+    }*/
+
     for(i=0; i<TAM_VET; i++)
     {
         vetorOrdenado[i] = vetor[TAM_VET-1-i];
@@ -169,6 +182,32 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas)
 
         copiaArvore(arvore, retorno, vetorOrdenado, qtdConsultas, i, vezesRep); //copiar os nodos com mais acesso para o vetor
     }
+
+    char strConsulta[TAM_VET][500]={0};
+    char auxChar[500]={0};
+
+    for(i=0; i<TAM_VET && (retorno+i)->termos != NULL; i++)
+    {
+        strcpy(strConsulta[i], parseLSEtoString((retorno+i)->termos, strConsulta[i]));
+    }
+
+    for(i=0; i<TAM_VET && (retorno+i)->termos != NULL; i++)
+    {
+        for(j=0; j<TAM_VET && (retorno+j)->termos != NULL; j++)
+        {
+            if(((retorno+i)->qtdeAcessos == (retorno+j)->qtdeAcessos) && strcmp(strConsulta[i], strConsulta[j]) < 0)
+            {
+                aux = *(retorno+i);
+                *(retorno+i) = *(retorno+j);
+                *(retorno+j) = aux;
+
+                strcpy(auxChar,strConsulta[i]);
+                strcpy(strConsulta[i],strConsulta[j]);
+                strcpy(strConsulta[j],auxChar);
+            }
+        }
+    }
+
     //printf("%d \n\n", qtdAux);
     //no final, printa na tela (substituir por arquivo)
     //todas as consutas encontradas
@@ -176,6 +215,7 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas)
     {
         printf("%d ",(retorno+i)->qtdeAcessos);
         printaLSE((retorno+i)->termos);
+        //printf("%s\n", (strConsulta+i));
     }
     return;
 }

@@ -348,23 +348,24 @@ void printaLDE(LDE* lista, int qtde)
         {
             while(auxiliar->prox != lista && auxiliar->prox)
             {
-                printf("%s %d\n", auxiliar->nome, auxiliar->qtde); //Printa "string valor"
+                printf("%d %s\n", auxiliar->qtde, auxiliar->nome); //Printa "string valor"
                 auxiliar = auxiliar->prox;
             }
-            printf("%s %d\n", auxiliar->nome, auxiliar->qtde);  // Printa o que estava faltando
+            printf("%d %s\n", auxiliar->qtde, auxiliar->nome);  // Printa o que estava faltando
         }
         else // Printa a quantidade vezes passada em qtde
         {
 
             while(auxiliar->prox != lista && auxiliar->prox && --qtde > 0)  // Decrementa o contador, para printar somente 'qtde' nodos
             {
-                printf("%s %d\n", auxiliar->nome, auxiliar->qtde);
+                printf("%d %s\n", auxiliar->qtde, auxiliar->nome);
                 auxiliar = auxiliar->prox;
             }
-            printf("%s %d\n", auxiliar->nome, auxiliar->qtde);
+            printf("%d %s\n", auxiliar->qtde, auxiliar->nome);
         }
     }
     else
+
     {
         printf("Lista Vazia!");
     }
