@@ -7,4 +7,5 @@ LSE* inicializaLSE();
 LSE* insereLSE();
 void printaLSE(LSE* lista);
 int LSEigual(LSE* lse1, LSE* lse2);
+char *parseLSEtoString(LSE*, char*);
 #endif // TERMOS_H_

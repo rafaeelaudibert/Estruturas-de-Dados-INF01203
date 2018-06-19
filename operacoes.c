@@ -15,14 +15,10 @@
 ///         int*                ->  Quantidade de consultas que devem ser retornadas
 /// OUTPUT:
 ///         Consulta*           ->  Arvore com somente as qtdConsultas mais realizadas
-
-//pensei em salvar todas as quantidades de acesso em um vetor, ordenar o vetor em decrescente, e
-//depois passar em toda a arvore copiando os nodos que tivessem a quantidade igual a do
-//inicio do vetor.
-
 void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
 {
 
+    char strParse1[200] = "", strParse2[200] = "";
 
     if(qtdConsultas == 0)
     {
@@ -45,7 +41,14 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
     {
         for(j=0; j<TAM_VET && (qtdCons+j)->termos != NULL; j++)
         {
-            if((qtdCons+i)->qtd > (qtdCons+j)->qtd)
+
+            //Transforma LDE em string
+            strcpy(strParse1, "");
+            strcpy(strParse1, parseLSEtoString((qtdCons+i)->termos, strParse1));
+            strcpy(strParse2, "");
+            strcpy(strParse2, parseLSEtoString((qtdCons+j)->termos, strParse2));
+
+            if(((qtdCons+i)->qtd > (qtdCons+j)->qtd) || (((qtdCons+i)->qtd == (qtdCons+j)->qtd) && strcmp(strParse1, strParse2) < 0))
             {
                 aux = *(qtdCons+i);
                 *(qtdCons+i) = *(qtdCons+j);

@@ -108,3 +108,26 @@ void printaLSE(LSE* lista)
     return;
 }
 
+
+
+char *parseLSEtoString(LSE* lista, char *string){
+
+    LSE* auxiliar = lista;
+
+    if(auxiliar){
+        strcpy(string, auxiliar->termo);
+        auxiliar = auxiliar->prox;
+
+        while(auxiliar){
+
+            //Adiciona o ; e o novo termo
+            strcat(string, ";");
+            strcat(string, auxiliar->termo);
+
+            auxiliar = auxiliar->prox;
+        }
+    }
+
+    return string;
+
+}
