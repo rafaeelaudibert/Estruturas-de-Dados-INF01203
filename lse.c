@@ -92,18 +92,18 @@ int LSEigual(LSE* lse1, LSE* lse2)
 }
 
 /// Função iterativa para printar uma LSE
-void printaLSE(LSE* lista)
+void printaLSE(LSE* lista, FILE* saida)
 {
     if(lista){
-        printf("%s", lista->termo);
+        fprintf(saida, "%s", lista->termo);
         lista = lista->prox;
 
         while(lista)
         {
-            printf(";%s", lista->termo);
+            fprintf(saida, ";%s", lista->termo);
             lista = lista->prox;
         }
-    printf("\n");
+    fprintf(saida, "\n");
     }
     return;
 }

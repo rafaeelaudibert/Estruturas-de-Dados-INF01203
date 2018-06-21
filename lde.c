@@ -335,7 +335,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
 /// INPUT:
 ///         LDE*                ->  Lista duplamente encadeada
 ///         int                 ->  Quantidade de termos a serem printados [Se for 0, printa todos os termos]
-void printaLDE(LDE* lista, int qtde)
+void printaLDE(LDE* lista, int qtde, FILE* saida)
 {
     // Ponteiro auxiliar para percorrer a lista
     LDE* auxiliar = lista;
@@ -348,20 +348,20 @@ void printaLDE(LDE* lista, int qtde)
         {
             while(auxiliar->prox != lista && auxiliar->prox)
             {
-                printf("%d %s\n", auxiliar->qtde, auxiliar->nome); //Printa "string valor"
+                fprintf(saida, "%d %s\n", auxiliar->qtde, auxiliar->nome); //Printa "string valor"
                 auxiliar = auxiliar->prox;
             }
-            printf("%d %s\n", auxiliar->qtde, auxiliar->nome);  // Printa o que estava faltando
+            fprintf(saida, "%d %s\n", auxiliar->qtde, auxiliar->nome);  // Printa o que estava faltando
         }
         else // Printa a quantidade vezes passada em qtde
         {
 
             while(auxiliar->prox != lista && auxiliar->prox && --qtde > 0)  // Decrementa o contador, para printar somente 'qtde' nodos
             {
-                printf("%d %s\n", auxiliar->qtde, auxiliar->nome);
+                fprintf(saida, "%d %s\n", auxiliar->qtde, auxiliar->nome);
                 auxiliar = auxiliar->prox;
             }
-            printf("%d %s\n", auxiliar->qtde, auxiliar->nome);
+            fprintf(saida, "%d %s\n", auxiliar->qtde, auxiliar->nome);
         }
     }
     else

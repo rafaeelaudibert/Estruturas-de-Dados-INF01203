@@ -3,8 +3,8 @@
 #ifndef OPERACOES_H_
 #define OPERACOES_H_
 
-void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas);
-void consultasArquivo(Consulta* arvore, int qtdConsultas);
+void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas, FILE* saida);
+void consultasArquivo(Consulta* arvore, int qtdConsultas, FILE* saida);
 LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[]);
 LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde);
 LDE* termosArquivo(LDE* listaTermos);

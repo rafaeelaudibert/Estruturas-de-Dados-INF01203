@@ -97,9 +97,9 @@ Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
     tempoGasto = ((end.tv_sec - start.tv_sec) * 1000000.0) + (end.tv_usec - start.tv_usec);
 
     if(tempoGasto < 1000){
-        printf("Tempo gasto: %4.3fus (microssegundos)\n",tempoGasto);
+        printf("Tempo gasto na inserção dos dados: \t\t%4.3fus (microssegundos)\n",tempoGasto);
     } else {
-        printf("Tempo gasto: %4.3fms (milissegundos)\n",tempoGasto/1000);
+        printf("Tempo gasto na inserção dos dados: \t\t%4.3fms (milissegundos)\n",tempoGasto/1000);
     }
 
 
@@ -119,9 +119,9 @@ void operacoesBenchmark(void(*function)(FILE*, FILE*, Info*), FILE* operacoes, F
     tempoGasto = ((double)stop-(double)start) / (double)freq * 1000000;
 
     if(tempoGasto < 1000)
-        printf("Tempo gasto na insercao dos dados: %3.8fus (microssegundos)\n", tempoGasto);
+        printf("Tempo gasto na realizaçao das operacoes: %3.8fus (microssegundos)\n", tempoGasto);
     else
-        printf("Tempo gasto na insercao dos dados: %3.8fms (milissegundos)\n", tempoGasto/1000);
+        printf("Tempo gasto na realizaçao das operacoes: %3.8fms (milissegundos)\n", tempoGasto/1000);
 
     */ //END WINDOWS
 
@@ -136,9 +136,11 @@ void operacoesBenchmark(void(*function)(FILE*, FILE*, Info*), FILE* operacoes, F
     tempoGasto = ((end.tv_sec - start.tv_sec) * 1000000.0) + (end.tv_usec - start.tv_usec);
 
     if(tempoGasto < 1000){
-        printf("Tempo gasto: %4.3fus (microssegundos)\n",tempoGasto);
+        printf("Tempo gasto na realizaçao das operacoes: \t%4.3fus (microssegundos)\n",tempoGasto);
+    } else if((tempoGasto /= 1000) < 1000){
+        printf("Tempo gasto na realizaçao das operacoes: \t%4.3fms (milissegundos)\n",tempoGasto);
     } else {
-        printf("Tempo gasto: %4.3fms (milissegundos)\n",tempoGasto/1000);
+        printf("Tempo gasto na realizaçao das operacoes: \t%4.3fs (segundos)\n",tempoGasto/1000);
     }
 
     //END LINUX

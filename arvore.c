@@ -82,12 +82,12 @@ int percorreArvore(Consulta *nodo, int nivel){
         printf("\nMeu nivel: %d", nivel);
         printf("\nEu mesmo: %p", nodo);
         printf("\nCidades:\n");
-        printaLDE(nodo->cidades, 0);
+        printaLDE(nodo->cidades, 0, stdout);
         printf("Ponteiro para a esquerda/direita: %p/%p", nodo->esq, nodo->dir);
         printf("\nQuantidade de acessos: %d", nodo->qtdeAcessos);
         printf("\nQuantidade de termos: %d", nodo->qtdeTermos);
         printf("\nTermos: ");
-        printaLSE(nodo->termos);
+        printaLSE(nodo->termos, stdout);
 
         esq = percorreArvore(nodo->esq, nivel+1);
         dir = percorreArvore(nodo->dir, nivel+1);

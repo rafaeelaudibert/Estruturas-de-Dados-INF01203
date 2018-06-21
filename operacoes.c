@@ -15,7 +15,7 @@
 ///         int*                ->  Quantidade de consultas que devem ser retornadas
 /// OUTPUT:
 ///         Consulta*           ->  Arvore com somente as qtdConsultas mais realizadas
-void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
+void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas, FILE* saida)
 {
 
     char strParse1[500] = {0}, strParse2[500] = {0};
@@ -61,8 +61,8 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas)
 
     for(i=0; i<TAM_VET && ((qtdCons+i)->qtd) != 0 && i < qtdConsultas; i++)
     {
-        printf("%d ", (qtdCons+i)->qtd);
-        printaLSE((qtdCons+i)->termos);
+        fprintf(saida, "%d ", (qtdCons+i)->qtd);
+        printaLSE((qtdCons+i)->termos, saida);
     }
     return;
 }
@@ -114,7 +114,7 @@ int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *ci
 ///         int*                ->  Quantidade de consultas que devem ser retornadas
 /// OUTPUT:
 ///         Consulta*           ->  Arvore com somente as qtdConsultas mais realizadas
-void consultasArquivo(Consulta* arvore, int qtdConsultas)
+void consultasArquivo(Consulta* arvore, int qtdConsultas, FILE* saida)
 {
 
     if(qtdConsultas == 0)
@@ -213,8 +213,8 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas)
     //todas as consutas encontradas
     for (i = 0; i < qtdConsultas && vetorOrdenado[i] != 0; i++)
     {
-        printf("%d ",(retorno+i)->qtdeAcessos);
-        printaLSE((retorno+i)->termos);
+        fprintf(saida, "%d ",(retorno+i)->qtdeAcessos);
+        printaLSE((retorno+i)->termos, saida);
         //printf("%s\n", (strConsulta+i));
     }
     return;
