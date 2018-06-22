@@ -211,7 +211,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
 
     LDE *novo, *auxiliar = lista, *anterior;
     char strAux[100] = "";
-    int numAux;
+    int numAux, flagInsercao = 0;
 
     if(auxiliar) //Tenho algum nodo na lista
     {
@@ -231,7 +231,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
                 novo->qtde = qtde;
                 strcpy(novo->nome, nome);
 
-                // Se o meu novo nodo tiver menos acessor que a raiz, ou um nome "menor"
+                // Se o meu novo nodo tiver menos acessos que a raiz, ou um nome "menor"
                 if(lista->qtde > 1 || strcmp(lista->nome, novo->nome) < 0)
                 {
                     novo->prox = NULL;
@@ -251,13 +251,18 @@ LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
                 anterior = auxiliar->ant; //Mantenho sempre um tracking do anterior
                 while(auxiliar)
                 {
-                    if (strcmp(auxiliar->nome, nome) == 0) // Se eu tenho o mesmo nome, então posso parar meu laço
+                    if (strcmp(auxiliar->nome, nome) == 0){ // Se eu tenho o mesmo nome, então posso parar meu laço
+                        flagInsercao = 1; //Preciso aumentar a quantidade do nodo que eu parei
                         break;
+                    } else if (auxiliar->qtde < qtde){
+                      flagInsercao = 2; //Preciso me inserir antes do auxiliar
+                      break;
+                    }
                     anterior = auxiliar;
                     auxiliar = auxiliar->prox;
                 }
 
-                if(auxiliar)  //Se saí por um break, então encontrei o meu nodo
+                if(auxiliar && flagInsercao == 1)  //Se saí por um break com flag 1, encontrei o nodo pra aumentar
                 {
                     auxiliar->qtde+=qtde;
 
@@ -290,9 +295,34 @@ LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
                             auxiliar = auxiliar->ant;
                         }
                     }
+                } else if(auxiliar && flagInsercao == 2)  //Se saí por um break com flag 2, preciso me inserir antes do auxiliar
+                {
+                  // Força alocação de memória
+                  do
+                  {
+                      novo = (LDE*) malloc(sizeof(LDE));
+                  }
+                  while(novo == NULL);
 
+                  novo->qtde = qtde;
+                  strcpy(novo->nome, nome);
+
+                  novo->prox = auxiliar;
+                  novo->ant = auxiliar->ant;
+                  auxiliar->ant->prox = novo;
+                  auxiliar->ant = novo;
+
+                  // ORDENAÇÃO ALFABÉTICA
+                  while(auxiliar->ant && auxiliar->ant->qtde == auxiliar->qtde && strcmp(auxiliar->nome, auxiliar->ant->nome) < 0)
+                  {
+                      strcpy(strAux, auxiliar->nome);
+                      strcpy(auxiliar->nome, auxiliar->ant->nome);
+                      strcpy(auxiliar->ant->nome, strAux);
+
+                      auxiliar = auxiliar->ant;
+                  }
                 }
-                else     // Se não, /* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */preciso me adicionar no final
+                else     // Se não, preciso me adicionar no final
                 {
                     // Força alocação de memória
                     do

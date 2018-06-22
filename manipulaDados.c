@@ -89,7 +89,6 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
             //Recebe a quantidade de consultas
             qtdTermos = atoi(strtok(NULL, ";"));
 
-            //printf("\n%d consultas mais realizadas no arquivo:\n", qtdTermos);
             consultasArquivo(dados->arvore, qtdTermos, saida);
             break;
         case 'c':
