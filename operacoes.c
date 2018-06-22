@@ -112,24 +112,19 @@ int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *ci
 ///         int*                ->  Quantidade de consultas que devem ser retornadas
 /// OUTPUT:
 ///         Consulta*           ->  Arvore com somente as qtdConsultas mais realizadas
-void consultasArquivo(Consulta* arvore, int qtdConsultas, FILE* saida)
+int consultasArquivo(Consulta* arvore, Consulta retorno[TAM_VET], int qtdConsultas)
 {
 
     if(qtdConsultas == 0)
     {
         qtdConsultas = TAM_VET;
     }
-    Consulta retorno[TAM_VET], aux;
+    Consulta aux;
     //int aux;//, aux;//arvore de retorno
     //clock_t timer, timer2;
     int vezesRep = 0;
-    int vetor[TAM_VET], i, j; //vetor de ordenamento
+    int vetor[TAM_VET] = {0}, i, j; //vetor de ordenamento
     int vetorOrdenado[TAM_VET];
-
-    for (i = 0; i < TAM_VET; i++) //zera o vetor
-    {
-        vetor[i] = 0;
-    }
     int contador = 0;
 
     //printf("Irei testar %d consultas\n", qtdConsultas);
@@ -233,15 +228,9 @@ void consultasArquivo(Consulta* arvore, int qtdConsultas, FILE* saida)
     //no final, printa na tela
     //todas as consutas encontradas
     //timer = clock();
-    for (i = 0; i < qtdConsultas && i < size; i++)
-    {
-        fprintf(saida, "%d ",(retorno+i)->qtdeAcessos);
-        printaLSE(retorno[i].termos, saida);
-        //printf("%s\n", (strConsulta+i));
-    }
     //printf("Tempo gasto no quinto for: %f\n\n", (float)clock() - timer);
     //printf("------------------\n\n");
-    return;
+    return size;
 }
 
 

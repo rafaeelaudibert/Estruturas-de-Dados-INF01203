@@ -6,7 +6,7 @@
 #define TAM_VET 11000
 
 void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas, FILE* saida);
-void consultasArquivo(Consulta* arvore, int qtdConsultas, FILE* saida);
+int consultasArquivo(Consulta* arvore, Consulta retorno[], int qtdConsultas);
 LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[]);
 LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde);
 LDE* termosArquivo(LDE* listaTermos);

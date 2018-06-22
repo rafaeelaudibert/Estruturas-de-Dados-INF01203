@@ -65,11 +65,19 @@ Info* entradaDados(FILE* entrada)
 void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
 {
     char str[201], localidade[100], operacao;
+    Consulta retorno[TAM_VET] = {0};
     LDE *termos;
+    int qtdConsultas = 0;
+    int i;
     int tamanho, qtdTermos; //Usado nas operações 'e' & 'f'
+
+    // SETTING
+    int size = consultasArquivo(dados->arvore, retorno, qtdTermos);
+    // Agora retorno tem os valores corretos
 
     while(fgets(str, 200, operacoes))
     {
+        qtdConsultas++;
         converteAcentos(str);
         removeCaracteres(str);
         operacao =  *(strtok(str, ";")); //Lê a operação a ser realizada
@@ -88,8 +96,16 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
         case 'b':
             //Recebe a quantidade de consultas
             qtdTermos = atoi(strtok(NULL, ";"));
+            if(qtdTermos == 0){
+              qtdTermos = size;
+            }
 
-            consultasArquivo(dados->arvore, qtdTermos, saida);
+            printf("printando %d termos na %d consulta\n", qtdTermos, qtdConsultas);
+            for (i = 0; i < qtdTermos && retorno[i].termos; i++)
+            {
+                fprintf(saida, "%d ",(retorno+i)->qtdeAcessos);
+                printaLSE(retorno[i].termos, saida);
+            }
             break;
         case 'c':
             //Recebe a localidade e a quantidade de termos
