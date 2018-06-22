@@ -22,7 +22,7 @@
 
 /* PROTÓTIPO DA FUNÇÃO BENCHMARK */
 Info* infoBenchmark(Info*(*function)(FILE*), FILE*);
-void operacoesBenchmark(void(*function)(FILE*, FILE*, Info*), FILE*, FILE*, Info*);
+void operacoesBenchmark(int(*function)(FILE*, FILE*, Info*), FILE*, FILE*, Info*);
 
 /* MAIN */
 int main(int argc, char **argv){
@@ -106,7 +106,7 @@ Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
     return dados;
 }
 
-void operacoesBenchmark(void(*function)(FILE*, FILE*, Info*), FILE* operacoes, FILE* saida, Info* dados){
+void operacoesBenchmark(int(*function)(FILE*, FILE*, Info*), FILE* operacoes, FILE* saida, Info* dados){
 
     /* //WINDOWS
     double tempoGasto;
@@ -128,19 +128,20 @@ void operacoesBenchmark(void(*function)(FILE*, FILE*, Info*), FILE* operacoes, F
     //LINUX
     struct timeval start, end;
     double tempoGasto;
+    int qtdOperacoes;
 
     gettimeofday(&start, NULL);
-    function(operacoes, saida, dados);
+    qtdOperacoes = function(operacoes, saida, dados);
     gettimeofday(&end, NULL);
 
     tempoGasto = ((end.tv_sec - start.tv_sec) * 1000000.0) + (end.tv_usec - start.tv_usec);
 
     if(tempoGasto < 1000){
-        printf("Tempo gasto na realizaçao das operacoes: \t%4.3fus (microssegundos)\n",tempoGasto);
+        printf("Tempo gasto na realizaçao das %d operacoes: \t%4.3fus (microssegundos)\n",qtdOperacoes, tempoGasto);
     } else if((tempoGasto /= 1000) < 1000){
-        printf("Tempo gasto na realizaçao das operacoes: \t%4.3fms (milissegundos)\n",tempoGasto);
+        printf("Tempo gasto na realizaçao das %d operacoes: \t%4.3fms (milissegundos)\n",qtdOperacoes, tempoGasto);
     } else {
-        printf("Tempo gasto na realizaçao das operacoes: \t%4.3fs (segundos)\n",tempoGasto/1000);
+        printf("Tempo gasto na realizaçao das %d operacoes: \t%4.3fs (segundos)\n",qtdOperacoes, tempoGasto/1000);
     }
 
     //END LINUX

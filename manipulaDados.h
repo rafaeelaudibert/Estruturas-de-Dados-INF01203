@@ -4,5 +4,5 @@
 #define MANIPULA_DADOS_H_
 
 Info* entradaDados(FILE* entrada);
-void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados);
+int realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados);
 #endif // MANIPULA_DADOS_H_

@@ -62,7 +62,7 @@ Info* entradaDados(FILE* entrada)
 /// INPUT:
 ///         FILE*                ->  Ponteiro para o arquivo com as operações a serem realizadas na árvore
 ///         Info*                ->  Estrutura contendo toda a informação necessária
-void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
+int realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
 {
     char str[201], localidade[100], operacao;
     Consulta retorno[TAM_VET] = {0};
@@ -96,11 +96,9 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
         case 'b':
             //Recebe a quantidade de consultas
             qtdTermos = atoi(strtok(NULL, ";"));
-            if(qtdTermos == 0){
-              qtdTermos = size;
-            }
 
-            printf("printando %d termos na %d consulta\n", qtdTermos, qtdConsultas);
+            if(qtdTermos == 0) qtdTermos = size; //Se for 0, printa todos
+
             for (i = 0; i < qtdTermos && retorno[i].termos; i++)
             {
                 fprintf(saida, "%d ",(retorno+i)->qtdeAcessos);
@@ -138,5 +136,5 @@ void realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
         }
     }
 
-    return;
+    return qtdConsultas;
 }
