@@ -17,19 +17,15 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas, FI
 {
 
     char strParse1[500] = {0}, strParse2[500] = {0};
+    int vetor[TAM_VET] = {0}, i, j; //vetor de ordenamento
+    Qtdcons qtdCons[TAM_VET], aux;
+    int contador = 0;
 
     if(qtdConsultas == 0)
     {
         qtdConsultas = TAM_VET;
     }
 
-    int vetor[TAM_VET], i, j; //vetor de ordenamento
-    Qtdcons qtdCons[TAM_VET], aux;
-    for (i = 0; i < TAM_VET; i++) //zera o vetor
-    {
-        vetor[i] = 0;
-    }
-    int contador = 0;
 
     //copia todas as quantidades de acesso de cada consulta da arvore pra um vetor
     contador = achaVetorRepsLocalidade(arvore, vetor, contador, cidade, qtdCons);
@@ -64,6 +60,8 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas, FI
     }
     return;
 }
+
+
 int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *cidade, Qtdcons *qtdCons)
 {
 
@@ -82,17 +80,11 @@ int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *ci
     }
 
     if(arvore == NULL)
-        return contador;
-
-    /*if(temCidade != 0)
     {
-        vetor[contador] = arvore->qtdeAcessos;
-        (qtdCons+contador)->qtd = temCidade;
-        //printf("%d - ", temCidade);
-        (qtdCons+contador)->termos = arvore->termos;
-        contador++;
+        printf("O arquivo de entrada está vazio");
+        return contador;
     }
-    */
+
     if(arvore->esq != NULL)
     {
         contador = achaVetorRepsLocalidade(arvore->esq, vetor, contador, cidade, qtdCons);
@@ -101,7 +93,7 @@ int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *ci
     {
         contador = achaVetorRepsLocalidade(arvore->dir, vetor, contador, cidade, qtdCons);
     }
-    //printf("%d %d\n", contador, arvore->qtdeAcessos);
+
     return contador;
 }
 
@@ -114,18 +106,17 @@ int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *ci
 ///         Consulta*           ->  Arvore com somente as qtdConsultas mais realizadas
 int consultasArquivo(Consulta* arvore, Consulta retorno[TAM_VET], int qtdConsultas)
 {
-
-    if(qtdConsultas == 0)
-    {
-        qtdConsultas = TAM_VET;
-    }
     Consulta aux;
-    //int aux;//, aux;//arvore de retorno
-    //clock_t timer, timer2;
     int vezesRep = 0;
-    int vetor[TAM_VET] = {0}, i, j; //vetor de ordenamento
+    int vetor[TAM_VET] = {0}, i; //vetor de ordenamento
     int vetorOrdenado[TAM_VET];
     int contador = 0;
+    int changed = 0;
+    char strConsulta[TAM_VET][500]= {0};
+    char auxChar[500]= {0};
+    int size = 0;
+    int maximo, mudancas = 1;
+
 
     //printf("Irei testar %d consultas\n", qtdConsultas);
     //copia todas as quantidades de acesso de cada consulta da arvore pra um vetor
@@ -138,35 +129,17 @@ int consultasArquivo(Consulta* arvore, Consulta retorno[TAM_VET], int qtdConsult
     quick_sort(vetor, 0, TAM_VET-1);
     //printf("Tempo gasto no quick_sort: %f\n", (float)clock() - timer);
 
-    /*for (i = 0; i < TAM_VET; i++)  //ordena burramente o vetor, mas ordena
-    {
-        for (j = 0; j < TAM_VET; j++)
-        {
-            if (vetor[i] > vetor[j])
-            {
-                aux = vetor[i];
-                vetor[i] = vetor[j];
-                vetor[j] = aux;
-            }
-        }
-    }*/
 
-    int size = 0;
     //timer = clock();
     for(i=0; i<TAM_VET; i++)
     {
-      if((vetorOrdenado[i] = vetor[TAM_VET-1-i]) != 0)
-        size++;
+        if((vetorOrdenado[i] = vetor[TAM_VET-1-i]) != 0)
+            size++;
     }
+
     //printf("Tempo gasto no primeiro for: %f\n", (float)clock() - timer);
     //printf("Tenho %d nodos\n", size);
 
-    //printa vetor ordenado
-    /*for (i = 0; i < TAM_VET; i++)
-    {
-        printf("%d ", vetorOrdenado[i]);
-    }
-    printf("\n\n");*/
 
     //após isso, para cada posição do vetor ordenado por quantidade de acesso,
     //vai percorrer a árvore procurando pelos nodos cuja
@@ -189,47 +162,47 @@ int consultasArquivo(Consulta* arvore, Consulta retorno[TAM_VET], int qtdConsult
     }
     //printf("Tempo gasto no segundo for: %f\n", (float)clock() - timer);
 
-    char strConsulta[TAM_VET][500]={0};
-    char auxChar[500]={0};
+
 
     //timer = clock();
     for(i=0; i<size && (retorno+i)->termos != NULL; i++)
     {
-        strcpy(strConsulta[i], parseLSEtoString((retorno+i)->termos, strConsulta[i]));
+        parseLSEtoString((retorno+i)->termos, strConsulta[i]);
     }
     //printf("Tempo gasto no terceiro for: %f\n", (float)clock() - timer);
 
-    int changed = 0;
-    int maximo = size, mudancas = 0;
-    //timer = clock();
-    //quick_sort_consultas(retorno, strConsulta, 0, contador-1);
-    do{
-      changed = 0;
-      for(i=1; i<maximo; i++){
-        if((retorno[i].qtdeAcessos == retorno[i-1].qtdeAcessos) && strcmp(strConsulta[i], strConsulta[i-1]) < 0){
-          aux = retorno[i];
-          retorno[i] = retorno[i-1];
-          retorno[i-1] = aux;
 
-          strcpy(auxChar,strConsulta[i]);
-          strcpy(strConsulta[i],strConsulta[i-1]);
-          strcpy(strConsulta[i-1],auxChar);
-          changed = 1;
-          mudancas = 0;
-        } else {
-          mudancas++;
+    //timer = clock();
+    // TENTEI FAZER UM QUICK SORT COM 2 PARAMETROS DE SORTING, MAS NAO FUNCIONOU PQ SOU BURRO AAAA, ENTÃO DALHE UM SUPER OPTIMIZED SUPERH HIPER BUBBLE SORT
+    maximo = size;
+    do
+    {
+        changed = 0;
+        for(i=1; i<maximo; i++)
+        {
+            if((retorno[i].qtdeAcessos == retorno[i-1].qtdeAcessos) && strcmp(strConsulta[i], strConsulta[i-1]) < 0)
+            {
+                aux = retorno[i];
+                retorno[i] = retorno[i-1];
+                retorno[i-1] = aux;
+
+                strcpy(auxChar,strConsulta[i]);
+                strcpy(strConsulta[i],strConsulta[i-1]);
+                strcpy(strConsulta[i-1],auxChar);
+                changed = mudancas = 1;
+            }
+            else
+            {
+                mudancas++;
+            }
         }
-      }
-      maximo-= mudancas + 1;
-    }while(changed);
+
+        maximo-= mudancas;
+    }
+    while(changed);
     //printf("Tempo gasto no quarto for: %f\n", (float)clock() - timer);
 
-    //printf("%d \n\n", qtdAux);
-    //no final, printa na tela
-    //todas as consutas encontradas
-    //timer = clock();
-    //printf("Tempo gasto no quinto for: %f\n\n", (float)clock() - timer);
-    //printf("------------------\n\n");
+
     return size;
 }
 
@@ -341,10 +314,12 @@ LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[])
 }
 
 
-LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde){
+LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde)
+{
 
 
-    while(termos){
+    while(termos)
+    {
         lista = insereLDENumerico(lista, termos->termo, qtde);
         termos = termos->prox;
     }
@@ -368,8 +343,6 @@ LDE* termosArquivo(LDE* listaTermos)
 
 LDE* termosArquivoLocalidade(LDE* listaTermos, int qtdTermos, char* localidade)
 {
-    //printf("%d", qtdTermos);
-    //printf("%s", cidade);
     int i;
     LDE *listaRetorno, *novo, *auxiliar;
 
@@ -581,53 +554,54 @@ void quick_sort(int *a, int left, int right)
 //     }
 // }
 
-void quick_sort_consultas(Consulta *a, char strConsulta[TAM_VET][500], int left, int right){
+void quick_sort_consultas(Consulta *a, char strConsulta[TAM_VET][500], int left, int right)
+{
 
-      int i, j;
-      char x[500], strAux[500];
-      Consulta y;
+    int i, j;
+    char x[500], strAux[500];
+    Consulta y;
 
-      i = left;
-      j = right;
-      strcpy(x, strConsulta[(left + right) / 2]);
+    i = left;
+    j = right;
+    strcpy(x, strConsulta[(left + right) / 2]);
 
-      while(i <= j)
-      {
-          while(strcmp(strConsulta[i], x) < 0 && i < right)
-          {
-              i++;
-          }
-          while(strcmp(strConsulta[j], x) > 0 && j > left)
-          {
-              j--;
-          }
-          if(i <= j)
-          {
-              // Troca a arvore de posição
-              y = a[i];
-              a[i] = a[j];
-              a[j] = y;
+    while(i <= j)
+    {
+        while(strcmp(strConsulta[i], x) < 0 && i < right)
+        {
+            i++;
+        }
+        while(strcmp(strConsulta[j], x) > 0 && j > left)
+        {
+            j--;
+        }
+        if(i <= j)
+        {
+            // Troca a arvore de posição
+            y = a[i];
+            a[i] = a[j];
+            a[j] = y;
 
-              // Troca a string que ordena a árvore de posição
-              strcpy(strAux, strConsulta[i]);
-              strcpy(strConsulta[i], strConsulta[j]);
-              strcpy(strConsulta[j], strConsulta[i]);
+            // Troca a string que ordena a árvore de posição
+            strcpy(strAux, strConsulta[i]);
+            strcpy(strConsulta[i], strConsulta[j]);
+            strcpy(strConsulta[j], strConsulta[i]);
 
-              i++;
-              j--;
-          }
-      }
+            i++;
+            j--;
+        }
+    }
 
-      if(j > left)
-      {
-          quick_sort_consultas(a, strConsulta, left, j);
-      }
-      if(i < right)
-      {
-          quick_sort_consultas(a, strConsulta, i, right);
-      }
+    if(j > left)
+    {
+        quick_sort_consultas(a, strConsulta, left, j);
+    }
+    if(i < right)
+    {
+        quick_sort_consultas(a, strConsulta, i, right);
+    }
 
-  }
+}
 
 
 // void double_quick_sort(int *a, int *b, int left, int right)

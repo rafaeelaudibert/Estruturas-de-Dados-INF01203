@@ -72,7 +72,7 @@ int realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
     int tamanho, qtdTermos; //Usado nas operações 'e' & 'f'
 
     // SETTING
-    int size = consultasArquivo(dados->arvore, retorno, qtdTermos);
+    int size = consultasArquivo(dados->arvore, retorno, TAM_VET);
     // Agora retorno tem os valores corretos
 
     while(fgets(str, 200, operacoes))
