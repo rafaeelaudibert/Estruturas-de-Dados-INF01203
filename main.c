@@ -16,9 +16,9 @@
 #include "lde.h"
 
 /* DEFINES PARA OS ARQUIVOS - DEVELOPMENT ONLY */
-#define F_ENTRADA "data/input.txt"
-#define F_OPERACOES "data/operations.txt"
-#define F_SAIDA "data/saida.txt"
+#define F_ENTRADA "data/input_ANSI.txt"
+#define F_OPERACOES "data/operations_ANSI.txt"
+#define F_SAIDA "data/saida_ANSI.txt"
 
 /* PROTÃ“TIPO DA FUNÃ‡ÃƒO BENCHMARK */
 Info* infoBenchmark(Info*(*function)(FILE*), FILE*);
@@ -97,9 +97,9 @@ Info* infoBenchmark(Info*(*function)(FILE*), FILE* entrada){
     tempoGasto = ((end.tv_sec - start.tv_sec) * 1000000.0) + (end.tv_usec - start.tv_usec);
 
     if(tempoGasto < 1000){
-        printf("Tempo gasto na inserÃ§Ã£o dos dados: \t\t%4.3fus (microssegundos)\n",tempoGasto);
+        printf("Tempo gasto na inserção dos dados: \t\t%4.3fus (microssegundos)\n",tempoGasto);
     } else {
-        printf("Tempo gasto na inserÃ§Ã£o dos dados: \t\t%4.3fms (milissegundos)\n",tempoGasto/1000);
+        printf("Tempo gasto na inserção dos dados: \t\t%4.3fms (milissegundos)\n",tempoGasto/1000);
     }
 
 
@@ -137,11 +137,11 @@ void operacoesBenchmark(int(*function)(FILE*, FILE*, Info*), FILE* operacoes, FI
     tempoGasto = ((end.tv_sec - start.tv_sec) * 1000000.0) + (end.tv_usec - start.tv_usec);
 
     if(tempoGasto < 1000){
-        printf("Tempo gasto na realizaÃ§ao das %d operacoes: \t%4.3fus (microssegundos)\n",qtdOperacoes, tempoGasto);
+        printf("Tempo gasto na realização das %d operacões: \t%4.3fus (microssegundos)\n",qtdOperacoes, tempoGasto);
     } else if((tempoGasto /= 1000) < 1000){
-        printf("Tempo gasto na realizaÃ§ao das %d operacoes: \t%4.3fms (milissegundos)\n",qtdOperacoes, tempoGasto);
+        printf("Tempo gasto na realização das %d operacões: \t%4.3fms (milissegundos)\n",qtdOperacoes, tempoGasto);
     } else {
-        printf("Tempo gasto na realizaÃ§ao das %d operacoes: \t%4.3fs (segundos)\n",qtdOperacoes, tempoGasto/1000);
+        printf("Tempo gasto na realização das %d operacões: \t%4.3fs (segundos)\n",qtdOperacoes, tempoGasto/1000);
     }
 
     //END LINUX

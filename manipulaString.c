@@ -10,19 +10,21 @@ void converteAcentos(char *str)
 {
 
     int i, j;
-    char comAcento[] = "àâêôûãõáéíóúçÀÂÊÔÛÃÕÁÉÍÓÚÇ";
-    char semAcento[] = "aaeouaoaeioucAAEOUAOAEIOUC";
+    char comAcento[] = "àâêôûãõáéíóúç";
+    char semAcento[] = "aaeouaoaeiouc";
 
     for(i=0; i<strlen(str)-1; i++)
     {
+        str[i] = tolower(str[i]);   // Transforma tudo em minuscula
         for(j=0; j<strlen(comAcento)-1; j++)
         {
             if(str[i] == comAcento[j])
             {
+                printf("Achei!");
                 str[i] = semAcento[j];
             }
         }
-        str[i] = tolower(str[i]);   // Transforma tudo em minuscula
+
     }
 }
 
@@ -60,4 +62,3 @@ void puxaChar(char *c)
         puxaChar(c+1);
     }
 }
-

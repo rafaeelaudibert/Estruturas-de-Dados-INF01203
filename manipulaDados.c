@@ -34,7 +34,7 @@ Info* entradaDados(FILE* entrada)
     {
         // String parse
         converteAcentos(str);
-        removeCaracteres(str);
+        //removeCaracteres(str);
 
         /* PEGA A CIDADE */
         strcpy(cidade, strtok(str, ";"));
@@ -79,7 +79,7 @@ int realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
     {
         qtdConsultas++;
         converteAcentos(str);
-        removeCaracteres(str);
+        //removeCaracteres(str);
         operacao =  *(strtok(str, ";")); //Lê a operação a ser realizada
 
         // Operacoes de consulta no arquivo
