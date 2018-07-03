@@ -8,11 +8,7 @@
 #include "lse.h"
 #include "operacoes.h"
 
-/// Função responsável por receber todos os dados do arquivo de entrada e realizar a inserção deles na estrutura correspondente
-/// INPUT:
-///         FILE*                ->  Ponteiro para o arquivo com os dados de entrada
-/// OUTPUT:
-///         Info*                ->  Estrutura que contem todas as informações recebidas
+// Função responsável por receber todos os dados do arquivo de entrada e realizar a inserção deles na estrutura correspondente
 Info* entradaDados(FILE* entrada)
 {
     int qtdTermos = 0;
@@ -58,10 +54,7 @@ Info* entradaDados(FILE* entrada)
 }
 
 
-/// Função responsável por realizar todas as operações contidas no arquivo de operações utilizando a árvore que possui todos os dados
-/// INPUT:
-///         FILE*                ->  Ponteiro para o arquivo com as operações a serem realizadas na árvore
-///         Info*                ->  Estrutura contendo toda a informação necessária
+// Função responsável por realizar todas as operações contidas no arquivo de operações utilizando a árvore que possui todos os dados
 int realizaOperacoes(FILE* operacoes, FILE* saida, Info* dados)
 {
     char str[201], localidade[100], operacao;

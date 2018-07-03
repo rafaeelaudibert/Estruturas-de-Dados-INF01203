@@ -3,9 +3,7 @@
 #include <ctype.h>
 #include "manipulaString.h"
 
-/// Função responsável por tirar o acento de uma string, modificando a própria string
-/// INPUT:
-///         char*                ->  String com acentos
+// Função responsável por tirar o acento de uma string, modificando a própria string
 void converteAcentos(char *str)
 {
 
@@ -26,11 +24,6 @@ void converteAcentos(char *str)
     }
 }
 
-/// Função responsável por remover caracteres desnecessários de uma string
-/// Remove caracteres que não sejam letras, números, ponto e virgula, espacos ou quebras de linha
-/// Modifica a própria string
-/// INPUT:
-///         char*                ->  String com acentos
 // Remove caracteres desnecessarios
 void removeCaracteres(char *str)
 {
@@ -48,10 +41,8 @@ void removeCaracteres(char *str)
     }
 }
 
-/// Função (recursiva) auxiliar da removeCaracteres
-/// Puxa todos os próximos caracteres da string, fazendo com que o caracter atual seja excluido
-/// INPUT:
-///         char*                ->  Ponteiro para um caractere que será excluido de uma string
+// Função (recursiva) auxiliar da removeCaracteres
+// Puxa todos os próximos caracteres da string, fazendo com que o caracter atual seja excluido
 void puxaChar(char *c)
 {
     if(*(c - 1) != '\0')
@@ -60,4 +51,3 @@ void puxaChar(char *c)
         puxaChar(c+1);
     }
 }
-

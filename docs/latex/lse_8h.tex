@@ -1,0 +1,180 @@
+\hypertarget{lse_8h}{}\section{Referência ao ficheiro lse.\+h}
+\label{lse_8h}\index{lse.\+h@{lse.\+h}}
+
+
+Arquivo que contém funções relacionadas a manipulação de listas simplesmente encadeadas.  
+
+
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para lse.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{lse_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{lse_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$ \hyperlink{lse_8h_ad765d50b06255841230e5ead220623be}{inicializa\+L\+SE} ()
+\begin{DoxyCompactList}\small\item\em Cria uma lista simplesmente encadeada. \end{DoxyCompactList}\item 
+\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$ \hyperlink{lse_8h_ad004db669d206be476474b218cbb88bc}{insere\+L\+SE} (\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$lista, char $\ast$termo)
+\begin{DoxyCompactList}\small\item\em Insere um nodo em uma lista simplesmente encadeada. \end{DoxyCompactList}\item 
+int \hyperlink{lse_8h_a7312566d42e1ebf660aa458dcff6338d}{L\+S\+Eigual} (\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$lse1, \hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$lse2)
+\begin{DoxyCompactList}\small\item\em Retorna 1 se duas L\+SE são identicas. \end{DoxyCompactList}\item 
+void \hyperlink{lse_8h_a64b6200aec6744a6e0efb72212786248}{printa\+L\+SE} (\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$lista, F\+I\+LE $\ast$saida)
+\begin{DoxyCompactList}\small\item\em Logging de informações sobre a lista. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{lse_8h_ad18b386b8356075444b5703a7aeb4816}{parse\+L\+S\+Eto\+String} (\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$lista, char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Transforma uma L\+SE em uma string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém funções relacionadas a manipulação de listas simplesmente encadeadas. 
+
+\begin{DoxyAuthor}{Autor}
+Rafael Baldasso Audibert 
+
+Augusto Zanella Bardini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+11 Jul 2018 
+\end{DoxyDate}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{lse_8h_ad765d50b06255841230e5ead220623be}\label{lse_8h_ad765d50b06255841230e5ead220623be}} 
+\index{lse.\+h@{lse.\+h}!inicializa\+L\+SE@{inicializa\+L\+SE}}
+\index{inicializa\+L\+SE@{inicializa\+L\+SE}!lse.\+h@{lse.\+h}}
+\subsubsection{\texorpdfstring{inicializa\+L\+S\+E()}{inicializaLSE()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE}$\ast$ inicializa\+L\+SE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria uma lista simplesmente encadeada. 
+
+A função \hyperlink{lse_8h_ad765d50b06255841230e5ead220623be}{inicializa\+L\+S\+E()} cria uma lista simplesmente encadeada vazia. \begin{DoxyReturn}{Retorna}
+{\ttfamily N\+U\+LL} sempre é retornado. 
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{lse_8h_ad765d50b06255841230e5ead220623be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lse_8h_ad004db669d206be476474b218cbb88bc}\label{lse_8h_ad004db669d206be476474b218cbb88bc}} 
+\index{lse.\+h@{lse.\+h}!insere\+L\+SE@{insere\+L\+SE}}
+\index{insere\+L\+SE@{insere\+L\+SE}!lse.\+h@{lse.\+h}}
+\subsubsection{\texorpdfstring{insere\+L\+S\+E()}{insereLSE()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE}$\ast$ insere\+L\+SE (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$}]{lista,  }\item[{char $\ast$}]{termo }\end{DoxyParamCaption})}
+
+
+
+Insere um nodo em uma lista simplesmente encadeada. 
+
+A função \hyperlink{lse_8h_ad004db669d206be476474b218cbb88bc}{insere\+L\+S\+E()} insere um nodo em uma lista simplesmente encadeada já existente, mantendo-\/a ordenada em ordem alfabética.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Lista na qual será inserida o novo termo \\
+\hline
+{\em termo} & String do termo que será inserido na lista \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily L\+S\+E$\ast$} contendo a lista recebido com a adição do novo termo. 
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{lse_8h_ad004db669d206be476474b218cbb88bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lse_8h_a7312566d42e1ebf660aa458dcff6338d}\label{lse_8h_a7312566d42e1ebf660aa458dcff6338d}} 
+\index{lse.\+h@{lse.\+h}!L\+S\+Eigual@{L\+S\+Eigual}}
+\index{L\+S\+Eigual@{L\+S\+Eigual}!lse.\+h@{lse.\+h}}
+\subsubsection{\texorpdfstring{L\+S\+Eigual()}{LSEigual()}}
+{\footnotesize\ttfamily int L\+S\+Eigual (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$}]{lse1,  }\item[{\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$}]{lse2 }\end{DoxyParamCaption})}
+
+
+
+Retorna 1 se duas L\+SE são identicas. 
+
+A função \hyperlink{lse_8h_a7312566d42e1ebf660aa458dcff6338d}{L\+S\+Eigual()} é responsável por dizer se {\ttfamily lse1} e {\ttfamily lse2} são idênticas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lse1} & Lista 1 \\
+\hline
+{\em lse2} & L\+Ista 2\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily 1} se as listas forem idênticas, {\ttfamily 0} se as listas forem diferentes 
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lse_8h_a7312566d42e1ebf660aa458dcff6338d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lse_8h_ad18b386b8356075444b5703a7aeb4816}\label{lse_8h_ad18b386b8356075444b5703a7aeb4816}} 
+\index{lse.\+h@{lse.\+h}!parse\+L\+S\+Eto\+String@{parse\+L\+S\+Eto\+String}}
+\index{parse\+L\+S\+Eto\+String@{parse\+L\+S\+Eto\+String}!lse.\+h@{lse.\+h}}
+\subsubsection{\texorpdfstring{parse\+L\+S\+Eto\+String()}{parseLSEtoString()}}
+{\footnotesize\ttfamily char$\ast$ parse\+L\+S\+Eto\+String (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$}]{lista,  }\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Transforma uma L\+SE em uma string. 
+
+A função \hyperlink{lse_8h_ad18b386b8356075444b5703a7aeb4816}{parse\+L\+S\+Eto\+String()} é responsável por transformar uma L\+SE em uma string formatada. Seu formato é \char`\"{}\char`\"{}$<$termo; termo; termo; termo$>$".
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Lista que iremos transformar em string \\
+\hline
+{\em string} & Ponteiro para o local onde guardaremos a string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily $\ast$char} onde iremos guardar a string 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Não é necessário utilizar o retorno dessa função, já que ela já recebe o ponteiro pra string na qual ela será guardada como parâmetro. Ela é retornada apenas por convenção. 
+\end{DoxyNote}
+\mbox{\Hypertarget{lse_8h_a64b6200aec6744a6e0efb72212786248}\label{lse_8h_a64b6200aec6744a6e0efb72212786248}} 
+\index{lse.\+h@{lse.\+h}!printa\+L\+SE@{printa\+L\+SE}}
+\index{printa\+L\+SE@{printa\+L\+SE}!lse.\+h@{lse.\+h}}
+\subsubsection{\texorpdfstring{printa\+L\+S\+E()}{printaLSE()}}
+{\footnotesize\ttfamily void printa\+L\+SE (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$}]{lista,  }\item[{F\+I\+LE $\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Logging de informações sobre a lista. 
+
+A função \hyperlink{lse_8h_a64b6200aec6744a6e0efb72212786248}{printa\+L\+S\+E()} é responsável por printar em um arquivo, informações a respeito da lista. Essa informação é printada no formato \char`\"{}@$<$termo;termo;termo;...@$>$\char`\"{}.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Lista que iremos printar \\
+\hline
+{\em saida} & Arquivo no qual será printado a informação (pode ser passado stdout, para printar no terminal) \\
+\hline
+\end{DoxyParams}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{lse_8h_a64b6200aec6744a6e0efb72212786248_icgraph}
+\end{center}
+\end{figure}

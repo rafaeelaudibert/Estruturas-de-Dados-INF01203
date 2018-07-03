@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Analytics - Estrutura de Dados: Código-Fonte de struct.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Analytics - Estrutura de Dados
+   &#160;<span id="projectnumber">1.0.0-alpha</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">struct.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="struct_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef STRUCT_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define STRUCT_H_</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structlde.html">   17</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structlde.html">lde</a>{</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structlde.html#aa4e90ca99702bac9e1c78503ad86acba">   18</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structlde.html#aa4e90ca99702bac9e1c78503ad86acba">nome</a>[100]; </div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structlde.html#aa8a45bf920d47706309cd931134d5219">   19</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structlde.html#aa8a45bf920d47706309cd931134d5219">qtde</a>;  </div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structlde.html#a842cbaea6d55e782335dcad1a6992695">   20</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlde.html">lde</a> *<a class="code" href="structlde.html#a842cbaea6d55e782335dcad1a6992695">prox</a>; </div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structlde.html#a9533d032f1309656dcf523f30de08484">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlde.html">lde</a> *<a class="code" href="structlde.html#a9533d032f1309656dcf523f30de08484">ant</a>; </div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <a class="code" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structlse.html">   27</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structlse.html">lse</a>{</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structlse.html#a9df8ca8433f565cd387dd62ce6023a51">   28</a></span>&#160;    <span class="keywordtype">char</span> termo[100]; </div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structlse.html#af49f0d9ba8c6fde74ac1b0ffef3c992b">   29</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlse.html">lse</a> *<a class="code" href="structlse.html#af49f0d9ba8c6fde74ac1b0ffef3c992b">prox</a>; </div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <a class="code" href="struct_8h.html#a0d3de75d86bf1db6f749c91f755b870c">LSE</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structabp.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structabp.html">abp</a>{</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structabp.html#a2ca276b8f2f9e2a163dc0d9504e846c2">   42</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structabp.html#a2ca276b8f2f9e2a163dc0d9504e846c2">qtdeAcessos</a>; </div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structabp.html#aba05845525837a0260605d109242fb49">   43</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structabp.html#aba05845525837a0260605d109242fb49">qtdeTermos</a>; </div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structabp.html#a455687e406c855e366193f3ba638ed6d">   44</a></span>&#160;    <a class="code" href="structlse.html">LSE</a>* <a class="code" href="structabp.html#a455687e406c855e366193f3ba638ed6d">termos</a>; </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structabp.html#ac621929c65d21c284f2897d0dc34777c">   45</a></span>&#160;    <a class="code" href="structlde.html">LDE</a>* <a class="code" href="structabp.html#ac621929c65d21c284f2897d0dc34777c">cidades</a>; </div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structabp.html#aa1052089fda0e5ed652bbe60126de869">   47</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structabp.html">abp</a> *<a class="code" href="structabp.html#aa1052089fda0e5ed652bbe60126de869">esq</a>; </div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structabp.html#a68e9acbab0de7ab617165c904c98334f">   48</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structabp.html">abp</a> *<a class="code" href="structabp.html#a68e9acbab0de7ab617165c904c98334f">dir</a>; </div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <a class="code" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structdescritor.html">   58</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structdescritor.html">descritor</a>{</div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structdescritor.html#a523b6d27352566be093cada88aa655d4">   59</a></span>&#160;    <a class="code" href="structabp.html">Consulta</a>  *<a class="code" href="structdescritor.html#a523b6d27352566be093cada88aa655d4">arvore</a>; </div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structdescritor.html#a4f74c1b0743b541ef2b21dec4fa4da2e">   60</a></span>&#160;    <a class="code" href="structlde.html">LDE</a> *<a class="code" href="structdescritor.html#a4f74c1b0743b541ef2b21dec4fa4da2e">termos</a>; </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <a class="code" href="struct_8h.html#a1f5d65da7c19674431ada6dcf434b9ec">Info</a>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structs__qtd_cons.html">   70</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structs__qtd_cons.html">s_qtdCons</a></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> qtd;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="structlse.html">LSE</a>* termos;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <a class="code" href="struct_8h.html#a30e93d002c23d05f5d039449d6775eb6">Qtdcons</a>;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="struct_8h_html_a1f5d65da7c19674431ada6dcf434b9ec"><div class="ttname"><a href="struct_8h.html#a1f5d65da7c19674431ada6dcf434b9ec">Info</a></div><div class="ttdeci">struct descritor Info</div><div class="ttdoc">Estrutura principal do programa, responsável por guardar TODOS os dados. </div></div>
+<div class="ttc" id="struct_8h_html_a0d3de75d86bf1db6f749c91f755b870c"><div class="ttname"><a href="struct_8h.html#a0d3de75d86bf1db6f749c91f755b870c">LSE</a></div><div class="ttdeci">struct lse LSE</div><div class="ttdoc">Lista simplesmente encadeada. </div></div>
+<div class="ttc" id="struct_8h_html_a1664119ce88635d3bf4655a988ef8248"><div class="ttname"><a href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a></div><div class="ttdeci">struct abp Consulta</div><div class="ttdoc">Arvore binária. </div></div>
+<div class="ttc" id="structlse_html"><div class="ttname"><a href="structlse.html">lse</a></div><div class="ttdoc">Lista simplesmente encadeada. </div><div class="ttdef"><b>Definition:</b> struct.h:27</div></div>
+<div class="ttc" id="structdescritor_html"><div class="ttname"><a href="structdescritor.html">descritor</a></div><div class="ttdoc">Estrutura principal do programa, responsável por guardar TODOS os dados. </div><div class="ttdef"><b>Definition:</b> struct.h:58</div></div>
+<div class="ttc" id="structlde_html_aa4e90ca99702bac9e1c78503ad86acba"><div class="ttname"><a href="structlde.html#aa4e90ca99702bac9e1c78503ad86acba">lde::nome</a></div><div class="ttdeci">char nome[100]</div><div class="ttdef"><b>Definition:</b> struct.h:18</div></div>
+<div class="ttc" id="structlde_html_a9533d032f1309656dcf523f30de08484"><div class="ttname"><a href="structlde.html#a9533d032f1309656dcf523f30de08484">lde::ant</a></div><div class="ttdeci">struct lde * ant</div><div class="ttdef"><b>Definition:</b> struct.h:21</div></div>
+<div class="ttc" id="structabp_html"><div class="ttname"><a href="structabp.html">abp</a></div><div class="ttdoc">Arvore binária. </div><div class="ttdef"><b>Definition:</b> struct.h:41</div></div>
+<div class="ttc" id="structabp_html_a455687e406c855e366193f3ba638ed6d"><div class="ttname"><a href="structabp.html#a455687e406c855e366193f3ba638ed6d">abp::termos</a></div><div class="ttdeci">LSE * termos</div><div class="ttdef"><b>Definition:</b> struct.h:44</div></div>
+<div class="ttc" id="structdescritor_html_a523b6d27352566be093cada88aa655d4"><div class="ttname"><a href="structdescritor.html#a523b6d27352566be093cada88aa655d4">descritor::arvore</a></div><div class="ttdeci">Consulta * arvore</div><div class="ttdef"><b>Definition:</b> struct.h:59</div></div>
+<div class="ttc" id="structlse_html_af49f0d9ba8c6fde74ac1b0ffef3c992b"><div class="ttname"><a href="structlse.html#af49f0d9ba8c6fde74ac1b0ffef3c992b">lse::prox</a></div><div class="ttdeci">struct lse * prox</div><div class="ttdef"><b>Definition:</b> struct.h:29</div></div>
+<div class="ttc" id="structabp_html_ac621929c65d21c284f2897d0dc34777c"><div class="ttname"><a href="structabp.html#ac621929c65d21c284f2897d0dc34777c">abp::cidades</a></div><div class="ttdeci">LDE * cidades</div><div class="ttdef"><b>Definition:</b> struct.h:45</div></div>
+<div class="ttc" id="structabp_html_a68e9acbab0de7ab617165c904c98334f"><div class="ttname"><a href="structabp.html#a68e9acbab0de7ab617165c904c98334f">abp::dir</a></div><div class="ttdeci">struct abp * dir</div><div class="ttdef"><b>Definition:</b> struct.h:48</div></div>
+<div class="ttc" id="structlde_html"><div class="ttname"><a href="structlde.html">lde</a></div><div class="ttdoc">Lista duplamente encadeada. </div><div class="ttdef"><b>Definition:</b> struct.h:17</div></div>
+<div class="ttc" id="structabp_html_a2ca276b8f2f9e2a163dc0d9504e846c2"><div class="ttname"><a href="structabp.html#a2ca276b8f2f9e2a163dc0d9504e846c2">abp::qtdeAcessos</a></div><div class="ttdeci">int qtdeAcessos</div><div class="ttdef"><b>Definition:</b> struct.h:42</div></div>
+<div class="ttc" id="structabp_html_aba05845525837a0260605d109242fb49"><div class="ttname"><a href="structabp.html#aba05845525837a0260605d109242fb49">abp::qtdeTermos</a></div><div class="ttdeci">int qtdeTermos</div><div class="ttdef"><b>Definition:</b> struct.h:43</div></div>
+<div class="ttc" id="structlde_html_aa8a45bf920d47706309cd931134d5219"><div class="ttname"><a href="structlde.html#aa8a45bf920d47706309cd931134d5219">lde::qtde</a></div><div class="ttdeci">int qtde</div><div class="ttdef"><b>Definition:</b> struct.h:19</div></div>
+<div class="ttc" id="struct_8h_html_a30e93d002c23d05f5d039449d6775eb6"><div class="ttname"><a href="struct_8h.html#a30e93d002c23d05f5d039449d6775eb6">Qtdcons</a></div><div class="ttdeci">struct s_qtdCons Qtdcons</div><div class="ttdoc">Estrutura utilizada para guardar uma LSE e um valor numérico arbitrário. </div></div>
+<div class="ttc" id="struct_8h_html_ae030205799002e4fc414e374283d8598"><div class="ttname"><a href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a></div><div class="ttdeci">struct lde LDE</div><div class="ttdoc">Lista duplamente encadeada. </div></div>
+<div class="ttc" id="structs__qtd_cons_html"><div class="ttname"><a href="structs__qtd_cons.html">s_qtdCons</a></div><div class="ttdoc">Estrutura utilizada para guardar uma LSE e um valor numérico arbitrário. </div><div class="ttdef"><b>Definition:</b> struct.h:70</div></div>
+<div class="ttc" id="structabp_html_aa1052089fda0e5ed652bbe60126de869"><div class="ttname"><a href="structabp.html#aa1052089fda0e5ed652bbe60126de869">abp::esq</a></div><div class="ttdeci">struct abp * esq</div><div class="ttdef"><b>Definition:</b> struct.h:47</div></div>
+<div class="ttc" id="structlde_html_a842cbaea6d55e782335dcad1a6992695"><div class="ttname"><a href="structlde.html#a842cbaea6d55e782335dcad1a6992695">lde::prox</a></div><div class="ttdeci">struct lde * prox</div><div class="ttdef"><b>Definition:</b> struct.h:20</div></div>
+<div class="ttc" id="structdescritor_html_a4f74c1b0743b541ef2b21dec4fa4da2e"><div class="ttname"><a href="structdescritor.html#a4f74c1b0743b541ef2b21dec4fa4da2e">descritor::termos</a></div><div class="ttdeci">LDE * termos</div><div class="ttdef"><b>Definition:</b> struct.h:60</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Analytics - Estrutura de Dados: Código-Fonte de benchmark.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Analytics - Estrutura de Dados
+   &#160;<span id="projectnumber">1.0.0-alpha</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">benchmark.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="benchmark_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct_8h.html">struct.h</a>&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef BENCHMARK_H</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define BENCHMARK_H</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<a class="code" href="structdescritor.html">Info</a>* <a class="code" href="benchmark_8h.html#a052cafc2d6cd429354bf898787b124c5">infoBenchmark</a>(<a class="code" href="structdescritor.html">Info</a>*(*<span class="keyword">function</span>)(FILE*), FILE* entrada);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="benchmark_8h.html#ac01505244d5cb5d97b243b11d79be624">operacoesBenchmark</a>(<span class="keywordtype">int</span>(*<span class="keyword">function</span>)(FILE*, FILE*, <a class="code" href="structdescritor.html">Info</a>*), FILE* operacoes, FILE* saida, <a class="code" href="structdescritor.html">Info</a>* dados);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif // BENCHMARK_H</span></div><div class="ttc" id="structdescritor_html"><div class="ttname"><a href="structdescritor.html">descritor</a></div><div class="ttdoc">Estrutura principal do programa, responsável por guardar TODOS os dados. </div><div class="ttdef"><b>Definition:</b> struct.h:58</div></div>
+<div class="ttc" id="benchmark_8h_html_ac01505244d5cb5d97b243b11d79be624"><div class="ttname"><a href="benchmark_8h.html#ac01505244d5cb5d97b243b11d79be624">operacoesBenchmark</a></div><div class="ttdeci">void operacoesBenchmark(int(*function)(FILE *, FILE *, Info *), FILE *operacoes, FILE *saida, Info *dados)</div><div class="ttdoc">Benchmark da saida de dados. </div><div class="ttdef"><b>Definition:</b> benchmark.c:52</div></div>
+<div class="ttc" id="struct_8h_html"><div class="ttname"><a href="struct_8h.html">struct.h</a></div><div class="ttdoc">Arquivo que contém as estruturas utilizadas no programa. </div></div>
+<div class="ttc" id="benchmark_8h_html_a052cafc2d6cd429354bf898787b124c5"><div class="ttname"><a href="benchmark_8h.html#a052cafc2d6cd429354bf898787b124c5">infoBenchmark</a></div><div class="ttdeci">Info * infoBenchmark(Info *(*function)(FILE *), FILE *entrada)</div><div class="ttdoc">Benchmark da entrada de dados. </div><div class="ttdef"><b>Definition:</b> benchmark.c:9</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

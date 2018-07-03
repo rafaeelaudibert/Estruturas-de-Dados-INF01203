@@ -5,13 +5,8 @@
 #include "lse.h"
 #include "lde.h"
 
-/// Função que encontra e coloca no arquivo as consultas mais realizadas em determinada cidade
-/// Se for passado 0 como qtdConsultas, escreve no arquivo todas consultas realizadas naquela localidade
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         char*               ->  Localidade desejada
-///         int*                ->  Quantidade de consultas que devem ser escritas no arquivo
-///         FILE*               ->  Arquivo onde será esctito o resultado
+// Função que encontra e coloca no arquivo as consultas mais realizadas em determinada cidade
+// Se for passado 0 como qtdConsultas, escreve no arquivo todas consultas realizadas naquela localidade
 void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas, FILE* saida)
 {
 
@@ -29,9 +24,10 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas, FI
     //copia todas as quantidades de acesso de cada consulta da arvore pra um vetor qtdCons
     contador = achaVetorRepsLocalidade(arvore, vetor, contador, cidade, qtdCons);
 
-    //bubble sort que ordena o vetor de qtdCons com duas regras:
-    //1 por quantidade de aparições da consulta
-    //2 por ordem alfabetica da consulta
+    //bubble sort modificado (não necessariamente para melhor) que ordena o vetor de qtdCons com duas regras, sendo que,
+    //a primeira tem precedencia sobre a segunda:
+    //1. quantidade de aparições da consulta
+    //2. ordem alfabetica da consulta
     for(i=0; i<TAM_VET && (qtdCons+i)->termos != NULL; i++)
     {
         //transforma a lista de termos a ser comparada em string strParse1
@@ -70,14 +66,8 @@ void consultasPorLocalidade(Consulta* arvore, char* cidade, int qtdConsultas, FI
 
 
 
-/// Função que retorna as consultas mais consultadas em todo o arquivo
-/// Se for passado 0 como qtdConsultas, retorna todas as consultas realizadas
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         int*                ->  Quantidade de consultas que devem ser escritas no arquivo
-///         FILE*               ->  Arquivo onde será esctito o resultado
-/// OUTPUT:
-///         Consulta*           ->  Vetor no qual estão armazenadas as consultas ordenadas
+// Função que retorna as consultas mais consultadas em todo o arquivo
+// Se for passado 0 como qtdConsultas, retorna todas as consultas realizadas
 int consultasArquivo(Consulta* arvore, Consulta retorno[TAM_VET], int qtdConsultas)
 {
     Consulta aux;
@@ -157,14 +147,8 @@ int consultasArquivo(Consulta* arvore, Consulta retorno[TAM_VET], int qtdConsult
 
 
 
-/// Função que retorna os termos mais consultados em uma determinada localidade
-/// Se for passado 0 como qtdConsultas, retorna todas as consultas realizadas naquela localidade
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         char*               ->  Localidade desejada
-///         int*                ->  Quantidade de termos que devem ser retornados
-/// OUTPUT:
-///         LDE*                ->  Lista duplamente encadeada contendo os qtdTermos termos mais pesquisados nessa localidade
+// Função que retorna os termos mais consultados em uma determinada localidade
+// Se for passado 0 como qtdConsultas, retorna todas as consultas realizadas naquela localidade
 LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[])
 {
     int quantidade;
@@ -192,13 +176,7 @@ LDE* termosPorLocalidade(Consulta* arvore, LDE *lista, char cidade[])
 
 
 
-/// Função que retorna os termos mais consultados em todo o arquivo
-/// Se for passado 0 como qtdConsultas, retorna todas as consultas realizadas
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         int*                ->  Quantidade de termos que devem ser retornados
-/// OUTPUT:
-///         LDE*                ->  Lista duplamente encadeada contendo os qtdTermos termos mais pesquisados
+// Função que retorna os termos mais consultados em todo o arquivo
 LDE* termosArquivo(LDE* listaTermos)
 {
     return listaTermos;
@@ -206,66 +184,9 @@ LDE* termosArquivo(LDE* listaTermos)
 
 
 
-/// Função que retorna os termos mais consultados em determinada localidade
-/// Se for passado 0 como qtdConsultas, retorna todas as consultas realizadas na localidade
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         int*                ->  Quantidade de termos que devem ser retornados
-///         char*               ->  Localidade desejada
-/// OUTPUT:
-///         LDE*                ->  Lista duplamente encadeada contendo os qtdTermos termos mais pesquisados
-LDE* termosArquivoLocalidade(LDE* listaTermos, int qtdTermos, char* localidade)
-{
-    int i;
-    LDE *listaRetorno, *novo, *auxiliar;
-
-    if(qtdTermos == 0)
-    {
-        listaRetorno = listaTermos;
-    }
-    else
-    {
-        // Cria o primeiro nodo
-        novo = (LDE*)malloc(sizeof(LDE));
-        novo->ant = NULL;
-        novo->prox = NULL;
-        novo->qtde = listaTermos->qtde;
-        strcpy(novo->nome, listaTermos->nome);
-        listaRetorno = novo;
-
-        // Seta o auxiliar
-        auxiliar = listaRetorno;
-
-        // Insiro os qtdTermos - 1 nodos restantes
-        for(i=1, listaTermos = listaTermos->prox; i<qtdTermos; i++, auxiliar=novo, listaTermos = listaTermos->prox)
-        {
-            if (listaTermos == NULL) // Ja passei a lista inteira
-                break;
-
-            // Cria o nodo
-            novo = (LDE*)malloc(sizeof(LDE));
-            novo->ant = auxiliar;
-            novo->prox = NULL;
-            novo->qtde = listaTermos->qtde;
-            strcpy(novo->nome, listaTermos->nome);
-            auxiliar->prox = novo;
-        }
-    }
-    return listaRetorno;
-}
-
-
-
-
-/// Função que retorna a média do tamanho das consultas realizadas em uma determinada localidade
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         char*               -> Localidade desejada
-/// OUTPUT:
-///         int                 -> Média de tamanho das consultas da localidade
+// Função que retorna a média do tamanho das consultas realizadas em uma determinada localidade
 int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade)
 {
-
     int totalTermos = 0, totalConsultas = 0;
 
     // Função auxiliar que vai contar o total de termos e o total de consultas;
@@ -279,14 +200,9 @@ int mediaTamanhoConsultasLocalidade(Consulta* arvore, char* cidade)
 
 
 
-/// Função que retorna a média do tamanho das consultas realizadas em todo o arquivo
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-/// OUTPUT:
-///         int                 -> Média de tamanho das consultas do arquivo
+// Função que retorna a média do tamanho das consultas realizadas em todo o arquivo
 int mediaTamanhoConsultasArquivo(Consulta* arvore)
 {
-
     int totalTermos = 0, totalConsultas = 0;
 
     // Função auxiliar que vai contar o total de termos e o total de consultas;
@@ -301,26 +217,19 @@ int mediaTamanhoConsultasArquivo(Consulta* arvore)
 
 
 
-///--------------------------------------------------------------------------------------------------------------
-///--------------------------------------------------------------------------------------------------------------
-///--------------------------------------------------------------------------------------------------------------
-/**>                                    FUNÇÕES AUXILIARES                                                    <*/
-///--------------------------------------------------------------------------------------------------------------
-///--------------------------------------------------------------------------------------------------------------
-///--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+/*                                      FUNÇÕES AUXILIARES                                                     */
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
 
 
 
 
 
-/// Função que encontra as repetições de uma consulta por localidade
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         int*                ->  Contador de posições do vetor
-///         char*               ->  Localidade desejada
-///         qtdCons*            ->  Vetor de repetições de cada consulta
-/// OUTPUT
-///         qtdCons*            ->  Vetor de repetições de cada consulta devidamente preenchido
+// Função que encontra as repetições de uma consulta por localidade
 int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *cidade, Qtdcons *qtdCons)
 {
     if(arvore == NULL)
@@ -356,13 +265,7 @@ int achaVetorRepsLocalidade(Consulta* arvore, int *vetor, int contador, char *ci
 }
 
 
-/// Copia a quantidade de acessos de cada nodo da arvore pra posições de um vetor
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         int*                ->  vetor onde sera armazenado as quantidades
-///         int                 ->  posição do vetor, pra recursividade
-/// OUTPUT:
-///         int*                ->  Vetor com todas as quantidades de acesso
+// Copia a quantidade de acessos de cada nodo da arvore pra posições de um vetor
 int achaVetorReps(Consulta* arvore, int *vetor, int contador)
 {
     if(arvore == NULL)
@@ -382,14 +285,8 @@ int achaVetorReps(Consulta* arvore, int *vetor, int contador)
     return contador;
 }
 
-/// Copia os nodos das arvore de consultas para a arvore de retorno utilizando o vetor ordenado
-/// de quantidade de acessos de cada nodo;
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         int*                ->  vetor onde sera armazenado as quantidades
-///         int                 ->  posição do vetor, pra recursividade
-/// OUTPUT:
-///         int*                ->  Vetor com todas as quantidades de acesso
+// Copia os nodos das arvore de consultas para a arvore de retorno utilizando o vetor ordenado
+// de quantidade de acessos de cada nodo;
 int copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int pos, int vezesRep)
 {
     if(arvore == NULL)
@@ -425,13 +322,7 @@ int copiaArvore(Consulta* arvore, Consulta* retorno, int *vetor, int qtd, int po
 
 
 
-/// Calcula a quantidade total de consultas e a quantidade total de termos
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         int*                ->  Ponteiro para int que armazena o total de termos
-///         int*                ->  Ponteiro para int que armazena o total de consultas
-/// OUTPUT:
-///         int                 -> Média de tamanho das consultas do arquivo
+// Calcula a quantidade total de consultas e a quantidade total de termos
 void auxiliarMediaTamanhoConsultasArquivo(Consulta *arvore, int *totTermos, int *totConsultas)
 {
 
@@ -448,13 +339,7 @@ void auxiliarMediaTamanhoConsultasArquivo(Consulta *arvore, int *totTermos, int 
 }
 
 
-/// Quick sort de vetores int genericos
-/// INPUT:
-///         int*                ->  Vetor
-///         int*                ->  Esquerda
-///         int*                ->  Direita
-/// OUTPUT:
-///         int*                ->  Vetor organizado
+// Quick sort de vetores int genericos
 void quick_sort(int *a, int left, int right)
 {
     int i, j, x, y;
@@ -494,13 +379,7 @@ void quick_sort(int *a, int left, int right)
 
 }
 
-/// Insere termos de uma LSE em uma segunda lista
-/// INPUT:
-///         LDE*                ->  Lista de cidades
-///         LSE*                ->  Lista com termos
-///         int*                ->  quantidade a ser inserida
-/// OUTPUT:
-///         LDE*                ->  Lista de cidades
+// Insere termos de uma LSE em uma LDE
 LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde)
 {
     while(termos)
@@ -512,12 +391,7 @@ LDE* insereTermosNodo(LDE *lista, LSE* termos, int qtde)
 }
 
 
-/// Função que 1 ou 0 se uma cidade estiver ou nao em uma lista, respectivamente
-/// INPUT:
-///         char                -> string da cidade
-///         LDE*                -> lista de cidades
-/// OUTPUT:
-///         int                 -> 1 sim, 0 nao
+// Função que retorna a quantidade de vezes que a cidade aparece ou 0 se uma cidade estiver ou nao em uma lista, respectivamente
 int temCidadeNaLista(char* cidade, LDE* lista)
 {
     LDE* auxiliar = lista;
@@ -541,14 +415,7 @@ int temCidadeNaLista(char* cidade, LDE* lista)
 
 
 
-/// Calcula a quantidade total de consultas e a quantidade total de termos em uma localidade
-/// INPUT:
-///         Consulta*           ->  Árvore na qual estão armazenadas as consultas
-///         int*                ->  Ponteiro para int que armazena o total de termos
-///         int*                ->  Ponteiro para int que armazena o total de consultas
-///         char*               ->  String da localidade
-/// OUTPUT:
-///         int                 -> Média de tamanho das consultas do arquivo
+// Calcula a quantidade total de consultas e a quantidade total de termos em uma localidade
 void auxiliarMediaTamanhoConsultasLocalidade(Consulta *arvore, int *totTermos, int *totConsultas, char* cidade)
 {
 

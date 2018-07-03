@@ -1,0 +1,141 @@
+\hypertarget{arvore_8h}{}\section{Referência ao ficheiro arvore.\+h}
+\label{arvore_8h}\index{arvore.\+h@{arvore.\+h}}
+
+
+Arquivo que contém funções relacionadas a manipulação de dados em arvores.  
+
+
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para arvore.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{arvore_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{arvore_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{arvore_8h_ae96f9f744c128760057a81b62848b43a}\label{arvore_8h_ae96f9f744c128760057a81b62848b43a}} 
+\#define {\bfseries Q\+T\+D\+\_\+\+T\+E\+R\+M\+OS}~1
+\item 
+\mbox{\Hypertarget{arvore_8h_a0b936c34e70da9e8b744011a6b0ec96a}\label{arvore_8h_a0b936c34e70da9e8b744011a6b0ec96a}} 
+\#define {\bfseries Q\+T\+D\+\_\+\+A\+C\+E\+S\+S\+OS}~2
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$ \hyperlink{arvore_8h_a3c7a20806dec140adf9462f60415012f}{cria\+Arvore} ()
+\begin{DoxyCompactList}\small\item\em Cria árvore. \end{DoxyCompactList}\item 
+\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$ \hyperlink{arvore_8h_a78da70932bd92e6ffa4af27cb59690f9}{insere\+Nodo\+Arvore} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, \hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$lista\+Termos, int qtd\+Termos, char $\ast$cidade)
+\begin{DoxyCompactList}\small\item\em Insere um nodo na árvore. \end{DoxyCompactList}\item 
+int \hyperlink{arvore_8h_a2216ac9a9960b66516e537015a3f26f7}{percorre\+Arvore} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$nodo, int nivel)
+\begin{DoxyCompactList}\small\item\em Logging de informações sobre uma árvore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém funções relacionadas a manipulação de dados em arvores. 
+
+\begin{DoxyAuthor}{Autor}
+Rafael Baldasso Audibert 
+
+Augusto Zanella Bardini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+11 Jul 2018 
+\end{DoxyDate}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{arvore_8h_a3c7a20806dec140adf9462f60415012f}\label{arvore_8h_a3c7a20806dec140adf9462f60415012f}} 
+\index{arvore.\+h@{arvore.\+h}!cria\+Arvore@{cria\+Arvore}}
+\index{cria\+Arvore@{cria\+Arvore}!arvore.\+h@{arvore.\+h}}
+\subsubsection{\texorpdfstring{cria\+Arvore()}{criaArvore()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta}$\ast$ cria\+Arvore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria árvore. 
+
+A função \hyperlink{arvore_8h_a3c7a20806dec140adf9462f60415012f}{cria\+Arvore()} cria uma arvore vazia. \begin{DoxyReturn}{Retorna}
+{\ttfamily N\+U\+LL} sempre é retornado. 
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{arvore_8h_a3c7a20806dec140adf9462f60415012f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{arvore_8h_a78da70932bd92e6ffa4af27cb59690f9}\label{arvore_8h_a78da70932bd92e6ffa4af27cb59690f9}} 
+\index{arvore.\+h@{arvore.\+h}!insere\+Nodo\+Arvore@{insere\+Nodo\+Arvore}}
+\index{insere\+Nodo\+Arvore@{insere\+Nodo\+Arvore}!arvore.\+h@{arvore.\+h}}
+\subsubsection{\texorpdfstring{insere\+Nodo\+Arvore()}{insereNodoArvore()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta}$\ast$ insere\+Nodo\+Arvore (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$}]{lista\+Termos,  }\item[{int}]{qtd\+Termos,  }\item[{char $\ast$}]{cidade }\end{DoxyParamCaption})}
+
+
+
+Insere um nodo na árvore. 
+
+A função \hyperlink{arvore_8h_a78da70932bd92e6ffa4af27cb59690f9}{insere\+Nodo\+Arvore()} é responsável por inserir um nodo na árvore (ou incrementar ou contador, caso o nodo já exista) 
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Árvore na qual será inserido o novo nodo \\
+\hline
+{\em lista\+Termos} & Lista dos termos que esse novo nodo irá conter (consulta) \\
+\hline
+{\em qtd\+Termos} & Tamanho da {\ttfamily lista\+Termos} \\
+\hline
+{\em cidade} & String com o nome da cidade na qual foi realizada a consulta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily $\ast$\+Consulta} contendo a arvore recebida, com a adição/incrementação do novo nodo. 
+\end{DoxyReturn}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{arvore_8h_a78da70932bd92e6ffa4af27cb59690f9_cgraph}
+\end{center}
+\end{figure}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{arvore_8h_a78da70932bd92e6ffa4af27cb59690f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{arvore_8h_a2216ac9a9960b66516e537015a3f26f7}\label{arvore_8h_a2216ac9a9960b66516e537015a3f26f7}} 
+\index{arvore.\+h@{arvore.\+h}!percorre\+Arvore@{percorre\+Arvore}}
+\index{percorre\+Arvore@{percorre\+Arvore}!arvore.\+h@{arvore.\+h}}
+\subsubsection{\texorpdfstring{percorre\+Arvore()}{percorreArvore()}}
+{\footnotesize\ttfamily int percorre\+Arvore (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{nodo,  }\item[{int}]{nivel }\end{DoxyParamCaption})}
+
+
+
+Logging de informações sobre uma árvore. 
+
+A função \hyperlink{arvore_8h_a2216ac9a9960b66516e537015a3f26f7}{percorre\+Arvore()} é responsável por printar na tela do terminal, informações a respeito de cada nodo da árvore 
+\begin{DoxyParams}{Parâmetros}
+{\em nodo} & Nodo inicial da árvore \\
+\hline
+{\em nivel} & Valor inicial para o nível da árvore (Para satisfazer ambas convenções de nível inicial = 0 ou 1)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Altura da arvore -\/ 1 + {\ttfamily nivel} 
+\end{DoxyReturn}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{arvore_8h_a2216ac9a9960b66516e537015a3f26f7_cgraph}
+\end{center}
+\end{figure}

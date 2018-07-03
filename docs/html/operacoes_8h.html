@@ -1,0 +1,886 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Analytics - Estrutura de Dados: Referência ao ficheiro operacoes.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Analytics - Estrutura de Dados
+   &#160;<span id="projectnumber">1.0.0-alpha</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro operacoes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arquivo que contém funções executadas durante a leitura do arquivo de operacoes.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="struct_8h_source.html">struct.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para operacoes.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h__incl.png" border="0" usemap="#operacoes_8h" alt=""/></div>
+<map name="operacoes_8h" id="operacoes_8h">
+<area shape="rect" id="node2" href="struct_8h.html" title="Arquivo que contém as estruturas utilizadas no programa. " alt="" coords="21,80,91,107"/>
+</map>
+</div>
+</div>
+<p><a href="operacoes_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a225c23d35d36fa87cd1a055c47d5b00b"><td class="memItemLeft" align="right" valign="top"><a id="a225c23d35d36fa87cd1a055c47d5b00b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TAM_VET</b>&#160;&#160;&#160;11000</td></tr>
+<tr class="separator:a225c23d35d36fa87cd1a055c47d5b00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a51685935591ec37d31c3a5600fe3f721"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a51685935591ec37d31c3a5600fe3f721">consultasPorLocalidade</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, char *cidade, int qtdConsultas, FILE *saida)</td></tr>
+<tr class="memdesc:a51685935591ec37d31c3a5600fe3f721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontra e escreve em um arquivo as consultas mais realizadas em uma dada cidade.  <a href="#a51685935591ec37d31c3a5600fe3f721">Mais...</a><br /></td></tr>
+<tr class="separator:a51685935591ec37d31c3a5600fe3f721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a561e45bc2d18732cb0d4d8ebc678b82a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a561e45bc2d18732cb0d4d8ebc678b82a">consultasArquivo</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, <a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> retorno[], int qtdConsultas)</td></tr>
+<tr class="memdesc:a561e45bc2d18732cb0d4d8ebc678b82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontra as consultas mais realizadas em todo o arquivo.  <a href="#a561e45bc2d18732cb0d4d8ebc678b82a">Mais...</a><br /></td></tr>
+<tr class="separator:a561e45bc2d18732cb0d4d8ebc678b82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8375d33a9e2f1d5a7fa40eadbfd59ad3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a8375d33a9e2f1d5a7fa40eadbfd59ad3">termosPorLocalidade</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, <a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *lista, char cidade[])</td></tr>
+<tr class="memdesc:a8375d33a9e2f1d5a7fa40eadbfd59ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontra os termos consultados em uma localidade.  <a href="#a8375d33a9e2f1d5a7fa40eadbfd59ad3">Mais...</a><br /></td></tr>
+<tr class="separator:a8375d33a9e2f1d5a7fa40eadbfd59ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac04e2f9df7f7b0f31c80a7aa7f76297d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#ac04e2f9df7f7b0f31c80a7aa7f76297d">termosArquivo</a> (<a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *listaTermos)</td></tr>
+<tr class="memdesc:ac04e2f9df7f7b0f31c80a7aa7f76297d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontra os termos consultados em um arquivo.  <a href="#ac04e2f9df7f7b0f31c80a7aa7f76297d">Mais...</a><br /></td></tr>
+<tr class="separator:ac04e2f9df7f7b0f31c80a7aa7f76297d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a89b388688c0c63b01d94d527c3ec88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a0a89b388688c0c63b01d94d527c3ec88">mediaTamanhoConsultasLocalidade</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, char *cidade)</td></tr>
+<tr class="memdesc:a0a89b388688c0c63b01d94d527c3ec88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a média do tamanho das consultas realizadas em uma cidade.  <a href="#a0a89b388688c0c63b01d94d527c3ec88">Mais...</a><br /></td></tr>
+<tr class="separator:a0a89b388688c0c63b01d94d527c3ec88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc720731dce4781dfd389ee245f3821"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#abfc720731dce4781dfd389ee245f3821">mediaTamanhoConsultasArquivo</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore)</td></tr>
+<tr class="memdesc:abfc720731dce4781dfd389ee245f3821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a média do tamanho das consultas realizadas em todo o arquivo.  <a href="#abfc720731dce4781dfd389ee245f3821">Mais...</a><br /></td></tr>
+<tr class="separator:abfc720731dce4781dfd389ee245f3821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe0890a6b92b76e2651aed7326988ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a4fe0890a6b92b76e2651aed7326988ad">insereTermosNodo</a> (<a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *lista, <a class="el" href="struct_8h.html#a0d3de75d86bf1db6f749c91f755b870c">LSE</a> *termos, int qtde)</td></tr>
+<tr class="memdesc:a4fe0890a6b92b76e2651aed7326988ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatena todos os termos de uma LSE em uma LDE.  <a href="#a4fe0890a6b92b76e2651aed7326988ad">Mais...</a><br /></td></tr>
+<tr class="separator:a4fe0890a6b92b76e2651aed7326988ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c8115288084f240afe157a2d62c433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#ad5c8115288084f240afe157a2d62c433">auxiliarMediaTamanhoConsultasArquivo</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, int *totTermos, int *totConsultas)</td></tr>
+<tr class="memdesc:ad5c8115288084f240afe157a2d62c433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a quantidade total de consultas e a quantidade total de termos no arquivo.  <a href="#ad5c8115288084f240afe157a2d62c433">Mais...</a><br /></td></tr>
+<tr class="separator:ad5c8115288084f240afe157a2d62c433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00195a3339794084b2ceb879da73642e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a00195a3339794084b2ceb879da73642e">auxiliarMediaTamanhoConsultasLocalidade</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, int *totTermos, int *totConsultas, char *cidade)</td></tr>
+<tr class="memdesc:a00195a3339794084b2ceb879da73642e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a quantidade total de consultas e a quantidade total de termos em uma dada cidade.  <a href="#a00195a3339794084b2ceb879da73642e">Mais...</a><br /></td></tr>
+<tr class="separator:a00195a3339794084b2ceb879da73642e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af226df14ca18acf9c3de7d605004d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a3af226df14ca18acf9c3de7d605004d5">temCidadeNaLista</a> (char *cidade, <a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *lista)</td></tr>
+<tr class="memdesc:a3af226df14ca18acf9c3de7d605004d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a "quantidade" de vezes que um termo aparece em uma LDE.  <a href="#a3af226df14ca18acf9c3de7d605004d5">Mais...</a><br /></td></tr>
+<tr class="separator:a3af226df14ca18acf9c3de7d605004d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8679d0e9fceefc34588b098a6f3e235a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a8679d0e9fceefc34588b098a6f3e235a">achaVetorReps</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, int *vetor, int contador)</td></tr>
+<tr class="memdesc:a8679d0e9fceefc34588b098a6f3e235a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia a quantidade de acessos de cada nodo da arvore pra posições de um vetor.  <a href="#a8679d0e9fceefc34588b098a6f3e235a">Mais...</a><br /></td></tr>
+<tr class="separator:a8679d0e9fceefc34588b098a6f3e235a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31658a0ce4d50f633b73cc410753ed58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a31658a0ce4d50f633b73cc410753ed58">achaVetorRepsLocalidade</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, int *vetor, int contador, char *cidade, <a class="el" href="struct_8h.html#a30e93d002c23d05f5d039449d6775eb6">Qtdcons</a> *qtdCons)</td></tr>
+<tr class="memdesc:a31658a0ce4d50f633b73cc410753ed58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontra as repetições de uma consulta por localidade.  <a href="#a31658a0ce4d50f633b73cc410753ed58">Mais...</a><br /></td></tr>
+<tr class="separator:a31658a0ce4d50f633b73cc410753ed58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670217d6418d7f242b8529dc3a07eefa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#a670217d6418d7f242b8529dc3a07eefa">copiaArvore</a> (<a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *arvore, <a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *retorno, int *vetor, int qtd, int pos, int vezesRep)</td></tr>
+<tr class="memdesc:a670217d6418d7f242b8529dc3a07eefa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia uma arvore para a outra, de maneira ordenada.  <a href="#a670217d6418d7f242b8529dc3a07eefa">Mais...</a><br /></td></tr>
+<tr class="separator:a670217d6418d7f242b8529dc3a07eefa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe9eba415b4b21ad403b5dff86c83a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8h.html#aabe9eba415b4b21ad403b5dff86c83a4">quick_sort</a> (int *a, int left, int right)</td></tr>
+<tr class="memdesc:aabe9eba415b4b21ad403b5dff86c83a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quick sort de vetores int genéricos.  <a href="#aabe9eba415b4b21ad403b5dff86c83a4">Mais...</a><br /></td></tr>
+<tr class="separator:aabe9eba415b4b21ad403b5dff86c83a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Arquivo que contém funções executadas durante a leitura do arquivo de operacoes. </p>
+<dl class="section author"><dt>Autor</dt><dd>Rafael Baldasso Audibert </dd>
+<dd>
+Augusto Zanella Bardini </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>11 Jul 2018 </dd></dl>
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a8679d0e9fceefc34588b098a6f3e235a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8679d0e9fceefc34588b098a6f3e235a">&#9670;&nbsp;</a></span>achaVetorReps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int achaVetorReps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>vetor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>contador</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copia a quantidade de acessos de cada nodo da arvore pra posições de um vetor. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a8679d0e9fceefc34588b098a6f3e235a" title="Copia a quantidade de acessos de cada nodo da arvore pra posições de um vetor. ">achaVetorReps()</a> recebe uma arvore, e pra cada nodo dessa árvore encontrado recursivamente, copia a quantidade de acessos dele para um vetor</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore que contem as informações a serem inseridas em vetor </td></tr>
+    <tr><td class="paramname">vetor</td><td>Vetor com as quantidades de consultas realizadas. </td></tr>
+    <tr><td class="paramname">contador</td><td>Conta em qual posição de <code>vetor</code> será inserido a quantidade </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int</code> Quantidade de consultas encontradas </dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Essa função é uma função auxiliar para <a class="el" href="operacoes_8h.html#a561e45bc2d18732cb0d4d8ebc678b82a" title="Encontra as consultas mais realizadas em todo o arquivo. ">consultasArquivo()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a31658a0ce4d50f633b73cc410753ed58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31658a0ce4d50f633b73cc410753ed58">&#9670;&nbsp;</a></span>achaVetorRepsLocalidade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int achaVetorRepsLocalidade </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>vetor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>contador</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cidade</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a30e93d002c23d05f5d039449d6775eb6">Qtdcons</a> *&#160;</td>
+          <td class="paramname"><em>qtdCons</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encontra as repetições de uma consulta por localidade. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a31658a0ce4d50f633b73cc410753ed58" title="Encontra as repetições de uma consulta por localidade. ">achaVetorRepsLocalidade()</a> recebe uma estrutura especial, criada somente para ela, fazendo com que ela coloque em um vetor, todas as consultas realizadas em uma cidade.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore que contem as informações a serem inseridas em vetor </td></tr>
+    <tr><td class="paramname">vetor</td><td>Vetor com as quantidades de consultas realizadas. </td></tr>
+    <tr><td class="paramname">contador</td><td>Conta em qual posição de <code>vetor</code> será inserido a quantidade </td></tr>
+    <tr><td class="paramname">cidade</td><td>Cidade a qual estamos procurando as consultas </td></tr>
+    <tr><td class="paramname">qtdCons</td><td>Vetor de QtdCons onde serão guardados as consultas e sua quantidade </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int</code> Quantidade de consultas encontradas </dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Essa função é uma função auxiliar para <a class="el" href="operacoes_8h.html#a51685935591ec37d31c3a5600fe3f721" title="Encontra e escreve em um arquivo as consultas mais realizadas em uma dada cidade. ...">consultasPorLocalidade()</a> </dd></dl>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_a31658a0ce4d50f633b73cc410753ed58_cgraph.png" border="0" usemap="#operacoes_8h_a31658a0ce4d50f633b73cc410753ed58_cgraph" alt=""/></div>
+<map name="operacoes_8h_a31658a0ce4d50f633b73cc410753ed58_cgraph" id="operacoes_8h_a31658a0ce4d50f633b73cc410753ed58_cgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#a3af226df14ca18acf9c3de7d605004d5" title="Retorna a &quot;quantidade&quot; de vezes que um termo aparece em uma LDE. " alt="" coords="239,5,379,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad5c8115288084f240afe157a2d62c433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c8115288084f240afe157a2d62c433">&#9670;&nbsp;</a></span>auxiliarMediaTamanhoConsultasArquivo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void auxiliarMediaTamanhoConsultasArquivo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>totTermos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>totConsultas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula a quantidade total de consultas e a quantidade total de termos no arquivo. </p>
+<p>A função <a class="el" href="operacoes_8h.html#ad5c8115288084f240afe157a2d62c433" title="Calcula a quantidade total de consultas e a quantidade total de termos no arquivo. ">auxiliarMediaTamanhoConsultasArquivo()</a> varre uma arvore buscando a quantidade total de consultas assim como a quantidade total de termos que possuem naquela arvore.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore a ser varrida </td></tr>
+    <tr><td class="paramname">totTermos</td><td>Ponteiro para um inteiro que armazena a quantidade total de termos na árvore </td></tr>
+    <tr><td class="paramname">totConsultas</td><td>Ponteiro para um inteiro que armazena a quantidade total de consultas na árvore </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Nota</dt><dd>Essa função é uma função auxiliar para <a class="el" href="operacoes_8h.html#abfc720731dce4781dfd389ee245f3821" title="Retorna a média do tamanho das consultas realizadas em todo o arquivo. ">mediaTamanhoConsultasArquivo()</a> </dd></dl>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_ad5c8115288084f240afe157a2d62c433_icgraph.png" border="0" usemap="#operacoes_8h_ad5c8115288084f240afe157a2d62c433_icgraph" alt=""/></div>
+<map name="operacoes_8h_ad5c8115288084f240afe157a2d62c433_icgraph" id="operacoes_8h_ad5c8115288084f240afe157a2d62c433_icgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#abfc720731dce4781dfd389ee245f3821" title="Retorna a média do tamanho das consultas realizadas em todo o arquivo. " alt="" coords="280,13,511,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a00195a3339794084b2ceb879da73642e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00195a3339794084b2ceb879da73642e">&#9670;&nbsp;</a></span>auxiliarMediaTamanhoConsultasLocalidade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void auxiliarMediaTamanhoConsultasLocalidade </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>totTermos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>totConsultas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cidade</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula a quantidade total de consultas e a quantidade total de termos em uma dada cidade. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a00195a3339794084b2ceb879da73642e" title="Calcula a quantidade total de consultas e a quantidade total de termos em uma dada cidade...">auxiliarMediaTamanhoConsultasLocalidade()</a> varre uma arvore buscando a quantidade total de consultas assim como a quantidade total de termos que possuem naquela arvore e que tenham acontecido nas consultas de uma determinada cidade</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore a ser varrida </td></tr>
+    <tr><td class="paramname">totTermos</td><td>Ponteiro para um inteiro que armazena a quantidade total de termos consultados pela cidade na árvore </td></tr>
+    <tr><td class="paramname">totConsultas</td><td>Ponteiro para um inteiro que armazena a quantidade total de consultas realizadas pela cidade na árvore </td></tr>
+    <tr><td class="paramname">cidade</td><td>String com o nome da cidade que está sendo procurada </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Nota</dt><dd>Essa função é uma função auxiliar para <a class="el" href="operacoes_8h.html#a0a89b388688c0c63b01d94d527c3ec88" title="Retorna a média do tamanho das consultas realizadas em uma cidade. ">mediaTamanhoConsultasLocalidade()</a> </dd></dl>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_a00195a3339794084b2ceb879da73642e_cgraph.png" border="0" usemap="#operacoes_8h_a00195a3339794084b2ceb879da73642e_cgraph" alt=""/></div>
+<map name="operacoes_8h_a00195a3339794084b2ceb879da73642e_cgraph" id="operacoes_8h_a00195a3339794084b2ceb879da73642e_cgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#a3af226df14ca18acf9c3de7d605004d5" title="Retorna a &quot;quantidade&quot; de vezes que um termo aparece em uma LDE. " alt="" coords="280,13,420,39"/>
+</map>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_a00195a3339794084b2ceb879da73642e_icgraph.png" border="0" usemap="#operacoes_8h_a00195a3339794084b2ceb879da73642e_icgraph" alt=""/></div>
+<map name="operacoes_8h_a00195a3339794084b2ceb879da73642e_icgraph" id="operacoes_8h_a00195a3339794084b2ceb879da73642e_icgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#a0a89b388688c0c63b01d94d527c3ec88" title="Retorna a média do tamanho das consultas realizadas em uma cidade. " alt="" coords="280,13,531,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a561e45bc2d18732cb0d4d8ebc678b82a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a561e45bc2d18732cb0d4d8ebc678b82a">&#9670;&nbsp;</a></span>consultasArquivo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int consultasArquivo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a>&#160;</td>
+          <td class="paramname"><em>retorno</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>qtdConsultas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encontra as consultas mais realizadas em todo o arquivo. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a561e45bc2d18732cb0d4d8ebc678b82a" title="Encontra as consultas mais realizadas em todo o arquivo. ">consultasArquivo()</a> encontra as consultas que foram mais buscadas. Se 0 for passado como parametro para <code>qtdConsultas</code>, são mostradas todas as consultas realizadas.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore que contem os dados </td></tr>
+    <tr><td class="paramname">retorno</td><td>Array de tamanho <code>qtdConsultas</code> (inicialmente), contendo as <code>qtdConsultas</code> mais realizadas em todo o arquivo </td></tr>
+    <tr><td class="paramname">qtdConsultas</td><td>Quantidade de consultas que serão buscadas na <code>arvore</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int</code> que é a quantidade de elementos em <code>retorno</code>. </dd></dl>
+<dl class="section warning"><dt>Aviso</dt><dd>Essa função é extremamente custosa quando se está procurando TODAS as consultas do arquivo. </dd></dl>
+
+</div>
+</div>
+<a id="a51685935591ec37d31c3a5600fe3f721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51685935591ec37d31c3a5600fe3f721">&#9670;&nbsp;</a></span>consultasPorLocalidade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void consultasPorLocalidade </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cidade</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>qtdConsultas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>saida</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encontra e escreve em um arquivo as consultas mais realizadas em uma dada cidade. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a51685935591ec37d31c3a5600fe3f721" title="Encontra e escreve em um arquivo as consultas mais realizadas em uma dada cidade. ...">consultasPorLocalidade()</a> encontra e escreve em um arquivo as <code>qtdConsultas</code> mais realizadas em uma dada cidade. Se 0 for passado como parametro para <code>qtdConsultas</code>, são mostradas todas as consultas realizadas naquela localidade.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore que contem os dados </td></tr>
+    <tr><td class="paramname">cidade</td><td>String da cidade que estamos procurando os dados </td></tr>
+    <tr><td class="paramname">qtdConsultas</td><td>Quantidade de consultas que serão printadas no arquivo </td></tr>
+    <tr><td class="paramname">saida</td><td>Arquivo no qual serão printadas as <code>qtdConsultas</code> mais consultadas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a670217d6418d7f242b8529dc3a07eefa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670217d6418d7f242b8529dc3a07eefa">&#9670;&nbsp;</a></span>copiaArvore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int copiaArvore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>retorno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>vetor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>qtd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vezesRep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copia uma arvore para a outra, de maneira ordenada. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a670217d6418d7f242b8529dc3a07eefa" title="Copia uma arvore para a outra, de maneira ordenada. ">copiaArvore()</a> copia a arvore <code>arvore</code>, para a arvore <code>retorno</code>, de maneira ordenada, seguindo o ordenamento dado por <code>vetor</code> </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore que contem as informações </td></tr>
+    <tr><td class="paramname">retorno</td><td>Arvore para a qual serao copiados os valores </td></tr>
+    <tr><td class="paramname">vetor</td><td>Vetor ordenado, com o qual procuramos os nodos certos a serem inseridos </td></tr>
+    <tr><td class="paramname">qtd</td><td>Até qual posição de <code>vetor</code> preciso preencher </td></tr>
+    <tr><td class="paramname">pos</td><td>Minha posição de preenchimento atual de <code>vetor</code> </td></tr>
+    <tr><td class="paramname">vezesRep</td><td>Vezes que a repetição ocorreu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int</code> Usado dentro das recursões para saber em que repetição da recursão estamos </dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Essa função é uma função auxiliar para <a class="el" href="operacoes_8h.html#a561e45bc2d18732cb0d4d8ebc678b82a" title="Encontra as consultas mais realizadas em todo o arquivo. ">consultasArquivo()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a4fe0890a6b92b76e2651aed7326988ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe0890a6b92b76e2651aed7326988ad">&#9670;&nbsp;</a></span>insereTermosNodo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a>* insereTermosNodo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *&#160;</td>
+          <td class="paramname"><em>lista</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a0d3de75d86bf1db6f749c91f755b870c">LSE</a> *&#160;</td>
+          <td class="paramname"><em>termos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>qtde</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Concatena todos os termos de uma LSE em uma LDE. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a4fe0890a6b92b76e2651aed7326988ad" title="Concatena todos os termos de uma LSE em uma LDE. ">insereTermosNodo()</a> concatena todos os termos que existem em <code>termos</code> em <code>lista</code>. É passado como parametro numérico da função <a class="el" href="lde_8h.html#a695bd097eab9845e2eddd196523c58ac" title="Insere um item na LDE, deixando-a em ordem numérica. ">insereLDENumerico()</a> o que é recebido no parametro <code>qtde</code>.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>Lista que receberá os termos </td></tr>
+    <tr><td class="paramname">termos</td><td>Lista da qual são copiados os termos </td></tr>
+    <tr><td class="paramname">qtde</td><td>Valor que será passado como parametro para a função <a class="el" href="lde_8h.html#a695bd097eab9845e2eddd196523c58ac" title="Insere um item na LDE, deixando-a em ordem numérica. ">insereLDENumerico()</a>. É a quantidade de vezes que cada termo aparecia originalmente. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>LDE*</code> que é a <code>lista</code> com a adição dos novos termos. </dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Essa função é uma função auxiliar para <a class="el" href="operacoes_8h.html#a8375d33a9e2f1d5a7fa40eadbfd59ad3" title="Encontra os termos consultados em uma localidade. ">termosPorLocalidade()</a> </dd></dl>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_cgraph.png" border="0" usemap="#operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_cgraph" alt=""/></div>
+<map name="operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_cgraph" id="operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_cgraph">
+<area shape="rect" id="node2" href="lde_8h.html#a695bd097eab9845e2eddd196523c58ac" title="Insere um item na LDE, deixando&#45;a em ordem numérica. " alt="" coords="195,5,343,32"/>
+</map>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_icgraph.png" border="0" usemap="#operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_icgraph" alt=""/></div>
+<map name="operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_icgraph" id="operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_icgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#a8375d33a9e2f1d5a7fa40eadbfd59ad3" title="Encontra os termos consultados em uma localidade. " alt="" coords="195,5,352,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abfc720731dce4781dfd389ee245f3821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc720731dce4781dfd389ee245f3821">&#9670;&nbsp;</a></span>mediaTamanhoConsultasArquivo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mediaTamanhoConsultasArquivo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna a média do tamanho das consultas realizadas em todo o arquivo. </p>
+<p>A função <a class="el" href="operacoes_8h.html#abfc720731dce4781dfd389ee245f3821" title="Retorna a média do tamanho das consultas realizadas em todo o arquivo. ">mediaTamanhoConsultasArquivo()</a> retorna a média do tamanho das consultas realizadas em no arquivo </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore com todas as consultas</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int*</code> que é a média do tamanho das consultas realizadas no arquivo </dd></dl>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_abfc720731dce4781dfd389ee245f3821_cgraph.png" border="0" usemap="#operacoes_8h_abfc720731dce4781dfd389ee245f3821_cgraph" alt=""/></div>
+<map name="operacoes_8h_abfc720731dce4781dfd389ee245f3821_cgraph" id="operacoes_8h_abfc720731dce4781dfd389ee245f3821_cgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#ad5c8115288084f240afe157a2d62c433" title="Calcula a quantidade total de consultas e a quantidade total de termos no arquivo. " alt="" coords="284,5,511,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0a89b388688c0c63b01d94d527c3ec88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a89b388688c0c63b01d94d527c3ec88">&#9670;&nbsp;</a></span>mediaTamanhoConsultasLocalidade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mediaTamanhoConsultasLocalidade </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cidade</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna a média do tamanho das consultas realizadas em uma cidade. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a0a89b388688c0c63b01d94d527c3ec88" title="Retorna a média do tamanho das consultas realizadas em uma cidade. ">mediaTamanhoConsultasLocalidade()</a> retorna a média do tamanho das consultas realizadas em uma determinada localidade</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore com todas as consultas </td></tr>
+    <tr><td class="paramname">cidade</td><td>Cidade a qual estamos procurando</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int*</code> que é a média do tamanho das consultas realizadas em uma determinada cidade. </dd></dl>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88_cgraph.png" border="0" usemap="#operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88_cgraph" alt=""/></div>
+<map name="operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88_cgraph" id="operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88_cgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#a00195a3339794084b2ceb879da73642e" title="Calcula a quantidade total de consultas e a quantidade total de termos em uma dada cidade..." alt="" coords="304,5,531,47"/>
+<area shape="rect" id="node3" href="operacoes_8h.html#a3af226df14ca18acf9c3de7d605004d5" title="Retorna a &quot;quantidade&quot; de vezes que um termo aparece em uma LDE. " alt="" coords="579,13,719,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aabe9eba415b4b21ad403b5dff86c83a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe9eba415b4b21ad403b5dff86c83a4">&#9670;&nbsp;</a></span>quick_sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void quick_sort </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Quick sort de vetores int genéricos. </p>
+<p>Ordena um vetor de int genéricos usando o algoritmo de Quick Sort (<a href="https://pt.wikipedia.org/wiki/Quicksort">https://pt.wikipedia.org/wiki/Quicksort</a>)</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Vetor a ser ordenado </td></tr>
+    <tr><td class="paramname">left</td><td>Detalhe de implementação relacionado ao algoritmo de Divide&amp;Conqueror </td></tr>
+    <tr><td class="paramname">right</td><td>Detalhe de implementação relacionado ao algoritmo de Divide&amp;Conqueror </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Nota</dt><dd>Essa função é uma função auxiliar </dd></dl>
+
+</div>
+</div>
+<a id="a3af226df14ca18acf9c3de7d605004d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af226df14ca18acf9c3de7d605004d5">&#9670;&nbsp;</a></span>temCidadeNaLista()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int temCidadeNaLista </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cidade</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *&#160;</td>
+          <td class="paramname"><em>lista</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna a "quantidade" de vezes que um termo aparece em uma LDE. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a3af226df14ca18acf9c3de7d605004d5" title="Retorna a &quot;quantidade&quot; de vezes que um termo aparece em uma LDE. ">temCidadeNaLista()</a> varre uma LDE, procurando um termo identico a <code>cidade</code>. Caso exista esse termo na LDE, retorna a "quantidade" de vezes que ele ocorre, caso contrário retorna 0. Essa &lt;quantidade de vezes que ele ocorre&gt; é dada pelo campo <a class="el" href="structlde.html#aa8a45bf920d47706309cd931134d5219">LDE::qtde</a> da cidade.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cidade</td><td>String a ser procurada em <code>lista</code> </td></tr>
+    <tr><td class="paramname">lista</td><td>Lista que será varrida procurando por <code>cidade</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int</code> 1 se existe a string na lista e 0 se não existe a string na lista </dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Essa função é uma função auxiliar para <a class="el" href="operacoes_8h.html#a31658a0ce4d50f633b73cc410753ed58" title="Encontra as repetições de uma consulta por localidade. ">achaVetorRepsLocalidade()</a>, <a class="el" href="operacoes_8h.html#a00195a3339794084b2ceb879da73642e" title="Calcula a quantidade total de consultas e a quantidade total de termos em uma dada cidade...">auxiliarMediaTamanhoConsultasLocalidade()</a> e <a class="el" href="operacoes_8h.html#a8375d33a9e2f1d5a7fa40eadbfd59ad3" title="Encontra os termos consultados em uma localidade. ">termosPorLocalidade()</a> </dd></dl>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_a3af226df14ca18acf9c3de7d605004d5_icgraph.png" border="0" usemap="#operacoes_8h_a3af226df14ca18acf9c3de7d605004d5_icgraph" alt=""/></div>
+<map name="operacoes_8h_a3af226df14ca18acf9c3de7d605004d5_icgraph" id="operacoes_8h_a3af226df14ca18acf9c3de7d605004d5_icgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#a8375d33a9e2f1d5a7fa40eadbfd59ad3" title="Encontra os termos consultados em uma localidade. " alt="" coords="228,5,385,32"/>
+<area shape="rect" id="node3" href="operacoes_8h.html#a31658a0ce4d50f633b73cc410753ed58" title="Encontra as repetições de uma consulta por localidade. " alt="" coords="214,56,399,83"/>
+<area shape="rect" id="node4" href="operacoes_8h.html#a00195a3339794084b2ceb879da73642e" title="Calcula a quantidade total de consultas e a quantidade total de termos em uma dada cidade..." alt="" coords="193,107,420,149"/>
+<area shape="rect" id="node5" href="operacoes_8h.html#a0a89b388688c0c63b01d94d527c3ec88" title="Retorna a média do tamanho das consultas realizadas em uma cidade. " alt="" coords="468,115,719,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac04e2f9df7f7b0f31c80a7aa7f76297d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac04e2f9df7f7b0f31c80a7aa7f76297d">&#9670;&nbsp;</a></span>termosArquivo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a>* termosArquivo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *&#160;</td>
+          <td class="paramname"><em>listaTermos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encontra os termos consultados em um arquivo. </p>
+<p>A função <a class="el" href="operacoes_8h.html#ac04e2f9df7f7b0f31c80a7aa7f76297d" title="Encontra os termos consultados em um arquivo. ">termosArquivo()</a> encontra todos os termos que foram consultados em um arquivo.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaTermos</td><td>Lista de todos os termos consultados no arquivo </td></tr>
+    <tr><td class="paramname">cidade</td><td>Cidade a qual estamos procurando os termos</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>LDE*</code> que é a lista de todos os termos consultados no arquivo. </dd></dl>
+<dl class="section warning"><dt>Aviso</dt><dd>Essa função é apenas um placeholder, para manter uma convenção de sempre chamarmos uma função para as operações, já que já temos todos os termos do arquivo separados em uma estrutura própria. </dd></dl>
+
+</div>
+</div>
+<a id="a8375d33a9e2f1d5a7fa40eadbfd59ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8375d33a9e2f1d5a7fa40eadbfd59ad3">&#9670;&nbsp;</a></span>termosPorLocalidade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a>* termosPorLocalidade </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td>
+          <td class="paramname"><em>arvore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *&#160;</td>
+          <td class="paramname"><em>lista</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>cidade</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encontra os termos consultados em uma localidade. </p>
+<p>A função <a class="el" href="operacoes_8h.html#a8375d33a9e2f1d5a7fa40eadbfd59ad3" title="Encontra os termos consultados em uma localidade. ">termosPorLocalidade()</a> encontra todos os termos que foram consultados em uma localidade. Funciona RECURSIVAMENTE.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arvore</td><td>Arvore que contem os dados </td></tr>
+    <tr><td class="paramname">lista</td><td><code>LDE</code> onde serão inseridos os termos do nodo atual da arvore. </td></tr>
+    <tr><td class="paramname">cidade</td><td>Cidade a qual estamos procurando os termos</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>LDE*</code> que é a lista com todos os termos pesquisados naquela cidade. </dd></dl>
+<dl class="section warning"><dt>Aviso</dt><dd>Na primeira chamada dessa função, a <code>lista</code> precisa ser VAZIA. </dd></dl>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3_cgraph.png" border="0" usemap="#operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3_cgraph" alt=""/></div>
+<map name="operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3_cgraph" id="operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3_cgraph">
+<area shape="rect" id="node2" href="operacoes_8h.html#a3af226df14ca18acf9c3de7d605004d5" title="Retorna a &quot;quantidade&quot; de vezes que um termo aparece em uma LDE. " alt="" coords="211,5,351,32"/>
+<area shape="rect" id="node3" href="operacoes_8h.html#a4fe0890a6b92b76e2651aed7326988ad" title="Concatena todos os termos de uma LSE em uma LDE. " alt="" coords="211,56,352,83"/>
+<area shape="rect" id="node4" href="lde_8h.html#a695bd097eab9845e2eddd196523c58ac" title="Insere um item na LDE, deixando&#45;a em ordem numérica. " alt="" coords="400,56,548,83"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

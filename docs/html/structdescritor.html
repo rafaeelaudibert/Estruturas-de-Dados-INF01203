@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Analytics - Estrutura de Dados: Referência à estrutura descritor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Analytics - Estrutura de Dados
+   &#160;<span id="projectnumber">1.0.0-alpha</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Campos de Dados</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à estrutura descritor</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Estrutura principal do programa, responsável por guardar TODOS os dados.  
+ <a href="structdescritor.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="struct_8h_source.html">struct.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para descritor:</div>
+<div class="dyncontent">
+<div class="center"><img src="structdescritor__coll__graph.png" border="0" usemap="#descritor_coll__map" alt="Collaboration graph"/></div>
+<map name="descritor_coll__map" id="descritor_coll__map">
+<area shape="rect" id="node2" href="structlde.html" title="Lista duplamente encadeada. " alt="" coords="5,7,47,33"/>
+<area shape="rect" id="node3" href="structabp.html" title="Arvore binária. " alt="" coords="97,99,144,125"/>
+<area shape="rect" id="node4" href="structlse.html" title="Lista simplesmente encadeada. " alt="" coords="130,7,170,33"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Campos de Dados</h2></td></tr>
+<tr class="memitem:a523b6d27352566be093cada88aa655d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdescritor.html#a523b6d27352566be093cada88aa655d4">arvore</a></td></tr>
+<tr class="separator:a523b6d27352566be093cada88aa655d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f74c1b0743b541ef2b21dec4fa4da2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdescritor.html#a4f74c1b0743b541ef2b21dec4fa4da2e">termos</a></td></tr>
+<tr class="separator:a4f74c1b0743b541ef2b21dec4fa4da2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Estrutura principal do programa, responsável por guardar TODOS os dados. </p>
+<p>Estrutura principal do programa, que guarda tanto a árvore binária de pesquisa <code>arvore</code>, como a lista geral de termos consultados <code>termos</code>. </p>
+</div><h2 class="groupheader">Documentação dos campos e atributos</h2>
+<a id="a523b6d27352566be093cada88aa655d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a523b6d27352566be093cada88aa655d4">&#9670;&nbsp;</a></span>arvore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_8h.html#a1664119ce88635d3bf4655a988ef8248">Consulta</a>* arvore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>&lt;struct abp&gt; contendo todas as informações do arquivo </p>
+
+</div>
+</div>
+<a id="a4f74c1b0743b541ef2b21dec4fa4da2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f74c1b0743b541ef2b21dec4fa4da2e">&#9670;&nbsp;</a></span>termos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_8h.html#ae030205799002e4fc414e374283d8598">LDE</a>* termos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Lista duplamente encadeada contendo a lista geral de termos consultados </p>
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte ficheiro:<ul>
+<li><a class="el" href="struct_8h_source.html">struct.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,85 @@
+\hypertarget{main_8c}{}\section{Referência ao ficheiro main.\+c}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+
+
+Arquivo que contém a main do programa Analytics.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}manipula\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}arvore.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}manipula\+Dados.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lde.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}benchmark.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a373f33e1065de00a8bccb33931ab2d1c}\label{main_8c_a373f33e1065de00a8bccb33931ab2d1c}} 
+\#define {\bfseries F\+\_\+\+E\+N\+T\+R\+A\+DA}~\char`\"{}data/input.\+txt\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8c_a2141ff885712fa75f5e08e769e3385d8}\label{main_8c_a2141ff885712fa75f5e08e769e3385d8}} 
+\#define {\bfseries F\+\_\+\+O\+P\+E\+R\+A\+C\+O\+ES}~\char`\"{}data/operations.\+txt\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8c_a650a755126cacd1b97fc7d5813ea9cbb}\label{main_8c_a650a755126cacd1b97fc7d5813ea9cbb}} 
+\#define {\bfseries F\+\_\+\+S\+A\+I\+DA}~\char`\"{}data/saida.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Função main do programa Analytics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém a main do programa Analytics. 
+
+\begin{DoxyAuthor}{Autor}
+Rafael Baldasso Audibert 
+
+Augusto Zanella Bardini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+11 Jul 2018 
+\end{DoxyDate}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Função main do programa Analytics. 
+
+A função \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()} é a função principal do programa Analytics, e é por ela que o programa começa
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em argc} & Quantidade de argumentos passados para a execução do programa \\
+\hline
+{\em $\ast$$\ast$argv} & Argumentos passados para a execução do programa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+0 caso tudo ocorra sem problemas 
+
+1 caso o arquivo de entrada não possa ser aberto; 
+
+2 caso o arquivo de operações não possa ser aberto; 
+
+3 caso o arquivo de saída não possa ser criado; 
+\end{DoxyReturn}

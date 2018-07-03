@@ -1,0 +1,96 @@
+\hypertarget{manipula_dados_8h}{}\section{Referência ao ficheiro manipula\+Dados.\+h}
+\label{manipula_dados_8h}\index{manipula\+Dados.\+h@{manipula\+Dados.\+h}}
+
+
+Arquivo que contém as principais funções do programa.  
+
+
+{\ttfamily \#include \char`\"{}arvore.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para manipula\+Dados.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{manipula_dados_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{manipula_dados_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$ \hyperlink{manipula_dados_8h_ab97166de20d3d2dbd7ae675f067e6ded}{entrada\+Dados} (F\+I\+LE $\ast$entrada)
+\begin{DoxyCompactList}\small\item\em Leitura dos dados do arquivo. \end{DoxyCompactList}\item 
+int \hyperlink{manipula_dados_8h_a5668dd7fa2dce43515ae7f83015b18ef}{realiza\+Operacoes} (F\+I\+LE $\ast$operacoes, F\+I\+LE $\ast$saida, \hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$dados)
+\begin{DoxyCompactList}\small\item\em Realização das operações nos dados recebidos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém as principais funções do programa. 
+
+\begin{DoxyAuthor}{Autor}
+Rafael Baldasso Audibert 
+
+Augusto Zanella Bardini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+11 Jul 2018 Nesse arquivo encontramos as duas principais funções do programa, sendo elas responsáveis por controlar a leitura dos arquivos de entrada e operações, além de realizar toda a manipulação das estruturas e das outras funções. 
+\end{DoxyDate}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{manipula_dados_8h_ab97166de20d3d2dbd7ae675f067e6ded}\label{manipula_dados_8h_ab97166de20d3d2dbd7ae675f067e6ded}} 
+\index{manipula\+Dados.\+h@{manipula\+Dados.\+h}!entrada\+Dados@{entrada\+Dados}}
+\index{entrada\+Dados@{entrada\+Dados}!manipula\+Dados.\+h@{manipula\+Dados.\+h}}
+\subsubsection{\texorpdfstring{entrada\+Dados()}{entradaDados()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info}$\ast$ entrada\+Dados (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{entrada }\end{DoxyParamCaption})}
+
+
+
+Leitura dos dados do arquivo. 
+
+A função \hyperlink{manipula_dados_8h_ab97166de20d3d2dbd7ae675f067e6ded}{entrada\+Dados()} realiza a leitura dos dados do arquivo de entrada, manipulando as outras funções do programa, fazendo com que cada valor termine em sua devida estrutura, pronta para ser utilizada pela função \hyperlink{manipula_dados_8h_a5668dd7fa2dce43515ae7f83015b18ef}{realiza\+Operacoes()}.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em entrada} & Nome do arquivo de entrada\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily Info$\ast$} contendo a árvore com as consultas e a lista de termos totais do arquivo. 
+\end{DoxyReturn}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{manipula_dados_8h_ab97166de20d3d2dbd7ae675f067e6ded_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{manipula_dados_8h_a5668dd7fa2dce43515ae7f83015b18ef}\label{manipula_dados_8h_a5668dd7fa2dce43515ae7f83015b18ef}} 
+\index{manipula\+Dados.\+h@{manipula\+Dados.\+h}!realiza\+Operacoes@{realiza\+Operacoes}}
+\index{realiza\+Operacoes@{realiza\+Operacoes}!manipula\+Dados.\+h@{manipula\+Dados.\+h}}
+\subsubsection{\texorpdfstring{realiza\+Operacoes()}{realizaOperacoes()}}
+{\footnotesize\ttfamily int realiza\+Operacoes (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{operacoes,  }\item[{F\+I\+LE $\ast$}]{saida,  }\item[{\hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$}]{dados }\end{DoxyParamCaption})}
+
+
+
+Realização das operações nos dados recebidos. 
+
+A função \hyperlink{manipula_dados_8h_a5668dd7fa2dce43515ae7f83015b18ef}{realiza\+Operacoes()} realiza a leitura das operacoes, realizando buscas nos dados fazendo com que toda a informação solicitada seja escrita no arquivo de saída.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em operacoes} & Nome do arquivo que contém as operações a serem realizadas nos {\ttfamily dados}. \\
+\hline
+{\em saida} & Nome do arquivo no qual serão escritos os dados de saída \\
+\hline
+{\em dados} & Informações geradas pela função \hyperlink{manipula_dados_8h_ab97166de20d3d2dbd7ae675f067e6ded}{entrada\+Dados()} a partir dos dados que haviam no arquivo de entrada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} que representa a quantidade de operações realizadas. 
+\end{DoxyReturn}

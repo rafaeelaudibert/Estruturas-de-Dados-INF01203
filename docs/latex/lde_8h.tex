@@ -1,0 +1,154 @@
+\hypertarget{lde_8h}{}\section{Referência ao ficheiro lde.\+h}
+\label{lde_8h}\index{lde.\+h@{lde.\+h}}
+
+
+Arquivo que contém funções relacionadas a manipulação de listas duplamente encadeadas.  
+
+
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Diagrama de dependências de inclusão para lde.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{lde_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{lde_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$ \hyperlink{lde_8h_abf1ed757950e3e4965ad96d64b2aee67}{inicializa\+L\+DE} ()
+\begin{DoxyCompactList}\small\item\em Cria uma lista duplamente encadeada. \end{DoxyCompactList}\item 
+\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$ \hyperlink{lde_8h_ae3e979b91f4e13e245b774c4c04a4e20}{insere\+L\+D\+E\+Alfabetico} (\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$lista, char $\ast$nome)
+\begin{DoxyCompactList}\small\item\em Insere um item na L\+DE, deixando-\/a em ordem alfabética. \end{DoxyCompactList}\item 
+\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$ \hyperlink{lde_8h_a695bd097eab9845e2eddd196523c58ac}{insere\+L\+D\+E\+Numerico} (\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$lista, char $\ast$nome, int qtde)
+\begin{DoxyCompactList}\small\item\em Insere um item na L\+DE, deixando-\/a em ordem numérica. \end{DoxyCompactList}\item 
+void \hyperlink{lde_8h_a2367200509bfed169f74596bdc08cc33}{printa\+L\+DE} (\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$lista, int qtde, F\+I\+LE $\ast$saida)
+\begin{DoxyCompactList}\small\item\em Logging de informações sobre a lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém funções relacionadas a manipulação de listas duplamente encadeadas. 
+
+\begin{DoxyAuthor}{Autor}
+Rafael Baldasso Audibert 
+
+Augusto Zanella Bardini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+11 Jul 2018 
+\end{DoxyDate}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{lde_8h_abf1ed757950e3e4965ad96d64b2aee67}\label{lde_8h_abf1ed757950e3e4965ad96d64b2aee67}} 
+\index{lde.\+h@{lde.\+h}!inicializa\+L\+DE@{inicializa\+L\+DE}}
+\index{inicializa\+L\+DE@{inicializa\+L\+DE}!lde.\+h@{lde.\+h}}
+\subsubsection{\texorpdfstring{inicializa\+L\+D\+E()}{inicializaLDE()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}$\ast$ inicializa\+L\+DE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria uma lista duplamente encadeada. 
+
+A função \hyperlink{lde_8h_abf1ed757950e3e4965ad96d64b2aee67}{inicializa\+L\+D\+E()} cria uma lista duplamente encadeada vazia. \begin{DoxyReturn}{Retorna}
+{\ttfamily N\+U\+LL} sempre é retornado. 
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lde_8h_abf1ed757950e3e4965ad96d64b2aee67_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lde_8h_ae3e979b91f4e13e245b774c4c04a4e20}\label{lde_8h_ae3e979b91f4e13e245b774c4c04a4e20}} 
+\index{lde.\+h@{lde.\+h}!insere\+L\+D\+E\+Alfabetico@{insere\+L\+D\+E\+Alfabetico}}
+\index{insere\+L\+D\+E\+Alfabetico@{insere\+L\+D\+E\+Alfabetico}!lde.\+h@{lde.\+h}}
+\subsubsection{\texorpdfstring{insere\+L\+D\+E\+Alfabetico()}{insereLDEAlfabetico()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}$\ast$ insere\+L\+D\+E\+Alfabetico (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$}]{lista,  }\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+
+
+
+Insere um item na L\+DE, deixando-\/a em ordem alfabética. 
+
+A função \hyperlink{lde_8h_ae3e979b91f4e13e245b774c4c04a4e20}{insere\+L\+D\+E\+Alfabetico()} é responsável por inserir um item na L\+DE, fazendo que com a L\+DE sempre fique em ordem alfabética. Caso um item seja igual a algum que já está inserido, é incrementado um contador, mostrando que aquele termo foi inserido mais de uma vez. 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Lista Duplamente Encadeada na qual será inserido o novo item \\
+\hline
+{\em nome} & String contendo o item que será inserido na lista\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily $\ast$\+L\+DE} contendo a lista recebida, com a adição/incrementação do novo item. 
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lde_8h_ae3e979b91f4e13e245b774c4c04a4e20_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lde_8h_a695bd097eab9845e2eddd196523c58ac}\label{lde_8h_a695bd097eab9845e2eddd196523c58ac}} 
+\index{lde.\+h@{lde.\+h}!insere\+L\+D\+E\+Numerico@{insere\+L\+D\+E\+Numerico}}
+\index{insere\+L\+D\+E\+Numerico@{insere\+L\+D\+E\+Numerico}!lde.\+h@{lde.\+h}}
+\subsubsection{\texorpdfstring{insere\+L\+D\+E\+Numerico()}{insereLDENumerico()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}$\ast$ insere\+L\+D\+E\+Numerico (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$}]{lista,  }\item[{char $\ast$}]{nome,  }\item[{int}]{qtde }\end{DoxyParamCaption})}
+
+
+
+Insere um item na L\+DE, deixando-\/a em ordem numérica. 
+
+A função \hyperlink{lde_8h_a695bd097eab9845e2eddd196523c58ac}{insere\+L\+D\+E\+Numerico()} é responsável por inserir um item na L\+DE, fazendo que com a L\+DE sempre fique em ordem numérica decrescente. Caso um item tenha o mesmo valor numérico que outro, eles são ordenados de forma alfabética. Caso um item com a mesma quantidade numérica e tenha seu nome igual a algum que já está inserido, é incrementado um contador, mostrando que aquele termo foi inserido mais de uma vez. 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Lista Duplamente Encadeada na qual será inserido o novo item \\
+\hline
+{\em nome} & String contendo o item que será inserido na lista \\
+\hline
+{\em qtde} & Numero que representa a quantidade de vezes que ele foi chamado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily $\ast$\+L\+DE} contendo a lista recebida, com a adição/incrementação do novo item. 
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lde_8h_a695bd097eab9845e2eddd196523c58ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lde_8h_a2367200509bfed169f74596bdc08cc33}\label{lde_8h_a2367200509bfed169f74596bdc08cc33}} 
+\index{lde.\+h@{lde.\+h}!printa\+L\+DE@{printa\+L\+DE}}
+\index{printa\+L\+DE@{printa\+L\+DE}!lde.\+h@{lde.\+h}}
+\subsubsection{\texorpdfstring{printa\+L\+D\+E()}{printaLDE()}}
+{\footnotesize\ttfamily void printa\+L\+DE (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$}]{lista,  }\item[{int}]{qtde,  }\item[{F\+I\+LE $\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Logging de informações sobre a lista. 
+
+A função \hyperlink{lde_8h_a2367200509bfed169f74596bdc08cc33}{printa\+L\+D\+E()} é responsável por printar em um arquivo, informações a respeito de {\ttfamily qtde} itens da lista. Se o parâmetro {\ttfamily qtde} for passado como 0, a lista inteira será printada. Essa informação é printada no formato \char`\"{}@$<$qtde, nome@$>$\char`\"{}.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Lista que iremos printar \\
+\hline
+{\em qtde} & Quantidade de termos da lista que serão printados. \\
+\hline
+{\em saida} & Arquivo no qual será printado a informação (pode ser passado stdout, para printar no terminal) \\
+\hline
+\end{DoxyParams}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{lde_8h_a2367200509bfed169f74596bdc08cc33_icgraph}
+\end{center}
+\end{figure}

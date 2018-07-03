@@ -5,21 +5,14 @@
 #include "lde.h"
 #include "lse.h"
 
-/// Funçao responsável por criar a árvore
-/// OUTPUT:
-///         Consulta*            ->  Árvore zerada / Ponteiro NULL
+// Funçao responsável por criar a árvore
 Consulta* criaArvore()
 {
     return NULL;
 }
 
 
-/// Função responsável por inserir um nodo na árvore (ou incrementar ou contador, caso o nodo já exista)
-/// INPUT:
-///         Consulta*           -> Árvore na qual será inserido o novo nodo
-///         LSE*                -> Lista dos termos a ser inserido na lista de termos do nodo
-///         int                 -> Qtd de termos que tenho no nodo
-///         char*               -> String contendo a cidade da qual os termos foram recebidos
+// Função responsável por inserir um nodo na árvore (ou incrementar ou contador, caso o nodo já exista)
 Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, char* cidade)
 {
 
@@ -68,12 +61,7 @@ Consulta* insereNodoArvore(Consulta *arvore, LSE* listaTermos, int qtdTermos, ch
     return arvore;
 }
 
-/// Função responsável por printar as informações sobre um nodo de uma árvore
-/// INPUT:
-///         Consulta*           -> Árvore a qual será printada
-///         int                 -> Nível atual do nodo
-/// OUTPUT:
-///         int                 -> Maior grau da árvore
+// Função responsável por printar as informações sobre um nodo de uma árvore
 int percorreArvore(Consulta *nodo, int nivel){
 
     int esq, dir;

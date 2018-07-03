@@ -3,20 +3,13 @@
 #include <string.h>
 #include "lse.h"
 
-/// Função responsável por inicializar uma Lista Simplesmente Encadeada
-/// OUTPUT:
-///         LDE*            ->  Lista simplesmente encadeada vazia / Ponteiro NULL
+// Função responsável por inicializar uma Lista Simplesmente Encadeada
 LSE* inicializaLSE()
 {
     return NULL;
 }
 
-/// Função chamada quando inserimos um novo termo na LSE, inserindo em ordem alfabetica
-/// INPUT:
-///         LDE*                ->  Lista simplesmente encadeada
-///         char*               ->  String
-/// OUTPUT:
-///         LDE*                ->  Lista simplesmente encadeada, com a inserção do novo elemento
+// Função chamada quando inserimos um novo termo na LSE, inserindo em ordem alfabetica
 LSE* insereLSE(LSE* lista, char* termo)
 {
     int found = 0;
@@ -57,13 +50,7 @@ LSE* insereLSE(LSE* lista, char* termo)
     return lista;
 }
 
-/// Função que retorna se duas LSE's tem os mesmos termos
-/// OBS.: Essa função só pode ser chamada se as duas LSE's tiverem o mesmo tamanho
-/// INPUT:
-///         LSE*                ->  Lista simplesmente encadeada
-///         LSE*                ->  Lista simplesmente encadeada
-/// OUTPUT:
-///         int                 ->  1 se as strings forem iguais em toda LSE, 0 se não forem
+// Função que retorna se duas LSE's tem os mesmos termos
 int LSEigual(LSE* lse1, LSE* lse2)
 {
 
@@ -87,11 +74,11 @@ int LSEigual(LSE* lse1, LSE* lse2)
     }
 
     /* Alternativa de retorno para essa função usando operador ternario
-     return lse1 && lse2 ? (strcmp(lse1->termo, lse2->termo) ? 0 : LSEigual(lse1->prox, lse2->prox)) : 1
+     return lse1 && lse2 ? (strcmp(lse1->termo, lse2->termo) ? 0 : LSEigual(lse1->prox, lse2->prox)) : 1;
     */
 }
 
-/// Função iterativa para printar uma LSE
+// Função iterativa para printar uma LSE
 void printaLSE(LSE* lista, FILE* saida)
 {
     if(lista){
@@ -109,7 +96,7 @@ void printaLSE(LSE* lista, FILE* saida)
 }
 
 
-
+// Transforma uma LSE em uma string
 char *parseLSEtoString(LSE* lista, char *string){
 
     LSE* auxiliar = lista;

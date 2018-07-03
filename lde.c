@@ -3,22 +3,15 @@
 #include <stdio.h>
 #include <string.h>
 
-/// Função responsável por inicializar uma Lista Duplamente Encadeada
-/// OUTPUT:
-///         LDE*            ->  Lista duplamente encadeada vazia / Ponteiro NULL
+// Função responsável por inicializar uma Lista Duplamente Encadeada
 LDE* inicializaLDE()
 {
     return NULL;
 }
 
-/// Função chamada quando uma consulta foi feita para um determinado elemento da LDE, decide o que fazer com o elemento
-/// Caso já tenha acontecido uma consulta idêntica nesse elemento, incrementa o contador de consultas
-/// Caso contrário, insere um novo elemento respeitando a ordem alfabética dos nomes
-/// INPUT:
-///         LDE*                ->  Lista duplamente encadeada
-///         char*               ->  String
-/// OUTPUT:
-///         LDE*                ->  Lista duplamente encadeada CIRCULAR, com a inserção do novo elemento (ou incremento do seu contador)
+// Função chamada quando uma consulta foi feita para um determinado elemento da LDE, decide o que fazer com o elemento
+// Caso já tenha acontecido uma consulta idêntica nesse elemento, incrementa o contador de consultas
+// Caso contrário, insere um novo elemento respeitando a ordem alfabética dos nomes
 LDE* insereLDEAlfabetico(LDE* lista, char *nome)
 {
 
@@ -199,13 +192,8 @@ LDE* insereLDEAlfabetico(LDE* lista, char *nome)
     return lista;
 }
 
-/// Função chamada quando uma consulta foi feita para um determinado elemento da LDE, decide o que fazer com o elemento
-/// Caso já tenha acontecido uma consulta idêntica nesse elemento, incrementa o contador de consultas e reordena a lista em ordem decrescente de Qtde
-/// INPUT:
-///         LDE*                ->  Lista duplamente encadeada
-///         char*               ->  String
-/// OUTPUT:
-///         LDE*                ->  Lista duplamente encadeada NÃO-CIRCULAR reordenada, com a inserção do novo elemento (ou incremento do seu contador)
+// Função chamada quando uma consulta foi feita para um determinado elemento da LDE, decide o que fazer com o elemento
+// Caso já tenha acontecido uma consulta idêntica nesse elemento, incrementa o contador de consultas e reordena a lista em ordem decrescente de Qtde
 LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
 {
 
@@ -361,10 +349,7 @@ LDE* insereLDENumerico(LDE* lista, char *nome, int qtde)
 }
 
 
-/// Função iterativa para printar uma determinada quantidade dos nomes e valores armazenados em uma lista duplamente encadeada [circular ou não]
-/// INPUT:
-///         LDE*                ->  Lista duplamente encadeada
-///         int                 ->  Quantidade de termos a serem printados [Se for 0, printa todos os termos]
+// Função iterativa para printar uma determinada quantidade dos nomes e valores armazenados em uma lista duplamente encadeada [circular ou não]
 void printaLDE(LDE* lista, int qtde, FILE* saida)
 {
     // Ponteiro auxiliar para percorrer a lista

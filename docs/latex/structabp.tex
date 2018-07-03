@@ -1,0 +1,89 @@
+\hypertarget{structabp}{}\section{Referência à estrutura abp}
+\label{structabp}\index{abp@{abp}}
+
+
+Arvore binária.  
+
+
+
+
+{\ttfamily \#include $<$struct.\+h$>$}
+
+
+
+Diagrama de colaboração para abp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{structabp__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Campos de Dados}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structabp_a2ca276b8f2f9e2a163dc0d9504e846c2}{qtde\+Acessos}
+\item 
+int \hyperlink{structabp_aba05845525837a0260605d109242fb49}{qtde\+Termos}
+\item 
+\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$ \hyperlink{structabp_a455687e406c855e366193f3ba638ed6d}{termos}
+\item 
+\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$ \hyperlink{structabp_ac621929c65d21c284f2897d0dc34777c}{cidades}
+\item 
+struct \hyperlink{structabp}{abp} $\ast$ \hyperlink{structabp_aa1052089fda0e5ed652bbe60126de869}{esq}
+\item 
+struct \hyperlink{structabp}{abp} $\ast$ \hyperlink{structabp_a68e9acbab0de7ab617165c904c98334f}{dir}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arvore binária. 
+
+Arvore binária de pesquisa responsável por guardar todos os dados das consultas. Cada nodo da árvore representa uma consulta, armazenando os termos da consulta, além das cidades que realizaram essa consulta.
+
+\begin{DoxyWarning}{Aviso}
+A árvore é binária de pesquisa, P\+O\+RÉM a chave dela não é tão útil para a realização das pesquisas. 
+\end{DoxyWarning}
+
+
+\subsection{Documentação dos campos e atributos}
+\mbox{\Hypertarget{structabp_ac621929c65d21c284f2897d0dc34777c}\label{structabp_ac621929c65d21c284f2897d0dc34777c}} 
+\index{abp@{abp}!cidades@{cidades}}
+\index{cidades@{cidades}!abp@{abp}}
+\subsubsection{\texorpdfstring{cidades}{cidades}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}$\ast$ cidades}
+
+{\ttfamily L\+DE} contendo as cidades que realizaram essa pesquisa \mbox{\Hypertarget{structabp_a68e9acbab0de7ab617165c904c98334f}\label{structabp_a68e9acbab0de7ab617165c904c98334f}} 
+\index{abp@{abp}!dir@{dir}}
+\index{dir@{dir}!abp@{abp}}
+\subsubsection{\texorpdfstring{dir}{dir}}
+{\footnotesize\ttfamily struct \hyperlink{structabp}{abp}$\ast$ dir}
+
+Ponteiro que aponta para o elemento-\/filho direito desse nodo \mbox{\Hypertarget{structabp_aa1052089fda0e5ed652bbe60126de869}\label{structabp_aa1052089fda0e5ed652bbe60126de869}} 
+\index{abp@{abp}!esq@{esq}}
+\index{esq@{esq}!abp@{abp}}
+\subsubsection{\texorpdfstring{esq}{esq}}
+{\footnotesize\ttfamily struct \hyperlink{structabp}{abp}$\ast$ esq}
+
+Ponteiro que aponta para o elemento-\/filho esquerdo desse nodo \mbox{\Hypertarget{structabp_a2ca276b8f2f9e2a163dc0d9504e846c2}\label{structabp_a2ca276b8f2f9e2a163dc0d9504e846c2}} 
+\index{abp@{abp}!qtde\+Acessos@{qtde\+Acessos}}
+\index{qtde\+Acessos@{qtde\+Acessos}!abp@{abp}}
+\subsubsection{\texorpdfstring{qtde\+Acessos}{qtdeAcessos}}
+{\footnotesize\ttfamily int qtde\+Acessos}
+
+Quantidade de vezes que essa consulta foi realizada. É a C\+H\+A\+VE da árvore \mbox{\Hypertarget{structabp_aba05845525837a0260605d109242fb49}\label{structabp_aba05845525837a0260605d109242fb49}} 
+\index{abp@{abp}!qtde\+Termos@{qtde\+Termos}}
+\index{qtde\+Termos@{qtde\+Termos}!abp@{abp}}
+\subsubsection{\texorpdfstring{qtde\+Termos}{qtdeTermos}}
+{\footnotesize\ttfamily int qtde\+Termos}
+
+Tamanho da lista representada por {\ttfamily termos} \mbox{\Hypertarget{structabp_a455687e406c855e366193f3ba638ed6d}\label{structabp_a455687e406c855e366193f3ba638ed6d}} 
+\index{abp@{abp}!termos@{termos}}
+\index{termos@{termos}!abp@{abp}}
+\subsubsection{\texorpdfstring{termos}{termos}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE}$\ast$ termos}
+
+{\ttfamily L\+SE} contendo os termos da pesquisa 
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_8h}{struct.\+h}\end{DoxyCompactItemize}

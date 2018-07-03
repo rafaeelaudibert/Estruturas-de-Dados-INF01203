@@ -1,0 +1,118 @@
+\hypertarget{manipula_string_8h}{}\section{Referência ao ficheiro manipula\+String.\+h}
+\label{manipula_string_8h}\index{manipula\+String.\+h@{manipula\+String.\+h}}
+
+
+Arquivo que contém funções relacionadas a manipulação de strings.  
+
+
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{manipula_string_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{manipula_string_8h_a63ed716824573bfcd51287ae437ff9dc}{converte\+Acentos} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Tira os acentos de uma string. \end{DoxyCompactList}\item 
+void \hyperlink{manipula_string_8h_a70ab0b22606dc0c70c1fc42a17c2dff0}{remove\+Caracteres} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Remove não-\/letras de uma string. \end{DoxyCompactList}\item 
+void \hyperlink{manipula_string_8h_a20a57ce9614b104d137a3c3037f4f574}{puxa\+Char} (char $\ast$c)
+\begin{DoxyCompactList}\small\item\em Remove um caractere de uma string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém funções relacionadas a manipulação de strings. 
+
+\begin{DoxyAuthor}{Autor}
+Rafael Baldasso Audibert 
+
+Augusto Zanella Bardini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+11 Jul 2018 
+\end{DoxyDate}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{manipula_string_8h_a63ed716824573bfcd51287ae437ff9dc}\label{manipula_string_8h_a63ed716824573bfcd51287ae437ff9dc}} 
+\index{manipula\+String.\+h@{manipula\+String.\+h}!converte\+Acentos@{converte\+Acentos}}
+\index{converte\+Acentos@{converte\+Acentos}!manipula\+String.\+h@{manipula\+String.\+h}}
+\subsubsection{\texorpdfstring{converte\+Acentos()}{converteAcentos()}}
+{\footnotesize\ttfamily void converte\+Acentos (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Tira os acentos de uma string. 
+
+A função \hyperlink{manipula_string_8h_a63ed716824573bfcd51287ae437ff9dc}{converte\+Acentos()} tira todos os acentos de uma string, transformando, i.\+e. à -\/$>$ a 
+\begin{DoxyParams}{Parâmetros}
+{\em str} & String que será convertida\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Aviso}
+A função funciona com strings escritas dentro do terminal, porém se for lido de um arquivo, pode ser que não funcione por causa das diferentes codificações. 
+\end{DoxyWarning}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{manipula_string_8h_a63ed716824573bfcd51287ae437ff9dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{manipula_string_8h_a20a57ce9614b104d137a3c3037f4f574}\label{manipula_string_8h_a20a57ce9614b104d137a3c3037f4f574}} 
+\index{manipula\+String.\+h@{manipula\+String.\+h}!puxa\+Char@{puxa\+Char}}
+\index{puxa\+Char@{puxa\+Char}!manipula\+String.\+h@{manipula\+String.\+h}}
+\subsubsection{\texorpdfstring{puxa\+Char()}{puxaChar()}}
+{\footnotesize\ttfamily void puxa\+Char (\begin{DoxyParamCaption}\item[{char $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Remove um caractere de uma string. 
+
+A função \hyperlink{manipula_string_8h_a20a57ce9614b104d137a3c3037f4f574}{puxa\+Char()} é a função auxiliar da \hyperlink{manipula_string_8h_a70ab0b22606dc0c70c1fc42a17c2dff0}{remove\+Caracteres()}. Ela remove um caractere de uma string, \char`\"{}puxando\char`\"{} todos os outros caracteres para não ficar um buraco no lugar do caractere a ser removido. 
+\begin{DoxyParams}{Parâmetros}
+{\em c} & Caractere a ser removido.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+A função precisa que esse caractere esteja dentro de uma string, já que puxará todos os caracteres até encontrar um \textquotesingle{}\textbackslash{}0\textquotesingle{}. 
+\end{DoxyNote}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{manipula_string_8h_a20a57ce9614b104d137a3c3037f4f574_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{manipula_string_8h_a70ab0b22606dc0c70c1fc42a17c2dff0}\label{manipula_string_8h_a70ab0b22606dc0c70c1fc42a17c2dff0}} 
+\index{manipula\+String.\+h@{manipula\+String.\+h}!remove\+Caracteres@{remove\+Caracteres}}
+\index{remove\+Caracteres@{remove\+Caracteres}!manipula\+String.\+h@{manipula\+String.\+h}}
+\subsubsection{\texorpdfstring{remove\+Caracteres()}{removeCaracteres()}}
+{\footnotesize\ttfamily void remove\+Caracteres (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Remove não-\/letras de uma string. 
+
+A função \hyperlink{manipula_string_8h_a70ab0b22606dc0c70c1fc42a17c2dff0}{remove\+Caracteres()} tira todos os caracteres que não sejam letras e/ou números de uma string. 
+\begin{DoxyParams}{Parâmetros}
+{\em str} & String na qual será feita a remoção \\
+\hline
+\end{DoxyParams}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{manipula_string_8h_a70ab0b22606dc0c70c1fc42a17c2dff0_cgraph}
+\end{center}
+\end{figure}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{manipula_string_8h_a70ab0b22606dc0c70c1fc42a17c2dff0_icgraph}
+\end{center}
+\end{figure}

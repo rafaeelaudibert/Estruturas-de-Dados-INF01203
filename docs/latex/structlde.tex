@@ -1,0 +1,68 @@
+\hypertarget{structlde}{}\section{Referência à estrutura lde}
+\label{structlde}\index{lde@{lde}}
+
+
+Lista duplamente encadeada.  
+
+
+
+
+{\ttfamily \#include $<$struct.\+h$>$}
+
+
+
+Diagrama de colaboração para lde\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{structlde__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Campos de Dados}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{structlde_aa4e90ca99702bac9e1c78503ad86acba}{nome} \mbox{[}100\mbox{]}
+\item 
+int \hyperlink{structlde_aa8a45bf920d47706309cd931134d5219}{qtde}
+\item 
+struct \hyperlink{structlde}{lde} $\ast$ \hyperlink{structlde_a842cbaea6d55e782335dcad1a6992695}{prox}
+\item 
+struct \hyperlink{structlde}{lde} $\ast$ \hyperlink{structlde_a9533d032f1309656dcf523f30de08484}{ant}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Lista duplamente encadeada. 
+
+Lista duplamente encadeada, que pode ou não ser circular. 
+
+\subsection{Documentação dos campos e atributos}
+\mbox{\Hypertarget{structlde_a9533d032f1309656dcf523f30de08484}\label{structlde_a9533d032f1309656dcf523f30de08484}} 
+\index{lde@{lde}!ant@{ant}}
+\index{ant@{ant}!lde@{lde}}
+\subsubsection{\texorpdfstring{ant}{ant}}
+{\footnotesize\ttfamily struct \hyperlink{structlde}{lde}$\ast$ ant}
+
+Ponteiro que aponta para o elemento anterior da lista \mbox{\Hypertarget{structlde_aa4e90ca99702bac9e1c78503ad86acba}\label{structlde_aa4e90ca99702bac9e1c78503ad86acba}} 
+\index{lde@{lde}!nome@{nome}}
+\index{nome@{nome}!lde@{lde}}
+\subsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily char nome\mbox{[}100\mbox{]}}
+
+String de tamanho máximo 100 \mbox{\Hypertarget{structlde_a842cbaea6d55e782335dcad1a6992695}\label{structlde_a842cbaea6d55e782335dcad1a6992695}} 
+\index{lde@{lde}!prox@{prox}}
+\index{prox@{prox}!lde@{lde}}
+\subsubsection{\texorpdfstring{prox}{prox}}
+{\footnotesize\ttfamily struct \hyperlink{structlde}{lde}$\ast$ prox}
+
+Ponteiro que aponta para o próximo elemento da lista \mbox{\Hypertarget{structlde_aa8a45bf920d47706309cd931134d5219}\label{structlde_aa8a45bf920d47706309cd931134d5219}} 
+\index{lde@{lde}!qtde@{qtde}}
+\index{qtde@{qtde}!lde@{lde}}
+\subsubsection{\texorpdfstring{qtde}{qtde}}
+{\footnotesize\ttfamily int qtde}
+
+Inteiro que armazena quantas vezes esse nodo foi acessado e/ou chamado e/ou requisitado 
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_8h}{struct.\+h}\end{DoxyCompactItemize}
