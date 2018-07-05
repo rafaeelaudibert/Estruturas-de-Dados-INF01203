@@ -35,27 +35,44 @@
   * @return 0 caso tudo ocorra sem problemas
   * @return 1 caso o arquivo de entrada não possa ser aberto;
   * @return 2 caso o arquivo de operações não possa ser aberto;
-  * @return 3 caso o arquivo de saída não possa ser criado;  
+  * @return 3 caso o arquivo de saída não possa ser criado;
   */
 int main(int argc, char **argv){
 
     FILE *entrada, *operacoes, *saida;
+    char fEntrada[100], fOPeracoes[100], fSaida[100];
     Info* dados = NULL;
     setlocale(LC_ALL, "Portuguese");
     printf("/* MEDICAO DO TEMPO *\\\n");
 
     // Abertura dos arquivos, com checagem dos erros
-    if(!(entrada = fopen(F_ENTRADA, "r"))){
-       printf("Erro na abertura do arquivo de entrada");
-       return 1;
-    }
-    if(!(operacoes = fopen(F_OPERACOES, "r"))){
-       printf("Erro na abertura do arquivo das operacoes");
-       return 2;
-    }
-    if(!(saida = fopen(F_SAIDA, "w"))){
-       printf("Erro na abertura do arquivo de saída");
-       return 3;
+    if(argc == 4){ // Se eu recebi como argumentos os nomes dos arquivos
+      if(!(entrada = fopen(argv[1], "r"))){
+         printf("Erro na abertura do arquivo de entrada\n");
+         return 1;
+      }
+      if(!(operacoes = fopen(argv[2], "r"))){
+         printf("Erro na abertura do arquivo das operacoes\n");
+         return 2;
+      }
+      if(!(saida = fopen(argv[3], "w"))){
+         printf("Erro na abertura do arquivo de saída\n");
+         return 3;
+      }
+    } else { //Usa os nomes default
+
+      if(!(entrada = fopen(F_ENTRADA, "r"))){
+         printf("Erro na abertura do arquivo de entrada\n");
+         return 1;
+      }
+      if(!(operacoes = fopen(F_OPERACOES, "r"))){
+         printf("Erro na abertura do arquivo das operacoes\n");
+         return 2;
+      }
+      if(!(saida = fopen(F_SAIDA, "w"))){
+         printf("Erro na abertura do arquivo de saída\n");
+         return 3;
+      }
     }
 
     dados = infoBenchmark(entradaDados, entrada); // Entrada dos dados com benchmark do tempo
