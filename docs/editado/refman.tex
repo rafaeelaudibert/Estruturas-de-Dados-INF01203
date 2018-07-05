@@ -1,0 +1,137 @@
+\documentclass[twoside]{book}
+
+% Packages required by doxygen
+\usepackage{fixltx2e}
+\usepackage{calc}
+\usepackage{doxygen}
+\usepackage[export]{adjustbox} % also loads graphicx
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
+\usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
+\usepackage[table]{xcolor}
+
+% NLS support packages
+% Font selection
+\usepackage[T1]{fontenc}
+
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\renewcommand{\DoxyLabelFont}{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+
+% Page & text layout
+\usepackage{geometry}
+\geometry{%
+  a4paper,%
+  top=3cm,%
+  bottom=2cm,%
+  left=3cm,%
+  right=2cm%
+}
+\tolerance=750
+\hfuzz=15pt
+\hbadness=750
+\setlength{\emergencystretch}{15pt}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{3ex plus 2ex minus 2ex}
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@parafont%
+  }%
+}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@subparafont%
+  }%
+}
+\makeatother
+
+
+
+% Hyperlinks (required, but should be loaded last)
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex,pagebackref=true]{hyperref}
+\else
+  \usepackage[ps2pdf,pagebackref=true]{hyperref}
+\fi
+\hypersetup{%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  unicode%
+}
+
+% Custom commands
+\newcommand{\clearemptydoublepage}{%
+  \newpage{\pagestyle{empty}\cleardoublepage}%
+}
+\usepackage{caption}
+\captionsetup{labelsep=space,font={bf},singlelinecheck=off,position=top}
+
+%===== C O N T E N T S =====
+
+\begin{document}
+
+% Titlepage & ToC
+\hypersetup{pageanchor=false,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
+\pagenumbering{alph}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}%
+{\Large Analytics -\/ Estrutura de Dados \\[1ex]\large 1.\+0.\+0-\/alpha }\\
+\vspace*{1cm}
+{\large Augusto Zanella Bardini}\\
+{\large Rafael Baldasso Audibert}\\
+\end{center}
+\end{titlepage}
+\pagenumbering{roman}
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+%--- Begin generated contents ---
+\chapter{Analytics -\/ Estruturas de Dados}
+\label{md__r_e_a_d_m_e}
+
+\Hypertarget{md__r_e_a_d_m_e}
+\input{md__r_e_a_d_m_e}
+\chapter{Documentação das Estruturas}
+\input{structabp}
+\input{structdescritor}
+\input{structlde}
+\input{structlse}
+\input{structs__qtd_cons}
+\chapter{Documentação dos Arquivos e Funções}
+\input{arvore_8h}
+\input{benchmark_8h}
+\input{lde_8h}
+\input{lse_8h}
+\input{main_8c}
+\input{manipula_dados_8h}
+\input{manipula_string_8h}
+\input{operacoes_8h}
+\input{struct_8h}
+%--- End generated contents ---
+% Index
+
+\end{document}

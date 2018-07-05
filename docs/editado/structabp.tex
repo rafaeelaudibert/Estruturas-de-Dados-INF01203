@@ -1,0 +1,45 @@
+\hypertarget{structabp}{}\section{Referência à estrutura abp}
+\label{structabp}\index{abp@{abp}}
+
+
+Arvore binária.  
+
+
+
+
+{\ttfamily \#include $<$struct.\+h$>$}
+
+
+
+Diagrama de colaboração para abp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{structabp__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Campos de Dados}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structabp_a2ca276b8f2f9e2a163dc0d9504e846c2}{qtde\+Acessos}
+\item 
+int \hyperlink{structabp_aba05845525837a0260605d109242fb49}{qtde\+Termos}
+\item 
+\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$ \hyperlink{structabp_a455687e406c855e366193f3ba638ed6d}{termos}
+\item 
+\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$ \hyperlink{structabp_ac621929c65d21c284f2897d0dc34777c}{cidades}
+\item 
+struct \hyperlink{structabp}{abp} $\ast$ \hyperlink{structabp_aa1052089fda0e5ed652bbe60126de869}{esq}
+\item 
+struct \hyperlink{structabp}{abp} $\ast$ \hyperlink{structabp_a68e9acbab0de7ab617165c904c98334f}{dir}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arvore binária. 
+
+Arvore binária de pesquisa responsável por guardar todos os dados das consultas. Cada nodo da árvore representa uma consulta, armazenando os termos da consulta, além das cidades que realizaram essa consulta.
+
+\begin{DoxyWarning}{Aviso}
+A árvore é binária de pesquisa, P\+O\+RÉM a chave dela não é tão útil para a realização das pesquisas. 
+\end{DoxyWarning}

@@ -1,0 +1,31 @@
+\subsection*{Descrição}
+
+O presente trabalho tem como objetivo a implementação de um “Analytics” de um motor de busca, onde são recebidas consultas realizadas e gera-se então um relatório a respeito dos dados inseridos durante a consulta.
+
+Esse relatório é gerado com base em operações que podem ser realizadas com as consultas. Essas operações são: (a) consultas mais realizadas por localidade; (b) consultas mais realizadas em todo o arquivo; (c) termos mais consultados por localidade; (d) termos mais consultados em todo o arquivo; (e) tamanho médio das consultas por localidade; e (f) tamanho médio das consultas no arquivo.
+
+Ao final do programa, também é dado como feedback o tempo gasto, tanto da leitura/manipulação de entrada dos dados, como do tempo gasto para realizar as operações nesses dados.
+
+\subsection*{Implementação}
+
+O programa utiliza como estrutura de dados principal uma ABP cujos nós são as diferentes consultas realizadas. A ABP é ordenada pela quantidade de termos de cada consulta (nó).
+
+Em cada nó da árvore, a consulta fica organizada por termos dentro de uma Lista Simplesmente Encadeada. Nesse mesmo nó, há também uma Lista Duplamente Encadeada que armazena as cidades nas quais foi realizada aquela consulta, guardando na mesma lista quantas vezes aquela cidade realizou a consulta. Temos também um valor que guarda a quantidade de acessos geral para aquela consulta, independentemente de cidade.
+
+Para facilitar algumas operações, também foi criada uma Lista Duplamente Encadeada geral, que armazena TODOS os termos que foram consultados no arquivo, assim como a quantidade de vezes que ele foi consultado.
+
+Na hora de realizar as operações, já temos acesso a toda essa informação gerada na inserção dos dados, porém não temos todas saídas de operação definidas separadamente. Para cada uma das operações, varremos a estrutura de árvores de listas buscando os dados necessários. Apenas uma operação utiliza de uma estratégia diferente: Consultas mais realizadas em todo o arquivo. Assim que é entrada na fase de realizar as operações, imediatamente é chamada a função que percorre todas as consultas, as transforma em strings, e as deixa ordenadas em em função de maior ocorrência. O motivo de ser realizado isso, é que em um arquivo com 4800 consultas diferentes, todo esse processo leva cerca de 1,5 segundos, logo, é necessário poupar tempo, mantendo as consultas salva em um “cache”, tornando a chegada no resultado mais simples.
+
+Para as outras operações, foram criadas funções que procuram os valores corretos a cada diferente operação, sem a utilização de algo parecido com um “cache”.
+
+\subsection*{Idealização inversa}
+
+A ideia de colocar na ABP as consultas, e não as cidades, como seria intuitivo fazer, dada a definição do trabalho, surgiu pensando que teríamos muitas consultas semelhantes de várias cidades diferentes, o que tornaria o código possivelmente muito mais rápido em comparação com o formato de árvore de cidades. Porém, ao serem definidas como entrada consultas, implicando muitas consultas diferentes e poucas cidades diferentes em cada consulta, nosso código tende a levar mais tempo do que programas otimizados para menos cidades/mais consultas.
+
+\subsection*{Conclusão}
+
+Mesmo não tendo sido implementado uma árvore balanceada, ou que facilitasse o acesso a consultas, como uma árvore AVL, ou Splay, respectivamente, pode-se perceber quão rápido a árvore deixa o programa em comparação a uma lista simplesmente encadeada, uma vez que não é necessário percorrer todos os nós para encontrar o nó necessário para determinada ação. Certamente, um programa feito baseado inteiramente em listas demoraria muito mais tempo para realizar operações com uma grande quantidade de dados, como foi utilizado durante a execução desse trabalho.
+
+A nível de complexidade, o trabalho mostrou que estruturas de armazenamento de vários tipos de dados se tornam inevitavelmente complexas, principalmente em linguagens de nível razoavelmente baixo, como C. Investir em organização e documentação de código, e em rotinas de testes meticulosos e rigorosos são a única forma de garantir o bom funcionamento do software.
+
+Os capítulos abaixo anexam ao trabalho uma descrição detalhada de todo o sistema. No Capítulo 2, são descritas e visualizadas todas as estruturas de dados utilizadas para o armazenamento dos dados. No Capítulo 3, são descritos e visualizados todos os arquivos e funções utilizados no sistema, incluindo suas correlações e dependências. Toda a descrição de estruturas e arquivos desse trabalho foi gerada utilizando o software Doxygen, a partir da documentação detalhada feita nos arquivos de header do código pelos autores do trabalho.

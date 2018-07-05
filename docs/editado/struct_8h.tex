@@ -1,0 +1,92 @@
+\hypertarget{struct_8h}{}\section{Referência ao ficheiro struct.\+h}
+\label{struct_8h}\index{struct.\+h@{struct.\+h}}
+
+
+Arquivo que contém as estruturas utilizadas no programa.  
+
+
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estruturas de Dados}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlde}{lde}
+\begin{DoxyCompactList}\small\item\em Lista duplamente encadeada. \end{DoxyCompactList}\item 
+struct \hyperlink{structlse}{lse}
+\begin{DoxyCompactList}\small\item\em Lista simplesmente encadeada. \end{DoxyCompactList}\item 
+struct \hyperlink{structabp}{abp}
+\begin{DoxyCompactList}\small\item\em Arvore binária. \end{DoxyCompactList}\item 
+struct \hyperlink{structdescritor}{descritor}
+\begin{DoxyCompactList}\small\item\em Estrutura principal do programa, responsável por guardar T\+O\+D\+OS os dados. \end{DoxyCompactList}\item 
+struct \hyperlink{structs__qtd_cons}{s\+\_\+qtd\+Cons}
+\begin{DoxyCompactList}\small\item\em Estrutura utilizada para guardar uma L\+SE e um valor numérico arbitrário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structlde}{lde} \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}
+\begin{DoxyCompactList}\small\item\em Lista duplamente encadeada. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}\label{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}} 
+typedef struct \hyperlink{structlse}{lse} \hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE}
+\begin{DoxyCompactList}\small\item\em Lista simplesmente encadeada. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structabp}{abp} \hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta}
+\begin{DoxyCompactList}\small\item\em Arvore binária. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structdescritor}{descritor} \hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info}
+\begin{DoxyCompactList}\small\item\em Estrutura principal do programa, responsável por guardar T\+O\+D\+OS os dados. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structs__qtd_cons}{s\+\_\+qtd\+Cons} \hyperlink{struct_8h_a30e93d002c23d05f5d039449d6775eb6}{Qtdcons}
+\begin{DoxyCompactList}\small\item\em Estrutura utilizada para guardar uma L\+SE e um valor numérico arbitrário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém as estruturas utilizadas no programa. 
+
+\mbox{\Hypertarget{struct_8h_a1664119ce88635d3bf4655a988ef8248}\label{struct_8h_a1664119ce88635d3bf4655a988ef8248}} 
+\index{struct.\+h@{struct.\+h}!Consulta@{Consulta}}
+\index{Consulta@{Consulta}!struct.\+h@{struct.\+h}}
+\subsubsection{\texorpdfstring{Consulta}{Consulta}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structabp}{abp}  \hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta}}
+
+
+
+Arvore binária. 
+
+Arvore binária de pesquisa responsável por guardar todos os dados das consultas. Cada nodo da árvore representa uma consulta, armazenando os termos da consulta, além das cidades que realizaram essa consulta.
+
+\begin{DoxyWarning}{Aviso}
+A árvore é binária de pesquisa, P\+O\+RÉM a chave dela não é tão útil para a realização das pesquisas. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}\label{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}} 
+\index{struct.\+h@{struct.\+h}!Info@{Info}}
+\index{Info@{Info}!struct.\+h@{struct.\+h}}
+\subsubsection{\texorpdfstring{Info}{Info}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structdescritor}{descritor}  \hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info}}
+
+
+
+Estrutura principal do programa, responsável por guardar T\+O\+D\+OS os dados. 
+
+Estrutura principal do programa, que guarda tanto a árvore binária de pesquisa {\ttfamily arvore}, como a lista geral de termos consultados {\ttfamily termos}. \mbox{\Hypertarget{struct_8h_ae030205799002e4fc414e374283d8598}\label{struct_8h_ae030205799002e4fc414e374283d8598}} 
+\index{struct.\+h@{struct.\+h}!L\+DE@{L\+DE}}
+\index{L\+DE@{L\+DE}!struct.\+h@{struct.\+h}}
+\subsubsection{\texorpdfstring{L\+DE}{LDE}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structlde}{lde}  \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}}
+
+
+
+Lista duplamente encadeada. 
+
+Lista duplamente encadeada, que pode ou não ser circular. \mbox{\Hypertarget{struct_8h_a30e93d002c23d05f5d039449d6775eb6}\label{struct_8h_a30e93d002c23d05f5d039449d6775eb6}} 
+\index{struct.\+h@{struct.\+h}!Qtdcons@{Qtdcons}}
+\index{Qtdcons@{Qtdcons}!struct.\+h@{struct.\+h}}
+\subsubsection{\texorpdfstring{Qtdcons}{Qtdcons}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structs__qtd_cons}{s\+\_\+qtd\+Cons}  \hyperlink{struct_8h_a30e93d002c23d05f5d039449d6775eb6}{Qtdcons}}
+
+
+
+Estrutura utilizada para guardar uma L\+SE e um valor numérico arbitrário. 
+
+Estrutura que é utilizada somente na função \hyperlink{operacoes_8h_a51685935591ec37d31c3a5600fe3f721}{consultas\+Por\+Localidade()} para poder armazenar quantas vezes uma {\ttfamily L\+S\+E$\ast$} foi chamada. 

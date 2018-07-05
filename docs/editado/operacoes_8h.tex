@@ -1,0 +1,486 @@
+\hypertarget{operacoes_8h}{}\section{Referência ao ficheiro operacoes.\+h}
+\label{operacoes_8h}\index{operacoes.\+h@{operacoes.\+h}}
+
+
+Arquivo que contém funções executadas durante a leitura do arquivo de operacoes.  
+
+
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para operacoes.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{operacoes_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{operacoes_8h_a225c23d35d36fa87cd1a055c47d5b00b}\label{operacoes_8h_a225c23d35d36fa87cd1a055c47d5b00b}} 
+\#define {\bfseries T\+A\+M\+\_\+\+V\+ET}~11000
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{operacoes_8h_a51685935591ec37d31c3a5600fe3f721}{consultas\+Por\+Localidade} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, char $\ast$cidade, int qtd\+Consultas, F\+I\+LE $\ast$saida)
+\begin{DoxyCompactList}\small\item\em Encontra e escreve em um arquivo as consultas mais realizadas em uma dada cidade. \end{DoxyCompactList}\item 
+int \hyperlink{operacoes_8h_a561e45bc2d18732cb0d4d8ebc678b82a}{consultas\+Arquivo} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, \hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} retorno\mbox{[}$\,$\mbox{]}, int qtd\+Consultas)
+\begin{DoxyCompactList}\small\item\em Encontra as consultas mais realizadas em todo o arquivo. \end{DoxyCompactList}\item 
+\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$ \hyperlink{operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3}{termos\+Por\+Localidade} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$lista, char cidade\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Encontra os termos consultados em uma localidade. \end{DoxyCompactList}\item 
+\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$ \hyperlink{operacoes_8h_ac04e2f9df7f7b0f31c80a7aa7f76297d}{termos\+Arquivo} (\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$lista\+Termos)
+\begin{DoxyCompactList}\small\item\em Encontra os termos consultados em um arquivo. \end{DoxyCompactList}\item 
+int \hyperlink{operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88}{media\+Tamanho\+Consultas\+Localidade} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, char $\ast$cidade)
+\begin{DoxyCompactList}\small\item\em Retorna a média do tamanho das consultas realizadas em uma cidade. \end{DoxyCompactList}\item 
+int \hyperlink{operacoes_8h_abfc720731dce4781dfd389ee245f3821}{media\+Tamanho\+Consultas\+Arquivo} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore)
+\begin{DoxyCompactList}\small\item\em Retorna a média do tamanho das consultas realizadas em todo o arquivo. \end{DoxyCompactList}\item 
+\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$ \hyperlink{operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad}{insere\+Termos\+Nodo} (\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$lista, \hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$termos, int qtde)
+\begin{DoxyCompactList}\small\item\em Concatena todos os termos de uma L\+SE em uma L\+DE. \end{DoxyCompactList}\item 
+void \hyperlink{operacoes_8h_ad5c8115288084f240afe157a2d62c433}{auxiliar\+Media\+Tamanho\+Consultas\+Arquivo} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, int $\ast$tot\+Termos, int $\ast$tot\+Consultas)
+\begin{DoxyCompactList}\small\item\em Calcula a quantidade total de consultas e a quantidade total de termos no arquivo. \end{DoxyCompactList}\item 
+void \hyperlink{operacoes_8h_a00195a3339794084b2ceb879da73642e}{auxiliar\+Media\+Tamanho\+Consultas\+Localidade} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, int $\ast$tot\+Termos, int $\ast$tot\+Consultas, char $\ast$cidade)
+\begin{DoxyCompactList}\small\item\em Calcula a quantidade total de consultas e a quantidade total de termos em uma dada cidade. \end{DoxyCompactList}\item 
+int \hyperlink{operacoes_8h_a3af226df14ca18acf9c3de7d605004d5}{tem\+Cidade\+Na\+Lista} (char $\ast$cidade, \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$lista)
+\begin{DoxyCompactList}\small\item\em Retorna a \char`\"{}quantidade\char`\"{} de vezes que um termo aparece em uma L\+DE. \end{DoxyCompactList}\item 
+int \hyperlink{operacoes_8h_a8679d0e9fceefc34588b098a6f3e235a}{acha\+Vetor\+Reps} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, int $\ast$vetor, int contador)
+\begin{DoxyCompactList}\small\item\em Copia a quantidade de acessos de cada nodo da arvore pra posições de um vetor. \end{DoxyCompactList}\item 
+int \hyperlink{operacoes_8h_a31658a0ce4d50f633b73cc410753ed58}{acha\+Vetor\+Reps\+Localidade} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, int $\ast$vetor, int contador, char $\ast$cidade, \hyperlink{struct_8h_a30e93d002c23d05f5d039449d6775eb6}{Qtdcons} $\ast$qtd\+Cons)
+\begin{DoxyCompactList}\small\item\em Encontra as repetições de uma consulta por localidade. \end{DoxyCompactList}\item 
+int \hyperlink{operacoes_8h_a670217d6418d7f242b8529dc3a07eefa}{copia\+Arvore} (\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$arvore, \hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$retorno, int $\ast$vetor, int qtd, int pos, int vezes\+Rep)
+\begin{DoxyCompactList}\small\item\em Copia uma arvore para a outra, de maneira ordenada. \end{DoxyCompactList}\item 
+void \hyperlink{operacoes_8h_aabe9eba415b4b21ad403b5dff86c83a4}{quick\+\_\+sort} (int $\ast$a, int left, int right)
+\begin{DoxyCompactList}\small\item\em Quick sort de vetores int genéricos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém funções executadas durante a leitura do arquivo de operacoes. 
+
+\mbox{\Hypertarget{operacoes_8h_a8679d0e9fceefc34588b098a6f3e235a}\label{operacoes_8h_a8679d0e9fceefc34588b098a6f3e235a}} 
+\index{operacoes.\+h@{operacoes.\+h}!acha\+Vetor\+Reps@{acha\+Vetor\+Reps}}
+\index{acha\+Vetor\+Reps@{acha\+Vetor\+Reps}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{acha\+Vetor\+Reps()}{achaVetorReps()}}
+{\footnotesize\ttfamily int acha\+Vetor\+Reps (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{int $\ast$}]{vetor,  }\item[{int}]{contador }\end{DoxyParamCaption})}
+
+
+
+Copia a quantidade de acessos de cada nodo da arvore pra posições de um vetor. 
+
+A função \hyperlink{operacoes_8h_a8679d0e9fceefc34588b098a6f3e235a}{acha\+Vetor\+Reps()} recebe uma arvore, e pra cada nodo dessa árvore encontrado recursivamente, copia a quantidade de acessos dele para um vetor
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore que contem as informações a serem inseridas em vetor \\
+\hline
+{\em vetor} & Vetor com as quantidades de consultas realizadas. \\
+\hline
+{\em contador} & Conta em qual posição de {\ttfamily vetor} será inserido a quantidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} Quantidade de consultas encontradas 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Essa função é uma função auxiliar para \hyperlink{operacoes_8h_a561e45bc2d18732cb0d4d8ebc678b82a}{consultas\+Arquivo()} 
+\end{DoxyNote}
+\mbox{\Hypertarget{operacoes_8h_a31658a0ce4d50f633b73cc410753ed58}\label{operacoes_8h_a31658a0ce4d50f633b73cc410753ed58}} 
+\index{operacoes.\+h@{operacoes.\+h}!acha\+Vetor\+Reps\+Localidade@{acha\+Vetor\+Reps\+Localidade}}
+\index{acha\+Vetor\+Reps\+Localidade@{acha\+Vetor\+Reps\+Localidade}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{acha\+Vetor\+Reps\+Localidade()}{achaVetorRepsLocalidade()}}
+{\footnotesize\ttfamily int acha\+Vetor\+Reps\+Localidade (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{int $\ast$}]{vetor,  }\item[{int}]{contador,  }\item[{char $\ast$}]{cidade,  }\item[{\hyperlink{struct_8h_a30e93d002c23d05f5d039449d6775eb6}{Qtdcons} $\ast$}]{qtd\+Cons }\end{DoxyParamCaption})}
+
+
+
+Encontra as repetições de uma consulta por localidade. 
+
+A função \hyperlink{operacoes_8h_a31658a0ce4d50f633b73cc410753ed58}{acha\+Vetor\+Reps\+Localidade()} recebe uma estrutura especial, criada somente para ela, fazendo com que ela coloque em um vetor, todas as consultas realizadas em uma cidade.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore que contem as informações a serem inseridas em vetor \\
+\hline
+{\em vetor} & Vetor com as quantidades de consultas realizadas. \\
+\hline
+{\em contador} & Conta em qual posição de {\ttfamily vetor} será inserido a quantidade \\
+\hline
+{\em cidade} & Cidade a qual estamos procurando as consultas \\
+\hline
+{\em qtd\+Cons} & Vetor de Qtd\+Cons onde serão guardados as consultas e sua quantidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} Quantidade de consultas encontradas 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Essa função é uma função auxiliar para \hyperlink{operacoes_8h_a51685935591ec37d31c3a5600fe3f721}{consultas\+Por\+Localidade()} 
+\end{DoxyNote}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operacoes_8h_a31658a0ce4d50f633b73cc410753ed58_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operacoes_8h_ad5c8115288084f240afe157a2d62c433}\label{operacoes_8h_ad5c8115288084f240afe157a2d62c433}} 
+\index{operacoes.\+h@{operacoes.\+h}!auxiliar\+Media\+Tamanho\+Consultas\+Arquivo@{auxiliar\+Media\+Tamanho\+Consultas\+Arquivo}}
+\index{auxiliar\+Media\+Tamanho\+Consultas\+Arquivo@{auxiliar\+Media\+Tamanho\+Consultas\+Arquivo}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{auxiliar\+Media\+Tamanho\+Consultas\+Arquivo()}{auxiliarMediaTamanhoConsultasArquivo()}}
+{\footnotesize\ttfamily void auxiliar\+Media\+Tamanho\+Consultas\+Arquivo (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{int $\ast$}]{tot\+Termos,  }\item[{int $\ast$}]{tot\+Consultas }\end{DoxyParamCaption})}
+
+
+
+Calcula a quantidade total de consultas e a quantidade total de termos no arquivo. 
+
+A função \hyperlink{operacoes_8h_ad5c8115288084f240afe157a2d62c433}{auxiliar\+Media\+Tamanho\+Consultas\+Arquivo()} varre uma arvore buscando a quantidade total de consultas assim como a quantidade total de termos que possuem naquela arvore.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore a ser varrida \\
+\hline
+{\em tot\+Termos} & Ponteiro para um inteiro que armazena a quantidade total de termos na árvore \\
+\hline
+{\em tot\+Consultas} & Ponteiro para um inteiro que armazena a quantidade total de consultas na árvore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Essa função é uma função auxiliar para \hyperlink{operacoes_8h_abfc720731dce4781dfd389ee245f3821}{media\+Tamanho\+Consultas\+Arquivo()} 
+\end{DoxyNote}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operacoes_8h_ad5c8115288084f240afe157a2d62c433_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operacoes_8h_a00195a3339794084b2ceb879da73642e}\label{operacoes_8h_a00195a3339794084b2ceb879da73642e}} 
+\index{operacoes.\+h@{operacoes.\+h}!auxiliar\+Media\+Tamanho\+Consultas\+Localidade@{auxiliar\+Media\+Tamanho\+Consultas\+Localidade}}
+\index{auxiliar\+Media\+Tamanho\+Consultas\+Localidade@{auxiliar\+Media\+Tamanho\+Consultas\+Localidade}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{auxiliar\+Media\+Tamanho\+Consultas\+Localidade()}{auxiliarMediaTamanhoConsultasLocalidade()}}
+{\footnotesize\ttfamily void auxiliar\+Media\+Tamanho\+Consultas\+Localidade (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{int $\ast$}]{tot\+Termos,  }\item[{int $\ast$}]{tot\+Consultas,  }\item[{char $\ast$}]{cidade }\end{DoxyParamCaption})}
+
+
+
+Calcula a quantidade total de consultas e a quantidade total de termos em uma dada cidade. 
+
+A função \hyperlink{operacoes_8h_a00195a3339794084b2ceb879da73642e}{auxiliar\+Media\+Tamanho\+Consultas\+Localidade()} varre uma arvore buscando a quantidade total de consultas assim como a quantidade total de termos que possuem naquela arvore e que tenham acontecido nas consultas de uma determinada cidade
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore a ser varrida \\
+\hline
+{\em tot\+Termos} & Ponteiro para um inteiro que armazena a quantidade total de termos consultados pela cidade na árvore \\
+\hline
+{\em tot\+Consultas} & Ponteiro para um inteiro que armazena a quantidade total de consultas realizadas pela cidade na árvore \\
+\hline
+{\em cidade} & String com o nome da cidade que está sendo procurada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Essa função é uma função auxiliar para \hyperlink{operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88}{media\+Tamanho\+Consultas\+Localidade()} 
+\end{DoxyNote}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operacoes_8h_a00195a3339794084b2ceb879da73642e_cgraph}
+\end{center}
+\end{figure}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operacoes_8h_a00195a3339794084b2ceb879da73642e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operacoes_8h_a561e45bc2d18732cb0d4d8ebc678b82a}\label{operacoes_8h_a561e45bc2d18732cb0d4d8ebc678b82a}} 
+\index{operacoes.\+h@{operacoes.\+h}!consultas\+Arquivo@{consultas\+Arquivo}}
+\index{consultas\+Arquivo@{consultas\+Arquivo}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{consultas\+Arquivo()}{consultasArquivo()}}
+{\footnotesize\ttfamily int consultas\+Arquivo (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta}}]{retorno\mbox{[}$\,$\mbox{]},  }\item[{int}]{qtd\+Consultas }\end{DoxyParamCaption})}
+
+
+
+Encontra as consultas mais realizadas em todo o arquivo. 
+
+A função \hyperlink{operacoes_8h_a561e45bc2d18732cb0d4d8ebc678b82a}{consultas\+Arquivo()} encontra as consultas que foram mais buscadas. Se 0 for passado como parametro para {\ttfamily qtd\+Consultas}, são mostradas todas as consultas realizadas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore que contem os dados \\
+\hline
+{\em retorno} & Array de tamanho {\ttfamily qtd\+Consultas} (inicialmente), contendo as {\ttfamily qtd\+Consultas} mais realizadas em todo o arquivo \\
+\hline
+{\em qtd\+Consultas} & Quantidade de consultas que serão buscadas na {\ttfamily arvore}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} que é a quantidade de elementos em {\ttfamily retorno}. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Aviso}
+Essa função é extremamente custosa quando se está procurando T\+O\+D\+AS as consultas do arquivo. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{operacoes_8h_a51685935591ec37d31c3a5600fe3f721}\label{operacoes_8h_a51685935591ec37d31c3a5600fe3f721}} 
+\index{operacoes.\+h@{operacoes.\+h}!consultas\+Por\+Localidade@{consultas\+Por\+Localidade}}
+\index{consultas\+Por\+Localidade@{consultas\+Por\+Localidade}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{consultas\+Por\+Localidade()}{consultasPorLocalidade()}}
+{\footnotesize\ttfamily void consultas\+Por\+Localidade (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{char $\ast$}]{cidade,  }\item[{int}]{qtd\+Consultas,  }\item[{F\+I\+LE $\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Encontra e escreve em um arquivo as consultas mais realizadas em uma dada cidade. 
+
+A função \hyperlink{operacoes_8h_a51685935591ec37d31c3a5600fe3f721}{consultas\+Por\+Localidade()} encontra e escreve em um arquivo as {\ttfamily qtd\+Consultas} mais realizadas em uma dada cidade. Se 0 for passado como parametro para {\ttfamily qtd\+Consultas}, são mostradas todas as consultas realizadas naquela localidade.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore que contem os dados \\
+\hline
+{\em cidade} & String da cidade que estamos procurando os dados \\
+\hline
+{\em qtd\+Consultas} & Quantidade de consultas que serão printadas no arquivo \\
+\hline
+{\em saida} & Arquivo no qual serão printadas as {\ttfamily qtd\+Consultas} mais consultadas. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operacoes_8h_a670217d6418d7f242b8529dc3a07eefa}\label{operacoes_8h_a670217d6418d7f242b8529dc3a07eefa}} 
+\index{operacoes.\+h@{operacoes.\+h}!copia\+Arvore@{copia\+Arvore}}
+\index{copia\+Arvore@{copia\+Arvore}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{copia\+Arvore()}{copiaArvore()}}
+{\footnotesize\ttfamily int copia\+Arvore (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{retorno,  }\item[{int $\ast$}]{vetor,  }\item[{int}]{qtd,  }\item[{int}]{pos,  }\item[{int}]{vezes\+Rep }\end{DoxyParamCaption})}
+
+
+
+Copia uma arvore para a outra, de maneira ordenada. 
+
+A função \hyperlink{operacoes_8h_a670217d6418d7f242b8529dc3a07eefa}{copia\+Arvore()} copia a arvore {\ttfamily arvore}, para a arvore {\ttfamily retorno}, de maneira ordenada, seguindo o ordenamento dado por {\ttfamily vetor} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore que contem as informações \\
+\hline
+{\em retorno} & Arvore para a qual serao copiados os valores \\
+\hline
+{\em vetor} & Vetor ordenado, com o qual procuramos os nodos certos a serem inseridos \\
+\hline
+{\em qtd} & Até qual posição de {\ttfamily vetor} preciso preencher \\
+\hline
+{\em pos} & Minha posição de preenchimento atual de {\ttfamily vetor} \\
+\hline
+{\em vezes\+Rep} & Vezes que a repetição ocorreu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} Usado dentro das recursões para saber em que repetição da recursão estamos 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Essa função é uma função auxiliar para \hyperlink{operacoes_8h_a561e45bc2d18732cb0d4d8ebc678b82a}{consultas\+Arquivo()} 
+\end{DoxyNote}
+\mbox{\Hypertarget{operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad}\label{operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad}} 
+\index{operacoes.\+h@{operacoes.\+h}!insere\+Termos\+Nodo@{insere\+Termos\+Nodo}}
+\index{insere\+Termos\+Nodo@{insere\+Termos\+Nodo}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{insere\+Termos\+Nodo()}{insereTermosNodo()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}$\ast$ insere\+Termos\+Nodo (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$}]{lista,  }\item[{\hyperlink{struct_8h_a0d3de75d86bf1db6f749c91f755b870c}{L\+SE} $\ast$}]{termos,  }\item[{int}]{qtde }\end{DoxyParamCaption})}
+
+
+
+Concatena todos os termos de uma L\+SE em uma L\+DE. 
+
+A função \hyperlink{operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad}{insere\+Termos\+Nodo()} concatena todos os termos que existem em {\ttfamily termos} em {\ttfamily lista}. É passado como parametro numérico da função \hyperlink{lde_8h_a695bd097eab9845e2eddd196523c58ac}{insere\+L\+D\+E\+Numerico()} o que é recebido no parametro {\ttfamily qtde}.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Lista que receberá os termos \\
+\hline
+{\em termos} & Lista da qual são copiados os termos \\
+\hline
+{\em qtde} & Valor que será passado como parametro para a função \hyperlink{lde_8h_a695bd097eab9845e2eddd196523c58ac}{insere\+L\+D\+E\+Numerico()}. É a quantidade de vezes que cada termo aparecia originalmente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily L\+D\+E$\ast$} que é a {\ttfamily lista} com a adição dos novos termos. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Essa função é uma função auxiliar para \hyperlink{operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3}{termos\+Por\+Localidade()} 
+\end{DoxyNote}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_cgraph}
+\end{center}
+\end{figure}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{operacoes_8h_a4fe0890a6b92b76e2651aed7326988ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operacoes_8h_abfc720731dce4781dfd389ee245f3821}\label{operacoes_8h_abfc720731dce4781dfd389ee245f3821}} 
+\index{operacoes.\+h@{operacoes.\+h}!media\+Tamanho\+Consultas\+Arquivo@{media\+Tamanho\+Consultas\+Arquivo}}
+\index{media\+Tamanho\+Consultas\+Arquivo@{media\+Tamanho\+Consultas\+Arquivo}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{media\+Tamanho\+Consultas\+Arquivo()}{mediaTamanhoConsultasArquivo()}}
+{\footnotesize\ttfamily int media\+Tamanho\+Consultas\+Arquivo (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore }\end{DoxyParamCaption})}
+
+
+
+Retorna a média do tamanho das consultas realizadas em todo o arquivo. 
+
+A função \hyperlink{operacoes_8h_abfc720731dce4781dfd389ee245f3821}{media\+Tamanho\+Consultas\+Arquivo()} retorna a média do tamanho das consultas realizadas em no arquivo 
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore com todas as consultas\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int$\ast$} que é a média do tamanho das consultas realizadas no arquivo 
+\end{DoxyReturn}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operacoes_8h_abfc720731dce4781dfd389ee245f3821_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88}\label{operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88}} 
+\index{operacoes.\+h@{operacoes.\+h}!media\+Tamanho\+Consultas\+Localidade@{media\+Tamanho\+Consultas\+Localidade}}
+\index{media\+Tamanho\+Consultas\+Localidade@{media\+Tamanho\+Consultas\+Localidade}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{media\+Tamanho\+Consultas\+Localidade()}{mediaTamanhoConsultasLocalidade()}}
+{\footnotesize\ttfamily int media\+Tamanho\+Consultas\+Localidade (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{char $\ast$}]{cidade }\end{DoxyParamCaption})}
+
+
+
+Retorna a média do tamanho das consultas realizadas em uma cidade. 
+
+A função \hyperlink{operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88}{media\+Tamanho\+Consultas\+Localidade()} retorna a média do tamanho das consultas realizadas em uma determinada localidade
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore com todas as consultas \\
+\hline
+{\em cidade} & Cidade a qual estamos procurando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int$\ast$} que é a média do tamanho das consultas realizadas em uma determinada cidade. 
+\end{DoxyReturn}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operacoes_8h_a0a89b388688c0c63b01d94d527c3ec88_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operacoes_8h_aabe9eba415b4b21ad403b5dff86c83a4}\label{operacoes_8h_aabe9eba415b4b21ad403b5dff86c83a4}} 
+\index{operacoes.\+h@{operacoes.\+h}!quick\+\_\+sort@{quick\+\_\+sort}}
+\index{quick\+\_\+sort@{quick\+\_\+sort}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{quick\+\_\+sort()}{quick\_sort()}}
+{\footnotesize\ttfamily void quick\+\_\+sort (\begin{DoxyParamCaption}\item[{int $\ast$}]{a,  }\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})}
+
+
+
+Quick sort de vetores int genéricos. 
+
+Ordena um vetor de int genéricos usando o algoritmo de Quick Sort (\href{https://pt.wikipedia.org/wiki/Quicksort}{\tt https\+://pt.\+wikipedia.\+org/wiki/\+Quicksort})
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em a} & Vetor a ser ordenado \\
+\hline
+{\em left} & Detalhe de implementação relacionado ao algoritmo de Divide\&Conqueror \\
+\hline
+{\em right} & Detalhe de implementação relacionado ao algoritmo de Divide\&Conqueror \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Essa função é uma função auxiliar 
+\end{DoxyNote}
+\mbox{\Hypertarget{operacoes_8h_a3af226df14ca18acf9c3de7d605004d5}\label{operacoes_8h_a3af226df14ca18acf9c3de7d605004d5}} 
+\index{operacoes.\+h@{operacoes.\+h}!tem\+Cidade\+Na\+Lista@{tem\+Cidade\+Na\+Lista}}
+\index{tem\+Cidade\+Na\+Lista@{tem\+Cidade\+Na\+Lista}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{tem\+Cidade\+Na\+Lista()}{temCidadeNaLista()}}
+{\footnotesize\ttfamily int tem\+Cidade\+Na\+Lista (\begin{DoxyParamCaption}\item[{char $\ast$}]{cidade,  }\item[{\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$}]{lista }\end{DoxyParamCaption})}
+
+
+
+Retorna a \char`\"{}quantidade\char`\"{} de vezes que um termo aparece em uma L\+DE. 
+
+A função \hyperlink{operacoes_8h_a3af226df14ca18acf9c3de7d605004d5}{tem\+Cidade\+Na\+Lista()} varre uma L\+DE, procurando um termo identico a {\ttfamily cidade}. Caso exista esse termo na L\+DE, retorna a \char`\"{}quantidade\char`\"{} de vezes que ele ocorre, caso contrário retorna 0. Essa $<$quantidade de vezes que ele ocorre$>$ é dada pelo campo \hyperlink{structlde_aa8a45bf920d47706309cd931134d5219}{L\+D\+E\+::qtde} da cidade.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cidade} & String a ser procurada em {\ttfamily lista} \\
+\hline
+{\em lista} & Lista que será varrida procurando por {\ttfamily cidade} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} 1 se existe a string na lista e 0 se não existe a string na lista 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Essa função é uma função auxiliar para \hyperlink{operacoes_8h_a31658a0ce4d50f633b73cc410753ed58}{acha\+Vetor\+Reps\+Localidade()}, \hyperlink{operacoes_8h_a00195a3339794084b2ceb879da73642e}{auxiliar\+Media\+Tamanho\+Consultas\+Localidade()} e \hyperlink{operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3}{termos\+Por\+Localidade()} 
+\end{DoxyNote}
+Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operacoes_8h_a3af226df14ca18acf9c3de7d605004d5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operacoes_8h_ac04e2f9df7f7b0f31c80a7aa7f76297d}\label{operacoes_8h_ac04e2f9df7f7b0f31c80a7aa7f76297d}} 
+\index{operacoes.\+h@{operacoes.\+h}!termos\+Arquivo@{termos\+Arquivo}}
+\index{termos\+Arquivo@{termos\+Arquivo}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{termos\+Arquivo()}{termosArquivo()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}$\ast$ termos\+Arquivo (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$}]{lista\+Termos }\end{DoxyParamCaption})}
+
+
+
+Encontra os termos consultados em um arquivo. 
+
+A função \hyperlink{operacoes_8h_ac04e2f9df7f7b0f31c80a7aa7f76297d}{termos\+Arquivo()} encontra todos os termos que foram consultados em um arquivo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista\+Termos} & Lista de todos os termos consultados no arquivo \\
+\hline
+{\em cidade} & Cidade a qual estamos procurando os termos\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily L\+D\+E$\ast$} que é a lista de todos os termos consultados no arquivo. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Aviso}
+Essa função é apenas um placeholder, para manter uma convenção de sempre chamarmos uma função para as operações, já que já temos todos os termos do arquivo separados em uma estrutura própria. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3}\label{operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3}} 
+\index{operacoes.\+h@{operacoes.\+h}!termos\+Por\+Localidade@{termos\+Por\+Localidade}}
+\index{termos\+Por\+Localidade@{termos\+Por\+Localidade}!operacoes.\+h@{operacoes.\+h}}
+\subsubsection{\texorpdfstring{termos\+Por\+Localidade()}{termosPorLocalidade()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE}$\ast$ termos\+Por\+Localidade (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1664119ce88635d3bf4655a988ef8248}{Consulta} $\ast$}]{arvore,  }\item[{\hyperlink{struct_8h_ae030205799002e4fc414e374283d8598}{L\+DE} $\ast$}]{lista,  }\item[{char}]{cidade\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Encontra os termos consultados em uma localidade. 
+
+A função \hyperlink{operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3}{termos\+Por\+Localidade()} encontra todos os termos que foram consultados em uma localidade. Funciona R\+E\+C\+U\+R\+S\+I\+V\+A\+M\+E\+N\+TE.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arvore} & Arvore que contem os dados \\
+\hline
+{\em lista} & {\ttfamily L\+DE} onde serão inseridos os termos do nodo atual da arvore. \\
+\hline
+{\em cidade} & Cidade a qual estamos procurando os termos\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily L\+D\+E$\ast$} que é a lista com todos os termos pesquisados naquela cidade. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Aviso}
+Na primeira chamada dessa função, a {\ttfamily lista} precisa ser V\+A\+Z\+IA. 
+\end{DoxyWarning}
+Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operacoes_8h_a8375d33a9e2f1d5a7fa40eadbfd59ad3_cgraph}
+\end{center}
+\end{figure}

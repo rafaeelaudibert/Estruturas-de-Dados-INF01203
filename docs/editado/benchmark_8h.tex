@@ -1,0 +1,82 @@
+\hypertarget{benchmark_8h}{}\section{Referência ao ficheiro benchmark.\+h}
+\label{benchmark_8h}\index{benchmark.\+h@{benchmark.\+h}}
+
+
+Arquivo que contém funções relacionadas a medição do tempo gasto para realizar as operações de entrada//saida de dados.  
+
+
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para benchmark.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{benchmark_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{benchmark_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$ \hyperlink{benchmark_8h_a052cafc2d6cd429354bf898787b124c5}{info\+Benchmark} (\hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$($\ast$function)(F\+I\+LE $\ast$), F\+I\+LE $\ast$entrada)
+\begin{DoxyCompactList}\small\item\em Benchmark da entrada de dados. \end{DoxyCompactList}\item 
+void \hyperlink{benchmark_8h_ac01505244d5cb5d97b243b11d79be624}{operacoes\+Benchmark} (int($\ast$function)(F\+I\+LE $\ast$, F\+I\+LE $\ast$, \hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$), F\+I\+LE $\ast$operacoes, F\+I\+LE $\ast$saida, \hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$dados)
+\begin{DoxyCompactList}\small\item\em Benchmark da saida de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo que contém funções relacionadas a medição do tempo gasto para realizar as operações de entrada//saida de dados. 
+
+\mbox{\Hypertarget{benchmark_8h_a052cafc2d6cd429354bf898787b124c5}\label{benchmark_8h_a052cafc2d6cd429354bf898787b124c5}} 
+\index{benchmark.\+h@{benchmark.\+h}!info\+Benchmark@{info\+Benchmark}}
+\index{info\+Benchmark@{info\+Benchmark}!benchmark.\+h@{benchmark.\+h}}
+\subsubsection{\texorpdfstring{info\+Benchmark()}{infoBenchmark()}}
+{\footnotesize\ttfamily \hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info}$\ast$ info\+Benchmark (\begin{DoxyParamCaption}\item[{\hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$($\ast$)(F\+I\+LE $\ast$)}]{function,  }\item[{F\+I\+LE $\ast$}]{entrada }\end{DoxyParamCaption})}
+
+
+
+Benchmark da entrada de dados. 
+
+A função \hyperlink{benchmark_8h_a052cafc2d6cd429354bf898787b124c5}{info\+Benchmark()} é responsável pela medição do tempo que a função {\ttfamily function} demora para realizar a inserção dos dados na estrutura.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em function} & Função da qual será medido o tempo. O\+BS.\+: Ela precisa ser do tipo {\ttfamily Info$\ast$}, e receber como parâmetro {\ttfamily F\+I\+L\+E$\ast$} \\
+\hline
+{\em entrada} & Arquivo que contém os dados de entrada. Será passado como parâmetro para {\ttfamily function}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily Info$\ast$} que é o mesmo que é retornado por {\ttfamily function}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{benchmark_8h_ac01505244d5cb5d97b243b11d79be624}\label{benchmark_8h_ac01505244d5cb5d97b243b11d79be624}} 
+\index{benchmark.\+h@{benchmark.\+h}!operacoes\+Benchmark@{operacoes\+Benchmark}}
+\index{operacoes\+Benchmark@{operacoes\+Benchmark}!benchmark.\+h@{benchmark.\+h}}
+\subsubsection{\texorpdfstring{operacoes\+Benchmark()}{operacoesBenchmark()}}
+{\footnotesize\ttfamily void operacoes\+Benchmark (\begin{DoxyParamCaption}\item[{int($\ast$)(F\+I\+LE $\ast$, F\+I\+LE $\ast$, \hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$)}]{function,  }\item[{F\+I\+LE $\ast$}]{operacoes,  }\item[{F\+I\+LE $\ast$}]{saida,  }\item[{\hyperlink{struct_8h_a1f5d65da7c19674431ada6dcf434b9ec}{Info} $\ast$}]{dados }\end{DoxyParamCaption})}
+
+
+
+Benchmark da saida de dados. 
+
+A função \hyperlink{benchmark_8h_ac01505244d5cb5d97b243b11d79be624}{operacoes\+Benchmark()} é responsável pela medição do tempo que a função {\ttfamily function} demora para realizar as operações e escrever a saída dos dados em um arquivo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em function} & Função da qual será medido o tempo. O\+BS.\+: Ela precisa ser do tipo {\ttfamily int}, e receber como parâmetro $<$F\+I\+L\+E$\ast$, F\+I\+L\+E$\ast$, Info$\ast$$>$ \\
+\hline
+{\em operacoes} & Arquivo que contém os dados das operações a serem realizadas em {\ttfamily dados}. Será passado como parâmetro para {\ttfamily function}. \\
+\hline
+{\em saida} & Arquivo onde serão impressos os dados de saída. Será passado como parâmetro para {\ttfamily function}. \\
+\hline
+{\em dados} & Dados onde serão realizadas as operações descritas em {\ttfamily operacoes}. Será passado como parâmetro para {\ttfamily function}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} que é a quantidade de operações realizadas com sucesso. 
+\end{DoxyReturn}
